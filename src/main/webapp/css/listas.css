@@ -1,0 +1,9 @@
+b:link{color: black}
+b:visited{color: black}
+b:hover{color: blue}
+b:active{color: white}
+
+li {
+  list-style-type: square;
+  list-style-position: inside;
+}

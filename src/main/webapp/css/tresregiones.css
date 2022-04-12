@@ -1,0 +1,26 @@
+a:link{color: black}
+a:visited{color: black}
+a:hover{color: white}
+a:active{color: white}
+#navigationbar {font-family: Century Gothic; color: white; background-color: rgb(184,184,184)}
+#sidenavigation {font-family: Century Gothic; float: left; height: 600px; width:231px ; color: white; background-color: rgb(184,184,184)}
+#content {font-family: Century Gothic; margin-left: 10em; background-color: rgb(220,220,220); height: 600px;}
+#pagefooter {clear: left}
+
+#textopiedepagina
+{
+	font-style: italic;
+	color: black;
+	background-color: rgb(184,184,184);
+	text-align:center
+}
+
+.barrasuperiorlink {clear: left; margin-left: 1em; font-size: 1.1em}
+.barralaterallink {font-size: 1.1em}
+
+.r{
+	font-family: Century Gothic;
+	text-align:center;
+	color: black
+}
+
