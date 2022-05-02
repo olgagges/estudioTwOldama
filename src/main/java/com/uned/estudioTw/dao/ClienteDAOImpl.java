@@ -31,8 +31,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 
 	public Cliente obtener(Long id) {
-		sessionFactory.getCurrentSession().createQuery("from Cliente where idCliente = :tid").
-		  setParameter("tid", id);
-		return null;
+		Cliente cliente = (Cliente) sessionFactory.getCurrentSession().createQuery("from Cliente where idCliente = :tid").setParameter("tid", id).list().get(0);
+		return cliente;
 	}
 }
