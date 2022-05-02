@@ -25,6 +25,7 @@
       <h3 class=r; style = "text-indent: 100px">¿Nuevo Cliente?</h3>
         <ul style = "text-indent: 120px">
           <li><b href="http://www.bing.com/" target="_blank">Darse de alta</b></li>
+          <li><a href="/listClientes.htm">Lista de clientes</a></li>
         </ul>
         
         <br>
