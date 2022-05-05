@@ -29,13 +29,29 @@ public class ClienteController {
 		Cliente cliente = new Cliente();
 		cliente.setPersona(persona);
 		clienteService.crear(cliente);
-		return new ModelAndView("redirect:/listClientes.htm");
+		return new ModelAndView("redirect:/sendForm.jsp");
 	}
 
 	@RequestMapping(value = "/addCliente.htm")
 	public String addClient() {
 		return "addCliente";
 	}
+
+	@RequestMapping(value = "/sendForm.htm")
+	public String sendForm() {
+		return "sendForm";
+	}
+	
+	/*@RequestMapping(value = "/editClients.htm")
+	public ModelAndView editCliente(long id)) {
+
+		
+		List<Cliente> clientes = clienteService.editarCliente(id);
+
+		ModelAndView mav = new ModelAndView("listClientes");
+		mav.addObject("cliente", clientes);
+		return mav;
+	}*/
 
 	@RequestMapping(value = "/listClientes.htm")
 	public ModelAndView allClients() {

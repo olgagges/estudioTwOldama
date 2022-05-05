@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<mytags:jquery />
+
 <mytags:barrasuperior />
 <mytags:barralateral />
 

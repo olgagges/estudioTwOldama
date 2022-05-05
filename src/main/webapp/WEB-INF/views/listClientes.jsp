@@ -3,10 +3,8 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 <html>
 <head>
-<<<<<<< HEAD
-=======
 <mytags:scriptjs />
->>>>>>> ea663d9956e7a99135d6de0d7e404713ac2a76c5
+
 <mytags:style />
 <title>Área Clientes OLDAMA</title>
 </head>
@@ -24,15 +22,15 @@
 	<c:when test="${fn:length(clients) gt 0}">
 		<table align ="center" border=1 width="50%" >
 			<tr bgcolor="grey">
-				<th>Nombre</th>
+				<th align="center">Nombre</th>
 				<th>Email</th>
 				<th>DNI</th>
 			</tr>
 			<c:forEach var="client" items="${clients}">
 				<tr>
 					<td align="center"><c:out value="${client.persona.nombre}"/></td>
-					<td align="center">${client.persona.email}</td>
-					<td align="center">${client.persona.dni}</td>
+					<td align="center"><c:out value="${client.persona.email}"/></td>
+					<td align="center"><c:out value="${client.persona.dni}"/></td>
 				</tr>
 			</c:forEach>
 		</table>
