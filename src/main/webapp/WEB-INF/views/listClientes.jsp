@@ -3,6 +3,10 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 <html>
 <head>
+<<<<<<< HEAD
+=======
+<mytags:scriptjs />
+>>>>>>> ea663d9956e7a99135d6de0d7e404713ac2a76c5
 <mytags:style />
 <title>Área Clientes OLDAMA</title>
 </head>
