@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 <html>
 <head>
-<mytags:jquery />
+<mytags:scriptjs />
 <mytags:style />
 </head>
 <body>
