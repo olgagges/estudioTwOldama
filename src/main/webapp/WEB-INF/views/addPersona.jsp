@@ -25,5 +25,7 @@
 	<input type="text" name="email" />
 <br />
 <input type="submit" /><input type="reset" /></form>
+
+<mytags:piedepagina />
 </body>
 </html>

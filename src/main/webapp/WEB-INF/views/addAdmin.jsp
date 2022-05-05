@@ -14,7 +14,7 @@
 
 <DIV id=content>
 <br>
-<h3 class=r>Rellene el formulario para generar un nuevo cliente</h3><br/>
+<h3 class=r>Rellene el formulario para generar un nuevo Administrador</h3><br/>
 
 <c:if test="${errors.errorCount gt 0}">
 	Errors!<br/>
@@ -24,7 +24,7 @@
 	</c:forEach>
 </c:if>
 
-<form class=r method="post" action="addCliente.htm">
+<form class=r method="post" action="addAdmin.htm">
 <label for="nombre">Nombre:</label>
 	<input type="text" name="nombre" /><br/><br/>
 <label for="dni">DNI:</label>

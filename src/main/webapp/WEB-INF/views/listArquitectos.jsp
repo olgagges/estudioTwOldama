@@ -15,20 +15,20 @@
 <DIV id=content>
 <br>
 
-<h3 class="r">Listado completo de Clientes OLDAMA Architecture</h3><br/><br/>
+<h3 class="r">Listado completo de Arquitectos OLDAMA Architecture</h3><br/><br/>
 <c:choose>
-	<c:when test="${fn:length(clients) gt 0}">
+	<c:when test="${fn:length(arquitects) gt 0}">
 		<table align ="center" border=1 width="50%" >
 			<tr bgcolor="grey">
 				<th>Nombre</th>
 				<th>Email</th>
 				<th>DNI</th>
 			</tr>
-			<c:forEach var="client" items="${clients}">
+			<c:forEach var="arquitect" items="${arquitects}">
 				<tr>
-					<td align="center"><c:out value="${client.persona.nombre}"/></td>
-					<td align="center">${client.persona.email}</td>
-					<td align="center">${client.persona.dni}</td>
+					<td align="center"><c:out value="${arquitect.persona.nombre}"/></td>
+					<td align="center">${arquitect.persona.email}</td>
+					<td align="center">${arquitect.persona.dni}</td>
 				</tr>
 			</c:forEach>
 		</table>

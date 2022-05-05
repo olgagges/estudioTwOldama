@@ -28,6 +28,6 @@
 	</c:when>
 	<c:otherwise>Sin datos</c:otherwise>
 </c:choose>
-
+<mytags:piedepagina />
 </body>
 </html>

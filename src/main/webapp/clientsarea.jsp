@@ -24,7 +24,7 @@
 
       <h3 class=r; style = "text-indent: 100px">¿Nuevo Cliente?</h3>
         <ul style = "text-indent: 120px">
-          <li><b href="http://www.bing.com/" target="_blank">Darse de alta</b></li>
+          <li><A href="addCliente.htm">Darse de alta</A></li>
           <li><a href="listClientes.htm">Lista de clientes</a></li>
         </ul>
         
@@ -32,8 +32,8 @@
         
       <h3 style = "text-indent: 100px">Cliente registrado</h3>
         <ul style = "text-indent: 120px">
-          <li><b href="http://www.facebook.com/" target="_blank">Solicitar proyecto</b></li>
-          <li><b href="http://www.twitter.com/" target="_blank">Descargar documentos de sus proyectos</b></li>
+          <li><a href="http://www.facebook.com/" target="_blank">Solicitar proyecto</a></li>
+          <li><a href="http://www.twitter.com/" target="_blank">Descargar documentos de sus proyectos</a></li>
         </ul>
       </li>
 

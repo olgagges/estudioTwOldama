@@ -14,7 +14,7 @@
     <A href="claim.htm">Área de Arquitectos</A>
    </SPAN>&nbsp;
    <SPAN class="barrasuperiorlink">
-    <A href="policies.htm">Área de Administrador</A>
+    <A href="adminarea.jsp">Área de Administrador</A>
    </SPAN>&nbsp;
    </A>
    <SPAN class="barrasuperiorlink">

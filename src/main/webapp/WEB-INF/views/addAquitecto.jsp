@@ -24,7 +24,7 @@
 	</c:forEach>
 </c:if>
 
-<form class=r method="post" action="addCliente.htm">
+<form class=r method="post" action="addArquitecto.htm">
 <label for="nombre">Nombre:</label>
 	<input type="text" name="nombre" /><br/><br/>
 <label for="dni">DNI:</label>
