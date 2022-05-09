@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Persona;
-import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.ClienteService;
 
 @Controller
@@ -55,6 +53,20 @@ public class ClienteController {
 		mav.addObject("cliente", cliente);
 		return mav;
 	}*/
+	
+	@RequestMapping(value = "/editCliente.htm")
+	public ModelAndView editCliente(@RequestParam("id") long idCliente) {
+		Cliente cliente = clienteService.obtener(idCliente);
+		ModelAndView mav = new ModelAndView("editCliente");
+		mav.addObject("cliente", cliente);
+		return mav;
+	}
+
+	@RequestMapping(value = "/editCliente.htm", method = RequestMethod.POST)
+	public ModelAndView addClient(Cliente cliente, Errors errors) {
+		clienteService.editar(cliente);
+		return new ModelAndView("redirect:/listClientes.htm");
+	}
 
 	@RequestMapping(value = "/listClientes.htm")
 	public ModelAndView allClients() {
