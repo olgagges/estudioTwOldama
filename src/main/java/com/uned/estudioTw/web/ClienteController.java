@@ -71,7 +71,7 @@ public class ClienteController {
 	public ModelAndView delCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
 		clienteService.borrar(cliente);
-		return new ModelAndView("redirect:/listClientes.htm");
+		return new ModelAndView("redirect:/personaborrada.htm");
 	}
 	
 //	@RequestMapping(value = "/delCliente.htm")
@@ -91,10 +91,7 @@ public class ClienteController {
 		return "personaborrada";
 	}
 	
-	@RequestMapping(value = "/borrCliente.htm")
-	public String borrCliente() {
-		return "borrCliente";
-	}
+	
 	
 	@RequestMapping(value = "/personaeditada.htm")
 	public String personaeditada() {

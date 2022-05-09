@@ -21,7 +21,7 @@ public class ProyectoDAOImpl implements ProyectoDAO {
 		sessionFactory.getCurrentSession().delete(proyecto);
 	}
 
-	public void actualizar(Proyecto proyecto) {
+	public void editar(Proyecto proyecto) {
 		sessionFactory.getCurrentSession().update(proyecto);
 	}
 

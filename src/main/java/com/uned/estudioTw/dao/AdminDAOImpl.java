@@ -21,7 +21,7 @@ public class AdminDAOImpl implements AdminDAO {
 		sessionFactory.getCurrentSession().delete(admin);
 	}
 
-	public void actualizar(Admin admin) {
+	public void editar(Admin admin) {
 		sessionFactory.getCurrentSession().update(admin);
 	}
 

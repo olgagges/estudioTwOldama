@@ -21,7 +21,7 @@ public class ArquitectoDAOImpl implements ArquitectoDAO {
 		sessionFactory.getCurrentSession().delete(arquitecto);
 	}
 
-	public void actualizar(Arquitecto arquitecto) {
+	public void editar(Arquitecto arquitecto) {
 		sessionFactory.getCurrentSession().update(arquitecto);
 	}
 
