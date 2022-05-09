@@ -3,18 +3,20 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 <html>
 <head>
+<mytags:scriptjs />
 <mytags:style />
 <title>OLDAMA ArchiTecTuRe</title>
 </head>
 
 <body>
-<mytags:jquery />
+
+
 <mytags:barrasuperior />
 <mytags:barralateral />
 
 <DIV id=content>
 <br>
-<h3 class=r>Rellene el formulario para generar un nuevo cliente</h3><br/>
+<h3 class=r>Rellene el formulario para generar un nuevo Arquitecto</h3><br/>
 
 <c:if test="${errors.errorCount gt 0}">
 	Errors!<br/>

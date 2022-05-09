@@ -29,7 +29,7 @@ public class ClienteController {
 		Cliente cliente = new Cliente();
 		cliente.setPersona(persona);
 		clienteService.crear(cliente);
-		return new ModelAndView("redirect:/sendForm.jsp");
+		return new ModelAndView("redirect:/sendForm.htm");
 	}
 
 	@RequestMapping(value = "/addCliente.htm")
@@ -46,10 +46,10 @@ public class ClienteController {
 	public ModelAndView editCliente(long id)) {
 
 		
-		List<Cliente> clientes = clienteService.editarCliente(id);
+		Cliente cliente = clienteService.editarCliente(id);
 
 		ModelAndView mav = new ModelAndView("listClientes");
-		mav.addObject("cliente", clientes);
+		mav.addObject("cliente", cliente);
 		return mav;
 	}*/
 
@@ -62,6 +62,33 @@ public class ClienteController {
 		ModelAndView mav = new ModelAndView("listClientes");
 		mav.addObject("clients", clientes);
 		return mav;
+	}
+	
+	@RequestMapping(value = "/delCliente.htm")
+	public ModelAndView delClient(long id, Errors errors) {
+		if (errors.hasErrors()) {
+			ModelAndView mav = new ModelAndView("delCliente");
+			mav.addObject("errors", errors);
+			return mav;
+		}
+		Cliente cliente = clienteService.obtener(id);
+		clienteService.borrar(cliente);
+		return new ModelAndView("redirect:/personaborrada.htm");
+	}
+	
+	@RequestMapping(value = "/personaborrada.htm")
+	public String personaborrada() {
+		return "personaborrada";
+	}
+	
+	@RequestMapping(value = "/borrCliente.htm")
+	public String borrCliente() {
+		return "borrCliente";
+	}
+	
+	@RequestMapping(value = "/personaeditada.htm")
+	public String personaeditada() {
+		return "personaeditada";
 	}
 
 }

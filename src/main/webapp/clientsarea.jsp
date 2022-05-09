@@ -18,14 +18,13 @@
 
 <br>
 
-<h2 class=r>Por favor, selecione la acción que desea realizar</h2>
+<h2 class=r>Por favor, seleccione la acción que desea realizar</h2>
 
 <br>
 
       <h3 class=r; style = "text-indent: 100px">¿Nuevo Cliente?</h3>
         <ul style = "text-indent: 120px">
           <li><A href="addCliente.htm">Darse de alta</A></li>
-          <li><a href="listClientes.htm">Lista de clientes</a></li>
         </ul>
         
         <br>

@@ -8,5 +8,10 @@ public interface ClienteService {
 	public List<Cliente> listarTodos();
 
 	public void crear(Cliente cliente);
+	
+	public void borrar(Cliente cliente);
+	
+	public void editar(Cliente cliente);
 
+	public Cliente obtener(long id);
 }

@@ -19,8 +19,19 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	public void crear(Cliente cliente) {
-		clienteDAO.crear(cliente);
-		
+		clienteDAO.crear(cliente);		
+	}
+	
+	public void borrar(Cliente cliente) {
+		clienteDAO.borrar(cliente);		
+	}
+	
+	public void editar(Cliente cliente) {
+		clienteDAO.editar(cliente);		
+	}
+	
+	public Cliente obtener(long id) {
+		return clienteDAO.obtener(id);		
 	}
 
 }

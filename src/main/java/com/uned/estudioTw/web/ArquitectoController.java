@@ -20,7 +20,7 @@ public class ArquitectoController {
 	ArquitectoService arquitectoService;
 
 	@RequestMapping(value = "/addArquitecto.htm", method = RequestMethod.POST)
-	public ModelAndView addArquitect(Persona persona, Errors errors) {
+	public ModelAndView addArquitecto(Persona persona, Errors errors) {
 		if (errors.hasErrors()) {
 			ModelAndView mav = new ModelAndView("addArquitecto");
 			mav.addObject("errors", errors);
@@ -29,11 +29,11 @@ public class ArquitectoController {
 		Arquitecto arquitecto = new Arquitecto();
 		arquitecto.setPersona(persona);
 		arquitectoService.crear(arquitecto);
-		return new ModelAndView("redirect:/listArquitectos.htm");
+		return new ModelAndView("redirect:/personadd.htm");
 	}
 
 	@RequestMapping(value = "/addArquitecto.htm")
-	public String addArquitect() {
+	public String addArquitecto() {
 		return "addArquitecto";
 	}
 

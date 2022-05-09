@@ -21,7 +21,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 		sessionFactory.getCurrentSession().delete(cliente);
 	}
 
-	public void actualizar(Cliente cliente) {
+	public void editar(Cliente cliente) {
 		sessionFactory.getCurrentSession().update(cliente);
 	}
 
@@ -34,4 +34,8 @@ public class ClienteDAOImpl implements ClienteDAO {
 		Cliente cliente = (Cliente) sessionFactory.getCurrentSession().createQuery("from Cliente where idCliente = :tid").setParameter("tid", id).list().get(0);
 		return cliente;
 	}
+
+
+		
+	
 }

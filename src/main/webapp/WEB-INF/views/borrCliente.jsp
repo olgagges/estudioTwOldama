@@ -4,48 +4,50 @@
 <html>
 <head>
 <mytags:scriptjs />
-
 <mytags:style />
-<title>Área Clientes OLDAMA</title>
+<title>OLDAMA ArchiTecTuRe</title>
 </head>
 
 <body>
+
 
 <mytags:barrasuperior />
 <mytags:barralateral />
 
 <DIV id=content>
 <br>
+<h3 class=r>Datos del Cliente que se desea borrar</h3><br/>
 
-<h3 class="r">Listado completo de Clientes OLDAMA Architecture</h3><br/><br/>
-<c:choose>
-	<c:when test="${fn:length(clients) gt 0}">
+
 		<table align ="center" border=1 width="60%" >
 			<tr bgcolor="grey">
 				<th align="center">Nombre</th>
 				<th>Email</th>
 				<th>DNI</th>
-				<th colspan="2">Acciones</th>
 			</tr>
 			<c:forEach var="client" items="${clients}">
+				
+				
+				<c:if test="${param.id == client.persona.idPersona}">
 				<tr>
 					<td align="center"><c:out value="${client.persona.nombre}"/></td>
 					<td align="center"><c:out value="${client.persona.email}"/></td>
 					<td align="center"><c:out value="${client.persona.dni}"/></td>
-					<td align="center"><A href="editCliente.htm?id=${client.persona.idPersona}">Editar</A></td>
-					<td align="center"><A href="borrCliente.htm?id=${client.persona.idPersona}">Borrar</A></td>
 				</tr>
+				</c:if>
+				
 			</c:forEach>
 		</table>
-	</c:when>
-	<c:otherwise><h3 class="r">Sin datos</h3></c:otherwise>
-</c:choose>
-<br/>
-<br/>
-<h5 class="r">Datos extraídos de la Base de Datos de OLDAMA Architecture</h5>
-<h5 class="r">Todos los datos cumplen con las políticas de privacidad establecidas</h5>
-<h5 class="r">Prohibida su difusión</h5>
+	
+
+
+<br/><br/>
+
+<form method="get" action="/page2">
+ <button text-alingn="center" type="submit">Continue
+</form>
+
 </DIV>
-</body>
 <mytags:piedepagina />
+</body>
 </html>

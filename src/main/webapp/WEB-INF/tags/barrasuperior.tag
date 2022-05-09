@@ -11,7 +11,7 @@
     <A href="clientsarea.jsp">햞ea de clientes</A>
    </SPAN>&nbsp;
    <SPAN class="barrasuperiorlink">
-    <A href="claim.htm">햞ea de Arquitectos</A>
+    <A href="architecarea.jsp">햞ea de Arquitectos</A>
    </SPAN>&nbsp;
    <SPAN class="barrasuperiorlink">
     <A href="adminarea.jsp">햞ea de Administrador</A>

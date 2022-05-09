@@ -7,7 +7,7 @@ public interface BaseDAO<T, K> {
 
 	void borrar(T t);
 
-	void actualizar(T t);
+	void editar(T t);
 
 	List<T> listarTodos();
 
