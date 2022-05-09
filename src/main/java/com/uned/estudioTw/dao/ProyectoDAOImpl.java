@@ -6,32 +6,33 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.uned.estudioTw.model.Cliente;
+import com.uned.estudioTw.model.Proyecto;
 
 @Repository
-public class ProyectoDAOImpl implements ClienteDAO {
+public class ProyectoDAOImpl implements ProyectoDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void crear(Cliente cliente) {
-		sessionFactory.getCurrentSession().save("Cliente", cliente);
+	public void crear(Proyecto proyecto) {
+		sessionFactory.getCurrentSession().save("Cliente", proyecto);
 	}
 
-	public void borrar(Cliente cliente) {
-		sessionFactory.getCurrentSession().delete(cliente);
+	public void borrar(Proyecto proyecto) {
+		sessionFactory.getCurrentSession().delete(proyecto);
 	}
 
-	public void actualizar(Cliente cliente) {
-		sessionFactory.getCurrentSession().update(cliente);
+	public void actualizar(Proyecto proyecto) {
+		sessionFactory.getCurrentSession().update(proyecto);
 	}
 
-	public List<Cliente> listarTodos() {
-		List<Cliente> clientes = sessionFactory.getCurrentSession().createQuery("FROM Cliente").list();
-		return clientes;
+	public List<Proyecto> listarTodos() {
+		List<Proyecto> proyectos = sessionFactory.getCurrentSession().createQuery("FROM Proyecto").list();
+		return proyectos;
 	}
 
-	public Cliente obtener(Long id) {
-		Cliente cliente = (Cliente) sessionFactory.getCurrentSession().createQuery("from Cliente where idCliente = :tid").setParameter("tid", id).list().get(0);
-		return cliente;
+	public Proyecto obtener(Long id) {
+		Proyecto proyecto = (Proyecto) sessionFactory.getCurrentSession()
+				.createQuery("from Proyecto where idProyecto = :tid").setParameter("tid", id).list().get(0);
+		return proyecto;
 	}
 }

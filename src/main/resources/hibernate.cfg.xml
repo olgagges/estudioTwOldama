@@ -2,8 +2,14 @@
 	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
-  <mapping class="com.uned.estudioTw.model.Persona" />
-   <mapping class="com.uned.estudioTw.model.Cliente" />
- </session-factory>
+	<session-factory>
+		<mapping class="com.uned.estudioTw.model.Persona" />
+		<mapping class="com.uned.estudioTw.model.Cliente" />
+		<mapping class="com.uned.estudioTw.model.Admin" />
+		<mapping class="com.uned.estudioTw.model.Arquitecto" />
+		<mapping class="com.uned.estudioTw.model.Proyecto" />
+		<mapping class="com.uned.estudioTw.model.TipoProyecto" />
+		<mapping class="com.uned.estudioTw.model.Certificado" />
+		<mapping class="com.uned.estudioTw.model.TipoCertificado" />
+	</session-factory>
 </hibernate-configuration>

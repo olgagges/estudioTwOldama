@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Persona;
+import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.ClienteService;
 
 @Controller
@@ -65,16 +68,23 @@ public class ClienteController {
 	}
 	
 	@RequestMapping(value = "/delCliente.htm")
-	public ModelAndView delClient(long id, Errors errors) {
-		if (errors.hasErrors()) {
-			ModelAndView mav = new ModelAndView("delCliente");
-			mav.addObject("errors", errors);
-			return mav;
-		}
-		Cliente cliente = clienteService.obtener(id);
+	public ModelAndView delCliente(@RequestParam("id") long idCliente) {
+		Cliente cliente = clienteService.obtener(idCliente);
 		clienteService.borrar(cliente);
-		return new ModelAndView("redirect:/personaborrada.htm");
+		return new ModelAndView("redirect:/listClientes.htm");
 	}
+	
+//	@RequestMapping(value = "/delCliente.htm")
+//	public ModelAndView delClient(long id, Errors errors) {
+//		if (errors.hasErrors()) {
+//			ModelAndView mav = new ModelAndView("delCliente");
+//			mav.addObject("errors", errors);
+//			return mav;
+//		}
+//		Cliente cliente = clienteService.obtener(id);
+//		clienteService.borrar(cliente);
+//		return new ModelAndView("redirect:/personaborrada.htm");
+//	}
 	
 	@RequestMapping(value = "/personaborrada.htm")
 	public String personaborrada() {

@@ -33,7 +33,7 @@
 					<td align="center"><c:out value="${client.persona.email}"/></td>
 					<td align="center"><c:out value="${client.persona.dni}"/></td>
 					<td align="center"><A href="editCliente.htm?id=${client.persona.idPersona}">Editar</A></td>
-					<td align="center"><A href="borrCliente.htm?id=${client.persona.idPersona}">Borrar</A></td>
+					<td align="center"><A href="delCliente.htm?id=${client.persona.idPersona}">Borrar</A></td>
 				</tr>
 			</c:forEach>
 		</table>
