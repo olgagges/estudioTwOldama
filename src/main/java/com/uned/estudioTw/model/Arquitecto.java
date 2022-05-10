@@ -12,9 +12,9 @@ public class Arquitecto {
 	@Id
 	@GeneratedValue
 	private long idArquitecto;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
+	@JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
 	private Persona persona;
 
 	public Persona getPersona() {
@@ -32,7 +32,5 @@ public class Arquitecto {
 	public void setIdArquitecto(long idArquitecto) {
 		this.idArquitecto = idArquitecto;
 	}
-	
-	
-}
 
+}
