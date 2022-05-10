@@ -6,7 +6,7 @@
 <mytags:scriptjs />
 
 <mytags:style />
-<title>Área Clientes OLDAMA</title>
+<title>OLDAMA ArchiTecTuRe</title>
 </head>
 
 <body>

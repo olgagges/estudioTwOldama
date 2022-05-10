@@ -11,16 +11,27 @@ import com.uned.estudioTw.model.Arquitecto;
 @Service
 public class ArquitectoServiceImpl implements ArquitectoService {
 	@Autowired
-	ArquitectoDAOImpl ArquitectoDAO;
+	ArquitectoDAOImpl arquitectoDAO;
 
 	public List<Arquitecto> listarTodos() {
-		List<Arquitecto> arquitectos = ArquitectoDAO.listarTodos();
+		List<Arquitecto> arquitectos = arquitectoDAO.listarTodos();
 		return arquitectos;
 	}
 
 	public void crear(Arquitecto arquitecto) {
-		ArquitectoDAO.crear(arquitecto);
-		
+		arquitectoDAO.crear(arquitecto);		
+	}
+	
+	public void borrar(Arquitecto arquitecto) {
+		arquitectoDAO.borrar(arquitecto);		
+	}
+	
+	public void editar(Arquitecto arquitecto) {
+		arquitectoDAO.editar(arquitecto);		
+	}
+	
+	public Arquitecto obtener(long id) {
+		return arquitectoDAO.obtener(id);		
 	}
 
 }

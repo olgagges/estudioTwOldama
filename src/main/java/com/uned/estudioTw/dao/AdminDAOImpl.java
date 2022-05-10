@@ -31,7 +31,7 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public Admin obtener(Long id) {
-		Admin admin = (Admin) sessionFactory.getCurrentSession().createQuery("from admin where idAdmin = :tid").setParameter("tid", id).list().get(0);
+		Admin admin = (Admin) sessionFactory.getCurrentSession().createQuery("from Admin where idAdmin = :tid").setParameter("tid", id).list().get(0);
 		return admin;
 	}
 }

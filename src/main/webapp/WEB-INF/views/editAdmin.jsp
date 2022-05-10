@@ -23,12 +23,12 @@
 <h3 class=r>Edición de datos personales</h3><br/>
 <h3 class=r>Modifique los campos deseados y pulse Confirmar</h3><br/>
 
-<form:form method="POST" action="editCliente.htm"
-	modelAttribute="cliente">
+<form:form method="POST" action="editAdmin.htm"
+	modelAttribute="admin">
 	<table align ="center">
 		<tr>
 			<td></td>
-			<td><form:hidden path="idCliente" /></td>
+			<td><form:hidden path="idAdmin" /></td>
 		</tr>
 		<tr>
 			<td>Nombre :</td>

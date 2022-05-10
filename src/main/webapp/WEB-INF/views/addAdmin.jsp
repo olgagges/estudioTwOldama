@@ -3,12 +3,14 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 <html>
 <head>
+<mytags:scriptjs />
 <mytags:style />
 <title>OLDAMA ArchiTecTuRe</title>
 </head>
 
 <body>
-<mytags:jquery />
+
+
 <mytags:barrasuperior />
 <mytags:barralateral />
 

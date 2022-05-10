@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import com.uned.estudioTw.model.Admin;
 import com.uned.estudioTw.model.Persona;
@@ -19,7 +21,7 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 
-	@RequestMapping(value = "/addadmin.htm", method = RequestMethod.POST)
+	@RequestMapping(value = "/addAdmin.htm", method = RequestMethod.POST)
 	public ModelAndView addAdmin(Persona persona, Errors errors) {
 		if (errors.hasErrors()) {
 			ModelAndView mav = new ModelAndView("addAdmin");
@@ -33,8 +35,22 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/addAdmin.htm")
-	public String addadmin() {
+	public String addAdmin() {
 		return "addAdmin";
+	}
+	
+	@RequestMapping(value = "/editAdmin.htm")
+	public ModelAndView editAdmin(@RequestParam("id") long idAdmin) {
+		Admin admin = adminService.obtener(idAdmin);
+		ModelAndView mav = new ModelAndView("editAdmin");
+		mav.addObject("admins", admin);
+		return mav;
+	}
+
+	@RequestMapping(value = "/editAdmin.htm", method = RequestMethod.POST)
+	public ModelAndView addAdmin(Admin admin, Errors errors) {
+		adminService.editar(admin);
+		return new ModelAndView("redirect:/personaeditada.htm");
 	}
 
 	@RequestMapping(value = "/listAdmins.htm")
@@ -47,5 +63,19 @@ public class AdminController {
 		mav.addObject("admins", admins);
 		return mav;
 	}
+	
+	@RequestMapping(value = "/delAdmin.htm")
+	public ModelAndView delAdmin(@RequestParam("id") long idAdmin) {
+		Admin admin = adminService.obtener(idAdmin);
+		adminService.borrar(admin);
+		return new ModelAndView("redirect:/personaborrada.htm");
+	}
+	
+	@RequestMapping(value = "/personaadd.htm")
+	public String personadd() {
+		return "personadd";
+	}
+	
+
 
 }

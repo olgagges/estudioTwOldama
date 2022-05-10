@@ -4,7 +4,7 @@
 <html>
 <head>
 <mytags:style />
-<title>Área Clientes OLDAMA</title>
+<title>OLDAMA ArchiTecTuRe</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 			</c:forEach>
 		</table>
 	</c:when>
-	<c:otherwise>Sin datos</c:otherwise>
+	<c:otherwise><h3 class="r">Sin datos</h3></c:otherwise>
 </c:choose>
 <br/>
 <br/>

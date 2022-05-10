@@ -19,8 +19,19 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	public void crear(Admin admin) {
-		adminDAO.crear(admin);
-		
+		adminDAO.crear(admin);		
+	}
+	
+	public void borrar(Admin admin) {
+		adminDAO.borrar(admin);		
+	}
+	
+	public void editar(Admin admin) {
+		adminDAO.editar(admin);		
+	}
+	
+	public Admin obtener(long id) {
+		return adminDAO.obtener(id);		
 	}
 
 }

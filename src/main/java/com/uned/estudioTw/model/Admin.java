@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public class Admin {
 	@Id
 	@GeneratedValue
-	private long idAmin;
+	private long idAdmin;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
@@ -26,11 +26,11 @@ public class Admin {
 	}
 
 	public long getIdAmin() {
-		return idAmin;
+		return idAdmin;
 	}
 
 	public void setIdAmin(long idAmin) {
-		this.idAmin = idAmin;
+		this.idAdmin = idAdmin;
 	}
 	
 }

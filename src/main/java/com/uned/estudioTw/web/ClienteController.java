@@ -42,30 +42,20 @@ public class ClienteController {
 	public String sendForm() {
 		return "sendForm";
 	}
-	
-	/*@RequestMapping(value = "/editClients.htm")
-	public ModelAndView editCliente(long id)) {
 
-		
-		Cliente cliente = clienteService.editarCliente(id);
-
-		ModelAndView mav = new ModelAndView("listClientes");
-		mav.addObject("cliente", cliente);
-		return mav;
-	}*/
 	
 	@RequestMapping(value = "/editCliente.htm")
 	public ModelAndView editCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
 		ModelAndView mav = new ModelAndView("editCliente");
-		mav.addObject("cliente", cliente);
+		mav.addObject("clients", cliente);
 		return mav;
 	}
 
 	@RequestMapping(value = "/editCliente.htm", method = RequestMethod.POST)
 	public ModelAndView addClient(Cliente cliente, Errors errors) {
 		clienteService.editar(cliente);
-		return new ModelAndView("redirect:/listClientes.htm");
+		return new ModelAndView("redirect:/personaeditada.htm");
 	}
 
 	@RequestMapping(value = "/listClientes.htm")
@@ -86,17 +76,7 @@ public class ClienteController {
 		return new ModelAndView("redirect:/personaborrada.htm");
 	}
 	
-//	@RequestMapping(value = "/delCliente.htm")
-//	public ModelAndView delClient(long id, Errors errors) {
-//		if (errors.hasErrors()) {
-//			ModelAndView mav = new ModelAndView("delCliente");
-//			mav.addObject("errors", errors);
-//			return mav;
-//		}
-//		Cliente cliente = clienteService.obtener(id);
-//		clienteService.borrar(cliente);
-//		return new ModelAndView("redirect:/personaborrada.htm");
-//	}
+
 	
 	@RequestMapping(value = "/personaborrada.htm")
 	public String personaborrada() {
