@@ -1,5 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mytags"%>
 
@@ -22,8 +22,7 @@
 <h3 class=r>Edición de datos personales</h3><br/>
 <h3 class=r>Modifique los campos deseados y pulse Confirmar</h3><br/>
 
-<form:form method="POST" action="editCliente.htm"
-	modelAttribute="cliente">
+<form:form method="POST" action="editCliente.htm" modelAttribute="cliente">
 	<table align ="center">
 		<tr>
 			<td></td>

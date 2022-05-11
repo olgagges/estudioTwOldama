@@ -48,7 +48,7 @@ public class ClienteController {
 	public ModelAndView editCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
 		ModelAndView mav = new ModelAndView("editCliente");
-		mav.addObject("clients", cliente);
+		mav.addObject("cliente", cliente);
 		return mav;
 	}
 
