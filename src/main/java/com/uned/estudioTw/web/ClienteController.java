@@ -48,12 +48,12 @@ public class ClienteController {
 	public ModelAndView editCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
 		ModelAndView mav = new ModelAndView("editCliente");
-		mav.addObject("clients", cliente);
+		mav.addObject("cliente", cliente);
 		return mav;
 	}
 
 	@RequestMapping(value = "/editCliente.htm", method = RequestMethod.POST)
-	public ModelAndView addClient(Cliente cliente, Errors errors) {
+	public ModelAndView editCliente(Cliente cliente, Errors errors) {
 		clienteService.editar(cliente);
 		return new ModelAndView("redirect:/personaeditada.htm");
 	}
