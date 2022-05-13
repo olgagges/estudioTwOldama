@@ -33,6 +33,14 @@ public class ClienteController {
 		return new ModelAndView("redirect:/sendForm.htm");
 	}
 
+	@RequestMapping(value = "/clientsArea.htm")
+	public ModelAndView clientArea(Persona persona, Errors errors) {
+		List<Cliente> clientes = clienteService.listarTodos();
+
+		ModelAndView mav = new ModelAndView("clientsarea");
+		mav.addObject("clients", clientes);
+		return mav;
+	}
 	@RequestMapping(value = "/addCliente.htm")
 	public String addClient() {
 		return "addCliente";

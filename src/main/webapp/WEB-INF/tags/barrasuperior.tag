@@ -8,7 +8,7 @@
    </SPAN>&nbsp;
    </A>
    <SPAN class="barrasuperiorlink">
-    <A href="clientsarea.jsp">Área de clientes</A>
+    <A href="clientsArea.htm">Área de clientes</A>
    </SPAN>&nbsp;
    <SPAN class="barrasuperiorlink">
     <A href="architecarea.jsp">Área de Arquitectos</A>
