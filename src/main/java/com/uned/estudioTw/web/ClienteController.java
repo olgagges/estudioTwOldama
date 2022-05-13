@@ -61,7 +61,7 @@ public class ClienteController {
 	}
 
 	@RequestMapping(value = "/editCliente.htm", method = RequestMethod.POST)
-	public ModelAndView addClient(Cliente cliente, Errors errors) {
+	public ModelAndView editCliente(Cliente cliente, Errors errors) {
 		clienteService.editar(cliente);
 		return new ModelAndView("redirect:/personaeditada.htm");
 	}
