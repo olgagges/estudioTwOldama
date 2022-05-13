@@ -12,9 +12,9 @@ public class Cliente {
 	@Id
 	@GeneratedValue
 	private long idCliente;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
+	@JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
 	private Persona persona;
 
 	public Persona getPersona() {
@@ -32,7 +32,5 @@ public class Cliente {
 	public void setIdCliente(long idCliente) {
 		this.idCliente = idCliente;
 	}
-	
-	
-}
 
+}

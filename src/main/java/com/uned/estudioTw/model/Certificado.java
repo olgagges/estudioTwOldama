@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Certificado {
@@ -26,6 +27,10 @@ public class Certificado {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idCliente", referencedColumnName = "idCliente")
 	private Cliente cliente;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
+	private Estructura estructura;
 
 	private Date fechaRenovavion;
 	private Date fechaInspeccion;

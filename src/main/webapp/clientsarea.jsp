@@ -26,6 +26,9 @@
         <ul style = "text-indent: 120px">
           <li><A href="addCliente.htm">Darse de alta</A></li>
         </ul>
+        <ul style = "text-indent: 120px">
+          <li><A href="addProyecto.htm?id=1">Dar de alta proyecto</A></li>
+        </ul>
         
         <br>
         

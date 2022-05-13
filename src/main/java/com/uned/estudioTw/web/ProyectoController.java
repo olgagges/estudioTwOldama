@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Proyecto;
 import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.ProyectoService;
@@ -30,12 +31,13 @@ public class ProyectoController {
 	}
 
 	@RequestMapping(value = "/addProyecto.htm", method = RequestMethod.POST)
-	public ModelAndView addClient(Proyecto proyecto, Errors errors) {
+	public ModelAndView addProyecto(Proyecto proyecto, Errors errors) {
 		if (errors.hasErrors()) {
 			ModelAndView mav = new ModelAndView("addProyecto");
 			mav.addObject("errors", errors);
 			return mav;
 		}
+		proyectoService.crear(proyecto);
 		return new ModelAndView("redirect:/sendForm.jsp");
 	}
 

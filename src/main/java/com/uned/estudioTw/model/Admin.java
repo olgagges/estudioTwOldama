@@ -12,9 +12,9 @@ public class Admin {
 	@Id
 	@GeneratedValue
 	private long idAdmin;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
+	@JoinColumn(name = "idPersona", referencedColumnName = "idPersona")
 	private Persona persona;
 
 	public Persona getPersona() {
@@ -29,9 +29,8 @@ public class Admin {
 		return idAdmin;
 	}
 
-	public void setIdAmin(long idAmin) {
+	public void setIdAmin(long idAdmin) {
 		this.idAdmin = idAdmin;
 	}
-	
-}
 
+}
