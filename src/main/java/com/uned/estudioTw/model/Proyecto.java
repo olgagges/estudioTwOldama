@@ -29,8 +29,9 @@ public class Proyecto {
 	@JoinColumn(name = "idArquitecto", referencedColumnName = "idArquitecto")
 	private Arquitecto arquitecto;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Estructura> estructuras;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
+	private Estructura estructuras;
 
 	public Cliente getCliente() {
 		return cliente;
