@@ -31,7 +31,7 @@ public class Proyecto {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
-	private Estructura estructuras;
+	private Estructura estructura;
 
 	public Cliente getCliente() {
 		return cliente;
@@ -58,6 +58,17 @@ public class Proyecto {
 	private long duracionObra;
 	private float presupuestoTotal;
 	private long duracionPresupuesto;
+	
+	private String direccion;
+	private long superficeTerreno;
+	private long superficeEdificio;
+	private long superficeReforma;
+	private long plantas;
+	private long habitaciones;
+	private long banyos;
+	private float coste;
+	private String finalidadObra;
+	
 
 	public long getIdProyecto() {
 		return idProyecto;
@@ -137,6 +148,86 @@ public class Proyecto {
 
 	public void setDuracionPresupuesto(long duracionPresupuesto) {
 		this.duracionPresupuesto = duracionPresupuesto;
+	}
+
+	public Estructura getEstructura() {
+		return estructura;
+	}
+
+	public void setEstructura(Estructura estructura) {
+		this.estructura = estructura;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public long getSuperficeTerreno() {
+		return superficeTerreno;
+	}
+
+	public void setSuperficeTerreno(long superficeTerreno) {
+		this.superficeTerreno = superficeTerreno;
+	}
+
+	public long getSuperficeEdificio() {
+		return superficeEdificio;
+	}
+
+	public void setSuperficeEdificio(long superficeEdificio) {
+		this.superficeEdificio = superficeEdificio;
+	}
+
+	public long getSuperficeReforma() {
+		return superficeReforma;
+	}
+
+	public void setSuperficeReforma(long superficeReforma) {
+		this.superficeReforma = superficeReforma;
+	}
+
+	public long getPlantas() {
+		return plantas;
+	}
+
+	public void setPlantas(long plantas) {
+		this.plantas = plantas;
+	}
+
+	public long getHabitaciones() {
+		return habitaciones;
+	}
+
+	public void setHabitaciones(long habitaciones) {
+		this.habitaciones = habitaciones;
+	}
+
+	public long getBanyos() {
+		return banyos;
+	}
+
+	public void setBanyos(long banyos) {
+		this.banyos = banyos;
+	}
+
+	public float getCoste() {
+		return coste;
+	}
+
+	public void setCoste(float coste) {
+		this.coste = coste;
+	}
+
+	public String getFinalidadObra() {
+		return finalidadObra;
+	}
+
+	public void setFinalidadObra(String finalidadObra) {
+		this.finalidadObra = finalidadObra;
 	}
 
 }

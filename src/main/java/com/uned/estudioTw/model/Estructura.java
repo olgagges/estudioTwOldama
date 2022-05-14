@@ -17,7 +17,7 @@ public class Estructura {
 	@JoinColumn(name = "idTipoEstructura", referencedColumnName = "idTipoEstructura")
 	private TipoEstructura TipoEstructura;
 
-	private String nombre;
+	private String ref;
 
 	public long getIdEstructura() {
 		return idEstructura;
@@ -35,12 +35,13 @@ public class Estructura {
 		TipoEstructura = tipoEstructura;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getRef() {
+		return ref;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setRef(String ref) {
+		this.ref = ref;
 	}
 
+	
 }
