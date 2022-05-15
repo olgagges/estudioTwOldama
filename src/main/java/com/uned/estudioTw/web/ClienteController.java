@@ -41,6 +41,7 @@ public class ClienteController {
 		mav.addObject("clients", clientes);
 		return mav;
 	}
+	
 	@RequestMapping(value = "/addCliente.htm")
 	public String addClient() {
 		return "addCliente";

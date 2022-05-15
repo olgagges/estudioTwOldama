@@ -12,11 +12,19 @@
 
 <mytags:barrasuperior />
 <mytags:barralateral />
+
 <script>
 function solicitarProyecto() {
 	document.location.href="addProyecto.htm?id=" + document.getElementById('idCliente').value;
 }
 </script>
+
+<script>
+function solicitarCertificado() {
+	document.location.href="certificadoArea.htm?id=" + document.getElementById('idCliente').value;
+}
+</script>
+
 <DIV id=content>
 <br>
 
@@ -49,9 +57,12 @@ function solicitarProyecto() {
           <li><A href="#" onClick="solicitarProyecto()">Dar de alta proyecto</A></li>
         </ul>
         <ul style = "text-indent: 120px">
+          <li><A href="#" onClick="solicitarCertificado()">Solicitar un certificado</A></li>
+        </ul>
+        <ul style = "text-indent: 120px">
           <li><a href="http://www.twitter.com/" target="_blank">Descargar documentos de sus proyectos</a></li>
         </ul>
-      </li>
+      
 
 
 </DIV>

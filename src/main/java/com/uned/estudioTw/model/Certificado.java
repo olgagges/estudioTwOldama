@@ -20,9 +20,9 @@ public class Certificado {
 	@JoinColumn(name = "idTipoCertificado", referencedColumnName = "idTipoCertificado")
 	private TipoCertificado tipoCertificado;*/
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	/*@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "nombre", referencedColumnName = "nombre")
-	private TipoCertificado tipoCertificado;
+	private TipoCertificado tipoCertificado;*/
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idArquitecto", referencedColumnName = "idArquitecto")
@@ -32,10 +32,11 @@ public class Certificado {
 	@JoinColumn(name = "idCliente", referencedColumnName = "idCliente")
 	private Cliente cliente;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
 	private Estructura estructura;
 
+	private String tipo;
 	private Date fechaRenovacion;
 	private Date fechaInspeccion;
 	private Date fechaSolicitud;
@@ -55,13 +56,13 @@ public class Certificado {
 		this.idCertificado = idCertificado;
 	}
 
-	public TipoCertificado getTipoCertificado() {
+	/*public TipoCertificado getTipoCertificado() {
 		return tipoCertificado;
 	}
 
 	public void setTipoCertificado(TipoCertificado tipoCertificado) {
 		this.tipoCertificado = tipoCertificado;
-	}
+	}*/
 
 	public Arquitecto getArquitecto() {
 		return arquitecto;
@@ -157,6 +158,14 @@ public class Certificado {
 
 	public void setCoste(float coste) {
 		this.coste = coste;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
