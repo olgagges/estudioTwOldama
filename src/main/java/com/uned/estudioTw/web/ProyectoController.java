@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.uned.estudioTw.model.Cliente;
+import com.uned.estudioTw.model.Arquitecto;
+import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
 import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.ProyectoService;
@@ -24,9 +25,14 @@ public class ProyectoController {
 	@RequestMapping(value = "/addProyecto.htm")
 	public ModelAndView addClientProject(@RequestParam("id") long idCliente) {
 		List<TipoProyecto> tiposProyecto = proyectoService.obtenerTiposProyecto();
+		List<Arquitecto> arquitectos = proyectoService.obtenerArquitectos();
+		List<Estructura> estructuras = null;
+		//proyectoService.obtenerEstructuras();
 		ModelAndView mav = new ModelAndView("addProyecto");
 		mav.addObject("idCliente", idCliente);
 		mav.addObject("tiposProyecto", tiposProyecto);
+		mav.addObject("arquitectos", arquitectos);
+		mav.addObject("estructuras", estructuras);
 		return mav;
 	}
 

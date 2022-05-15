@@ -3,8 +3,8 @@ a:visited{color: black}
 a:hover{color: white}
 a:active{color: white}
 #navigationbar {font-family: Century Gothic; color: white; background-color: rgb(184,184,184)}
-#sidenavigation {font-family: Century Gothic; float: left; height: 600px; width:231px ; color: white; background-color: rgb(184,184,184)}
-#content {font-family: Century Gothic; margin-left: 10em; background-color: rgb(220,220,220); height: 600px;}
+#sidenavigation {font-family: Century Gothic; float: left; height: 1000px; width:231px ; color: white; background-color: rgb(184,184,184)}
+#content {font-family: Century Gothic; margin-left: 10em; background-color: rgb(220,220,220); height: 1000px;}
 #pagefooter {clear: left}
 
 

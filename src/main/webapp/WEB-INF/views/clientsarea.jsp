@@ -15,13 +15,21 @@
 
 <script>
 function solicitarProyecto() {
-	document.location.href="addProyecto.htm?id=" + document.getElementById('idCliente').value;
+	if (document.getElementById('idCliente').value=='') {
+		alert('Debe seleccionar el cliente');
+		document.getElementById('idCliente').focus;
+	}
+	else document.location.href="addProyecto.htm?id=" + document.getElementById('idCliente').value;
 }
 </script>
 
 <script>
 function solicitarCertificado() {
-	document.location.href="certificadoArea.htm?id=" + document.getElementById('idCliente').value;
+	if (document.getElementById('idCliente').value=='') {
+		alert('Debe seleccionar el cliente');
+		document.getElementById('idCliente').focus;
+	}
+	else document.location.href="certificadoArea.htm?id=" + document.getElementById('idCliente').value;
 }
 </script>
 
@@ -47,7 +55,7 @@ function solicitarCertificado() {
       <h3 style = "text-indent: 100px">Cliente registrado</h3>
        	<label for="cliente">Seleccionar cliente:</label> 
        		<select id="idCliente">
-				<option>Seleccione Cliente</option>
+				<option value="">Seleccione Cliente</option>
 				<c:forEach items="${clients}" var="lista">
 					<option value="${lista.getIdCliente()}">${lista.getPersona().getNombre()}
 					</option>
