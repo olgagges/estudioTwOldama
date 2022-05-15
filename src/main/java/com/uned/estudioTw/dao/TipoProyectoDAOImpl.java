@@ -28,7 +28,7 @@ public class TipoProyectoDAOImpl implements TipoProyectoDAO {
 
 	}
 
-	public void actualizar(TipoProyecto t) {
+	public void editar(TipoProyecto t) {
 		// TODO Auto-generated method stub
 
 	}

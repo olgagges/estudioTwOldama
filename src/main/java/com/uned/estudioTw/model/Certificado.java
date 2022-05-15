@@ -16,8 +16,12 @@ public class Certificado {
 	@GeneratedValue
 	private long idCertificado;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	/*@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idTipoCertificado", referencedColumnName = "idTipoCertificado")
+	private TipoCertificado tipoCertificado;*/
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "nombre", referencedColumnName = "nombre")
 	private TipoCertificado tipoCertificado;
 
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -32,7 +36,7 @@ public class Certificado {
 	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
 	private Estructura estructura;
 
-	private Date fechaRenovavion;
+	private Date fechaRenovacion;
 	private Date fechaInspeccion;
 	private Date fechaSolicitud;
 	private Date fechaEntrega;
@@ -75,12 +79,12 @@ public class Certificado {
 		this.cliente = cliente;
 	}
 
-	public Date getFechaRenovavion() {
-		return fechaRenovavion;
+	public Date getFechaRenovacion() {
+		return fechaRenovacion;
 	}
 
-	public void setFechaRenovavion(Date fechaRenovavion) {
-		this.fechaRenovavion = fechaRenovavion;
+	public void setFechaRenovavion(Date fechaRenovacion) {
+		this.fechaRenovacion = fechaRenovacion;
 	}
 
 	public Date getFechaInspeccion() {
