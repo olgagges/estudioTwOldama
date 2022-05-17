@@ -1,5 +1,7 @@
 package com.uned.estudioTw.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uned.estudioTw.model.Certificado;
+import com.uned.estudioTw.model.Cliente;
+import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.service.CertificadoService;
 import com.uned.estudioTw.service.ClienteService;
 import com.uned.estudioTw.service.EstructuraService;
@@ -26,8 +30,10 @@ public class CertificadoController {
 	
 	@RequestMapping(value = "/certificadoArea.htm")
 	public ModelAndView certificadoArea(@RequestParam("id") long idCliente) {
+		List<Estructura> estructuras = estructuraService.listarTodos();
+
 		ModelAndView mav = new ModelAndView("certificadoArea");
-		mav.addObject("idCliente", idCliente);
+		mav.addObject("estructuras", estructuras);
 		return mav;
 	}
 	

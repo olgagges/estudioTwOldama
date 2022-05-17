@@ -23,14 +23,12 @@ public class EstructuraController {
 
 	@Autowired
 	EstructuraService estructuraService;
-	@Autowired
-	ClienteService clienteService;
+
 	
 	@RequestMapping(value = "/addEstructura.htm")
 	public ModelAndView addEstructura(@RequestParam("id") long idCliente) {
-		Cliente cliente = clienteService.obtener(idCliente);
-		ModelAndView mav = new ModelAndView("solCertificado");
-		mav.addObject("cliente", cliente);
+		ModelAndView mav = new ModelAndView("addEstructura");
+		mav.addObject("idCliente", idCliente);
 		return mav;
 	}
 
@@ -42,7 +40,7 @@ public class EstructuraController {
 			return mav;
 		}
 		estructuraService.crear(estructura);
-		return new ModelAndView("redirect:/solcertificado.htm");
+		return new ModelAndView("redirect:/sendForm.htm");
 	}
 
 	

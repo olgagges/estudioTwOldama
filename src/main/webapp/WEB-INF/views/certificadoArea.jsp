@@ -15,13 +15,17 @@
 
 <script>
 function addEstructura() {
-	document.location.href="addEstructura.htm?id=" + document.getElementById('idCliente').value;
+	document.location.href="addEstructura.htm?id=0"; //+ document.getElementById('idCliente').value;
 }
 </script>
 
 <script>
-function solcertificado() {
-	document.location.href="certificadoArea.htm?id=" + document.getElementById('idCliente').value + "&idestr" + document.getElementById('idEstructura').value ;
+function addCertificado() {
+	if (document.getElementById('idEstructura').value=='') {
+		alert('Debe seleccionar un edificio');
+		document.getElementById('idEstructura').focus;
+	}
+	else document.location.href="addCertificado.htm?id=" + document.getElementById('idCliente').value + "&idestr" + document.getElementById('idEstructura').value ;
 }
 </script>
 
@@ -43,10 +47,10 @@ function solcertificado() {
         <br>
         
        	<label for="estructura">Edificio:</label> 
-       		<select id="ref">
-				<option>Referencia catastral</option>
-				<c:forEach items="${estructura}" var="lista">
-					<option value="${lista.getRef()}">${lista.getRef()}
+				<select id="idEstructura">
+				<option>Seleccione Edificio</option>
+				<c:forEach items="${estructuras}" var="listaEstructuras">
+					<option value="${listaEstructuras.getIdEstructura()}">${listaEstructuras.getRef()}
 					</option>
 				</c:forEach>
 			</select>
@@ -54,7 +58,7 @@ function solcertificado() {
         <br>
         
         <form>
-    		<a href="#" onClick="solCertificado()">
+    		<a href="#" onClick="addCertificado()">
         	<input type="button" value="Seleccionar">
     		</a>
    		 </form>

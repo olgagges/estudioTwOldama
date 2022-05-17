@@ -44,7 +44,7 @@
 
 		</select><br/><br/>
 		
-<label for="direccion">Dirección completa</label>
+<label for="fechaSolicitud">Fecha de Solicitud</label>
 	<input name="fechaSolicitud" type="Date" id="fecha" value="<?php echo date("m/d/Y"); ?>"><br/><br/>
 
 <br/><br/>

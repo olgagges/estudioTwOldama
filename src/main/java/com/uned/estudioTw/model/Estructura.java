@@ -13,11 +13,13 @@ public class Estructura {
 	@GeneratedValue
 	private long idEstructura;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	/*@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idTipoEstructura", referencedColumnName = "idTipoEstructura")
-	private TipoEstructura TipoEstructura;
+	private TipoEstructura TipoEstructura;*/
 
 	private String ref;
+	private String direccion;
+	private String tipo;
 
 	public long getIdEstructura() {
 		return idEstructura;
@@ -27,13 +29,13 @@ public class Estructura {
 		this.idEstructura = idEstructura;
 	}
 
-	public TipoEstructura getTipoEstructura() {
+	/*public TipoEstructura getTipoEstructura() {
 		return TipoEstructura;
 	}
 
 	public void setTipoEstructura(TipoEstructura tipoEstructura) {
 		TipoEstructura = tipoEstructura;
-	}
+	}*/
 
 	public String getRef() {
 		return ref;
@@ -41,6 +43,22 @@ public class Estructura {
 
 	public void setRef(String ref) {
 		this.ref = ref;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
