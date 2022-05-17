@@ -32,6 +32,17 @@ public class ArquitectoController {
 		arquitectoService.crear(arquitecto);
 		return new ModelAndView("redirect:/personadd.htm");
 	}
+	
+	
+	@RequestMapping(value = "/architecarea.htm")
+	public ModelAndView Architecarea(Persona persona, Errors errors) {
+		List<Arquitecto> arquitecto = arquitectoService.listarTodos();
+
+		ModelAndView mav = new ModelAndView("architecarea");
+		mav.addObject("architects", arquitecto);
+		return mav;
+	}
+	
 
 	@RequestMapping(value = "/addArquitecto.htm")
 	public String addArquitecto() {
