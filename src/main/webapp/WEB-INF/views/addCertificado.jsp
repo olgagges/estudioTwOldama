@@ -27,9 +27,20 @@
 </c:if>
 
 <form class=r method="post" action="addCertificado.htm">
-	<input name = "idCliente" type=hidden value="${idCliente}" />
-	<input name = "idEstructura" type=hidden value="${idEstructura}" />
-	<input name = "idArquitecto" type=hidden value="0" />
+
+	<input name = "idCliente" type="hidden" value="${idCliente}" />
+	<input name = "idEstructura" type="hidden" value="${idEstructura}" />
+	<input name = "idArquitecto" type="hidden" value="0" />
+	<input name = "fechaRenovacion" type="hidden" value="2018-07-22" />
+	<input name = "fechaInspeccion" type="hidden" value="2018-07-22" />
+	<input name = "fechaEntrega" type="hidden" value="2018-07-22" />
+	<input name = "fechaVisita" type="hidden" value="2018-07-22" />
+	<input name = "fechaEmision" type="hidden" value="2018-07-22" />
+	<input name = "fechaEmisionEstudio" type="hidden" value="2018-07-22" />
+	<input name = "fechaITE" type="hidden" value="2018-07-22" />
+	<input name = "eficiencia" type="hidden" value="X" />
+	<input name = "coste" type="hidden" value="0" />
+	
 	
 	<label for="tipo">Tipo de certificado:</label>
 		<select name="tipo">
@@ -45,7 +56,8 @@
 		</select><br/><br/>
 		
 <label for="fechaSolicitud">Fecha de Solicitud</label>
-	<input name="fechaSolicitud" type="Date" id="fecha" value="<?php echo date("m/d/Y"); ?>"><br/><br/>
+	<input name="fechaSolicitud" type="date" value="2018-07-22"
+       min="2018-01-01" max="2018-12-31"><br/><br/>
 
 <br/><br/>
 

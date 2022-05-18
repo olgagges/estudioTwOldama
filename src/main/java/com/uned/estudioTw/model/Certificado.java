@@ -44,7 +44,7 @@ public class Certificado {
 	private Date fechaVisita;
 	private Date fechaEmision;
 	private Date fechaEmisionEstudio;
-	private Date fechaITV;
+	private Date fechaITE;
 	private char eficiencia; // A o G
 	private float coste;
 
@@ -136,13 +136,6 @@ public class Certificado {
 		this.fechaEmisionEstudio = fechaEmisionEstudio;
 	}
 
-	public Date getFechaITV() {
-		return fechaITV;
-	}
-
-	public void setFechaITV(Date fechaITV) {
-		this.fechaITV = fechaITV;
-	}
 
 	public char getEficiencia() {
 		return eficiencia;
@@ -166,6 +159,14 @@ public class Certificado {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public Date getFechaITE() {
+		return fechaITE;
+	}
+
+	public void setFechaITE(Date fechaITE) {
+		this.fechaITE = fechaITE;
 	}
 
 }

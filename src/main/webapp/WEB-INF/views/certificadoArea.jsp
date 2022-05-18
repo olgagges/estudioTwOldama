@@ -25,7 +25,7 @@ function addCertificado() {
 		alert('Debe seleccionar un edificio');
 		document.getElementById('idEstructura').focus;
 	}
-	else document.location.href="addCertificado.htm?id=" + document.getElementById('idCliente').value + "&idestr" + document.getElementById('idEstructura').value ;
+	else document.location.href="addCertificado.htm?id=0&idestr=0";// + document.getElementById('idCliente').value + "&idestr" + document.getElementById('idEstructura').value ;
 }
 </script>
 
