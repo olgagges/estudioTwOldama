@@ -24,5 +24,25 @@ public class CertificadoServiceImpl implements CertificadoService {
 	public List<TipoCertificado> obtenerTiposCertificado() {
 		return tipoCertificadoDAO.listarTodos();
 	}
+	
+	public List<Certificado> listarTodos() {
+		List<Certificado> certificados = certificadoDAO.listarTodos();
+		return certificados;
+	}
+
+	public void borrar(Certificado certificado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void editar(Certificado certificado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Certificado obtener(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

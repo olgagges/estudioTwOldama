@@ -45,7 +45,7 @@ function addCertificado() {
        
         
         <br>
-        
+        <ul style = "text-indent: 120px">
        	<label for="estructura">Edificio:</label> 
 				<select id="idEstructura">
 				<option>Seleccione Edificio</option>
@@ -54,10 +54,10 @@ function addCertificado() {
 					</option>
 				</c:forEach>
 			</select>
-			 <br>
+		</ul>
         <br>
         
-        <form>
+        <form style = "text-indent: 210px">
     		<a href="#" onClick="addCertificado()">
         	<input type="button" value="Seleccionar">
     		</a>

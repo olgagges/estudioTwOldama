@@ -58,7 +58,10 @@ function registrarProyecto() {
         
       <h3 style = "text-indent: 100px">Certificados</h3>
         <ul style = "text-indent: 120px">
-          <li><a href="instagram.htm">EmisiÃ³n de Certificados</a></li>
+          <li><a href="listCertificados.htm?tipo=HABITABILIDAD">Certificados de Habitabilidad</a></li>
+          <li><a href="listCertificados.htm?tipo=ITE">Certificados de Inspección Técnica</a></li>
+          <li><a href="listCertificados.htm?tipo=EFICIENCIAENERGETICA">Certificados de Eficiencia Energética</a></li>
+          <li><a href="listCertificados.htm?tipo=INFORMESPERICIALES">Informes Periciales</a></li>
 
         </ul>
       </li>

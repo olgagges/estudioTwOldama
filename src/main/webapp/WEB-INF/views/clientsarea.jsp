@@ -53,6 +53,7 @@ function solicitarCertificado() {
         <br>
         
       <h3 style = "text-indent: 100px">Cliente registrado</h3>
+       	<ul style = "text-indent: 120px">
        	<label for="cliente">Seleccionar cliente:</label> 
        		<select id="idCliente">
 				<option value="">Seleccione Cliente</option>
@@ -61,6 +62,7 @@ function solicitarCertificado() {
 					</option>
 				</c:forEach>
 			</select>
+		 </ul>
 		<ul style = "text-indent: 120px">
           <li><A href="#" onClick="solicitarProyecto()">Dar de alta proyecto</A></li>
         </ul>

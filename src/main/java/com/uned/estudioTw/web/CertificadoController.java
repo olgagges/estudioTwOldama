@@ -44,7 +44,11 @@ public class CertificadoController {
 
 	@RequestMapping(value = "/addCertificado.htm")
 	public ModelAndView addCertificado(@RequestParam("id") long idCliente, @RequestParam("idestr") long idEstructura) {
+		Cliente cliente = clienteService.obtener(idCliente);
+		Estructura estructura =estructuraService.obtener(idEstructura);
 		ModelAndView mav = new ModelAndView("addCertificado");
+		mav.addObject("cliente", cliente);
+		mav.addObject("estructura", estructura);
 		mav.addObject("idCliente", idCliente);
 		mav.addObject("idEstructura", idEstructura);
 		return mav;
@@ -58,7 +62,21 @@ public class CertificadoController {
 			return mav;
 		}
 		certificadoService.crear(certificado);
-		return new ModelAndView("redirect:/sendForm.jsp");
+		return new ModelAndView("redirect:/sendForm.htm");
+	}
+	
+	@RequestMapping(value = "/listCertificados.htm")
+	public ModelAndView allCertificados(@RequestParam("tipo") String tipoCertificado) {
+
+		
+		List<Certificado> certificados = certificadoService.listarTodos();
+
+		ModelAndView mav = new ModelAndView("listCertificados");
+		mav.addObject("tipo", tipoCertificado);
+		mav.addObject("certificados", certificados);
+		return mav;
 	}
 
+
+	
 }

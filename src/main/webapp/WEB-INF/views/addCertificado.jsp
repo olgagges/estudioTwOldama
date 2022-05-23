@@ -6,6 +6,18 @@
 <mytags:scriptjs />
 <mytags:style />
 <title>OLDAMA ArchiTecTuRe</title>
+
+<script>
+$( document ).ready(function() {
+ 
+    var hoy = new Date();
+ 
+    var fechaSolicitud = hoy.getDay()+"-"+(hoy.getMonth()+1)+"-"+hoy.getFullYear();
+ 
+    $("#fechaSolicitud").val(fecha);
+});
+</script>
+
 </head>
 
 <body>
@@ -17,6 +29,7 @@
 <DIV id=content>
 <br>
 <h3 class=r>Rellene el formulario para generar un nuevo Certificado</h3><br/>
+<h3 class=r>"${idCliente}"    "${idEstructura}"</h3><br/>
 
 <c:if test="${errors.errorCount gt 0}">
 	Errors!<br/>
@@ -25,19 +38,29 @@
 		<br />
 	</c:forEach>
 </c:if>
-
+<table align ="center" border=1 width="60%" >
+	<tr bgcolor="grey">
+		<th align="center">Cliente</th>
+		<th>Edificio</th>
+		<th>Dirección</th>
+	</tr>
+	<tr>
+		<td align="center"><c:out value="${cliente.persona.nombre}"/></td>
+		<td align="center"><c:out value="${estructura.ref}"/></td>
+		<td align="center"><c:out value="${estructura.direccion}"/></td>
+	</tr>
+</table><br/><br/>
 <form class=r method="post" action="addCertificado.htm">
 
-	<input name = "idCliente" type="hidden" value="${idCliente}" />
+	<input name = "idArquitecto" type="hidden" value="null" />
+	<input type="hidden" name="idcliente" value="${cliente.idCliente}">
 	<input name = "idEstructura" type="hidden" value="${idEstructura}" />
-	<input name = "idArquitecto" type="hidden" value="0" />
-	<input name = "fechaRenovacion" type="hidden" value="2018-07-22" />
-	<input name = "fechaInspeccion" type="hidden" value="2018-07-22" />
-	<input name = "fechaEntrega" type="hidden" value="2018-07-22" />
-	<input name = "fechaVisita" type="hidden" value="2018-07-22" />
-	<input name = "fechaEmision" type="hidden" value="2018-07-22" />
-	<input name = "fechaEmisionEstudio" type="hidden" value="2018-07-22" />
-	<input name = "fechaITE" type="hidden" value="2018-07-22" />
+
+	
+	<label for="fechaSolicitud">Fecha de Solicitud</label>
+	<input name="fechaSolicitud" type="text" value="dd/mm/aaaa"
+       min="2018-01-01" max="2030-12-31"><br/><br/>
+       
 	<input name = "eficiencia" type="hidden" value="X" />
 	<input name = "coste" type="hidden" value="0" />
 	
@@ -45,23 +68,27 @@
 	<label for="tipo">Tipo de certificado:</label>
 		<select name="tipo">
 
-		<option>Habitabilidad</option>
+		<option>HABITABILIDAD</option>
 
-		<option>Inspección Técnica</option>
+		<option value="ITE">INSPECCIÓN TÉCNICA</option>
 
-		<option>Eficiencia Energética</option>
+		<option value="EFICIENCIAENERGETICA">EFICIENCIA ENERGÉTICA</option>
 		
-		<option>Informe Pericial</option>
+		<option value="INFORMEPERICIAL">INFORME PERICIAL</option>
 
-		</select><br/><br/>
+		</select><br/>
 		
-<label for="fechaSolicitud">Fecha de Solicitud</label>
-	<input name="fechaSolicitud" type="date" value="2018-07-22"
-       min="2018-01-01" max="2018-12-31"><br/><br/>
-
 <br/><br/>
 
-<input type="submit" /><input type="reset" /></form>
+<h3 class=r>Al enviar el formulario, confirma la solicitud de un nuevo Certificado</h3>
+<h3 class=r>Esta operación no se puede deshacer</h3><br/>
+<br/>
+
+<input type="submit" /><input type="reset" />
+
+</form>
+
+
 
 </DIV>
 <mytags:piedepagina />
