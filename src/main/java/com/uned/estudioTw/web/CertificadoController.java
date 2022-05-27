@@ -61,7 +61,12 @@ public class CertificadoController {
 			mav.addObject("errors", errors);
 			return mav;
 		}
+		
 		certificadoService.crear(certificado);
+		/*if (certificado.getCliente() !=null) {
+			certificado.setCliente(certificadoService.obtenerCliente(certificado.getCliente().getIdCliente()));
+		}*/
+		
 		return new ModelAndView("redirect:/sendForm.htm");
 	}
 	

@@ -29,42 +29,45 @@
 		</c:if>
 
 		<form class=r method="post" action="addProyecto.htm">
-			<input type=hiddenvalue="${idCliente}" /> 
+			<input type=hidden value="${idCliente}" /> 
+
+			<input type=hidden name="idCliente" value="${idCliente}" /> 
+
 			<label for="idTipoProyecto">Tipo
 				de proyecto</label> 
-			<select id="idTipoProyecto">
-				<option>Seleccione Tipo</option>
+			<select id="idTipoProyecto" name="idTipoProyecto">
+				<option value=0>Seleccione Tipo</option>
 				<c:forEach items="${tiposProyecto}" var="lista">
 					<option value="${lista.getIdTipoProyecto()}">${lista.getRef()}
 					</option>
 				</c:forEach>
 			</select> </br><br/>
 			<label for="idArquitecto">Arquitecto</label> 
-			<select id="idArquitecto">
-				<option>Seleccione Arquitecto</option>
+			<select id="idArquitecto"  name="idArquitecto">
+				<option value=0>Seleccione Arquitecto</option>
 				<c:forEach items="${arquitectos}" var="listaArquitectos">
 					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
 					</option>
 				</c:forEach>
 			</select> </br><br/>
-				<label for="idEstructura">Estructura</label> 
+<%-- 				<label for="idEstructura">Estructura</label> 
 			<select id="idEstructura">
-				<option>Seleccione Estructura</option>
+				<option value=0 >Seleccione Estructura</option>
 				<c:forEach items="${estructuras}" var="listaEstructuras">
 					<option value="${listaEstructuras.getIdEstructura()}">${listaEstructuras.getRef()}
 					</option>
 				</c:forEach>
-			</select> </br><br/>
+			</select> </br><br/> --%>
 			<label for="ref">Descripcion:</label>
 			<input type="text" name="ref" /><br/><br/>
 			<label for="ref">Fecha Inicio:</label>
-			<input type="text" name="fechaInicio"/><br/><br/>
+			<input type="text" name="fechaInicio" value="01/01/2022"/><br/><br/>
 			<label for="ref">Fecha Solicitud:</label>
-			<input type="text" name="fechaSolicitud" /><br/><br/>
+			<input type="text" name="fechaSolicitud" value="01/01/2022"/><br/><br/>
 			<label for="ref">Fecha Entrega:</label>
-			<input type="text" name="fechaEntrega" /><br/><br/>
+			<input type="text" name="fechaEntrega" value="01/01/2022"/><br/><br/>
 			<label for="ref">Fecha Fin:</label>
-			<input type="text" name="fechaFin" /><br/><br/>
+			<input type="text" name="fechaFin" value="01/01/2022"/><br/><br/>
 
 
 			<label for="ref">Duración obra:</label>

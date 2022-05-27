@@ -44,6 +44,8 @@ public class ProyectoController {
 			mav.addObject("errors", errors);
 			return mav;
 		}
+		
+		
 		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), proyecto.getFechaInicio(), proyecto.getFechaSolicitud(),
 				proyecto.getFechaEntrega(), proyecto.getFechaFin(), proyecto.getDuracionObra(),
 				proyecto.getPresupuestoTotal(), proyecto.getDuracionPresupuesto(), proyecto.getDireccion(),

@@ -3,6 +3,7 @@ package com.uned.estudioTw.service;
 import java.util.List;
 
 import com.uned.estudioTw.model.Certificado;
+import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.TipoCertificado;
 
@@ -16,5 +17,7 @@ public interface CertificadoService {
 	public void editar(Certificado certificado);
 
 	public Certificado obtener(long id);
+
+	public Cliente obtenerCliente(long idCliente);
 }
 

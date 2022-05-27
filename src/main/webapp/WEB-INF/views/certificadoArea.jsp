@@ -21,11 +21,16 @@ function addEstructura() {
 
 <script>
 function addCertificado() {
+	var estructura;
+	
 	if (document.getElementById('idEstructura').value=='') {
 		alert('Debe seleccionar un edificio');
 		document.getElementById('idEstructura').focus;
 	}
-	else document.location.href="addCertificado.htm?id=0&idestr=0";// + document.getElementById('idCliente').value + "&idestr" + document.getElementById('idEstructura').value ;
+	else {
+		estructura=document.getElementById('idEstructura').value;
+		document.location.href="addCertificado.htm?id=" + ${idCliente} + "&idestr=" + estructura;
+	}
 }
 </script>
 
