@@ -15,7 +15,7 @@
 
 <script>
 function addEstructura() {
-	document.location.href="addEstructura.htm?id=0"; //+ document.getElementById('idCliente').value;
+	document.location.href="addEstructura.htm?id=" + ${idCliente};
 }
 </script>
 

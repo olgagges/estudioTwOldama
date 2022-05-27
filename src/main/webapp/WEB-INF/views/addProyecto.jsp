@@ -29,7 +29,7 @@
 		</c:if>
 
 		<form class=r method="post" action="addProyecto.htm">
-			<input type=hidden value="${idCliente}" /> 
+			<input type=hiddenvalue="${idCliente}" /> 
 			<label for="idTipoProyecto">Tipo
 				de proyecto</label> 
 			<select id="idTipoProyecto">

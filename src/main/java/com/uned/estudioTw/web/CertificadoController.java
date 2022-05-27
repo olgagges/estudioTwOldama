@@ -31,9 +31,9 @@ public class CertificadoController {
 	@RequestMapping(value = "/certificadoArea.htm")
 	public ModelAndView certificadoArea(@RequestParam("id") long idCliente) {
 		List<Estructura> estructuras = estructuraService.listarTodos();
-
 		ModelAndView mav = new ModelAndView("certificadoArea");
 		mav.addObject("estructuras", estructuras);
+		mav.addObject("idCliente", idCliente);
 		return mav;
 	}
 	

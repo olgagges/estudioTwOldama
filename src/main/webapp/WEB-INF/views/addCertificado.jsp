@@ -53,7 +53,7 @@ $( document ).ready(function() {
 <form class=r method="post" action="addCertificado.htm">
 
 	<input name = "idArquitecto" type="hidden" value="null" />
-	<input type="hidden" name="idcliente" value="${cliente.idCliente}">
+	<input type="hidden" id="idCliente" name="idCliente" value="${idCliente}">
 	<input name = "idEstructura" type="hidden" value="${idEstructura}" />
 
 	
