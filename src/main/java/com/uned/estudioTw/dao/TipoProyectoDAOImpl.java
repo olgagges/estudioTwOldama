@@ -34,7 +34,8 @@ public class TipoProyectoDAOImpl implements TipoProyectoDAO {
 	}
 
 	public TipoProyecto obtener(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		TipoProyecto tipoProyecto = (TipoProyecto) sessionFactory.getCurrentSession()
+				.createQuery("from TipoProyecto where idTipoProyecto = :tid").setParameter("tid", id).list().get(0);
+		return tipoProyecto;
 	}
 }

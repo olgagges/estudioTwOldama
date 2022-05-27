@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.uned.estudioTw.model.TipoCertificado;
+import com.uned.estudioTw.model.TipoProyecto;
 
 @Repository
 public class TipoCertificadoDAOImpl implements TipoCertificadoDAO {
@@ -34,7 +35,8 @@ public class TipoCertificadoDAOImpl implements TipoCertificadoDAO {
 	}
 
 	public TipoCertificado obtener(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		TipoCertificado tipoCertificado = (TipoCertificado) sessionFactory.getCurrentSession()
+				.createQuery("from TipoCertificado where idTipoCertificado = :tid").setParameter("tid", id).list().get(0);
+		return tipoCertificado;
 	}
 }

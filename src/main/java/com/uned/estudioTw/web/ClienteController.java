@@ -41,7 +41,7 @@ public class ClienteController {
 		mav.addObject("clients", clientes);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/addCliente.htm")
 	public String addClient() {
 		return "addCliente";
@@ -52,7 +52,6 @@ public class ClienteController {
 		return "sendForm";
 	}
 
-	
 	@RequestMapping(value = "/editCliente.htm")
 	public ModelAndView editCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
@@ -70,30 +69,25 @@ public class ClienteController {
 	@RequestMapping(value = "/listClientes.htm")
 	public ModelAndView allClients() {
 
-		
 		List<Cliente> clientes = clienteService.listarTodos();
 
 		ModelAndView mav = new ModelAndView("listClientes");
 		mav.addObject("clients", clientes);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/delCliente.htm")
 	public ModelAndView delCliente(@RequestParam("id") long idCliente) {
 		Cliente cliente = clienteService.obtener(idCliente);
 		clienteService.borrar(cliente);
 		return new ModelAndView("redirect:/personaborrada.htm");
 	}
-	
 
-	
 	@RequestMapping(value = "/personaborrada.htm")
 	public String personaborrada() {
 		return "personaborrada";
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/personaeditada.htm")
 	public String personaeditada() {
 		return "personaeditada";
