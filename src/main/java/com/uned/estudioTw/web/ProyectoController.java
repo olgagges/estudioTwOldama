@@ -17,6 +17,8 @@ import com.uned.estudioTw.model.ProyectoDTO;
 import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.ProyectoService;
 
+import utils.Utils;
+
 @Controller
 public class ProyectoController {
 
@@ -46,8 +48,8 @@ public class ProyectoController {
 		}
 		
 		
-		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), proyecto.getFechaInicio(), proyecto.getFechaSolicitud(),
-				proyecto.getFechaEntrega(), proyecto.getFechaFin(), proyecto.getDuracionObra(),
+		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), Utils.convetirFecha(proyecto.getFechaInicio()), Utils.convetirFecha(proyecto.getFechaSolicitud()),
+				Utils.convetirFecha(proyecto.getFechaEntrega()), Utils.convetirFecha(proyecto.getFechaFin()), proyecto.getDuracionObra(),
 				proyecto.getPresupuestoTotal(), proyecto.getDuracionPresupuesto(), proyecto.getDireccion(),
 				proyecto.getSuperficeTerreno(), proyecto.getSuperficeEdificio(), proyecto.getSuperficeReforma(),
 				proyecto.getPlantas(), proyecto.getHabitaciones(), proyecto.getBanyos(), proyecto.getCoste(),
