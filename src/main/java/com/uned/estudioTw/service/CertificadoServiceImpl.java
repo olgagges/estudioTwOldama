@@ -5,11 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.uned.estudioTw.dao.ArquitectoDAOImpl;
 import com.uned.estudioTw.dao.CertificadoDAOImpl;
 import com.uned.estudioTw.dao.ClienteDAOImpl;
+import com.uned.estudioTw.dao.EstructuraDAOImpl;
 import com.uned.estudioTw.dao.TipoCertificadoDAOImpl;
+import com.uned.estudioTw.model.Arquitecto;
 import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
+import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.TipoCertificado;
 
 @Service
@@ -20,6 +24,10 @@ public class CertificadoServiceImpl implements CertificadoService {
 	TipoCertificadoDAOImpl tipoCertificadoDAO;
 	@Autowired
 	ClienteDAOImpl clienteDAO;
+	@Autowired
+	ArquitectoDAOImpl arquitectoDAO;
+	@Autowired
+	EstructuraDAOImpl estructuraDAO;
 
 	public void crear(Certificado certificado) {
 		certificadoDAO.crear(certificado);
@@ -51,6 +59,14 @@ public class CertificadoServiceImpl implements CertificadoService {
 	
 	public Cliente obtenerCliente(long idCliente) {
 		return clienteDAO.obtener(idCliente);
+	}
+	
+	public Estructura obtenerEstructura(long idEstructura) {
+		return estructuraDAO.obtener(idEstructura);
+	}
+
+	public Arquitecto obtenerArquitecto(long idArquitecto) {
+		return arquitectoDAO.obtener(idArquitecto);
 	}
 
 }

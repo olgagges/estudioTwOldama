@@ -29,7 +29,7 @@ $( document ).ready(function() {
 <DIV id=content>
 <br>
 <h3 class=r>Rellene el formulario para generar un nuevo Certificado</h3><br/>
-<h3 class=r>"${idCliente}"    "${idEstructura}"</h3><br/>
+
 
 <c:if test="${errors.errorCount gt 0}">
 	Errors!<br/>
@@ -52,7 +52,7 @@ $( document ).ready(function() {
 </table><br/><br/>
 <form class=r method="post" action="addCertificado.htm">
 
-	<input name = "idArquitecto" type="hidden" value="null" />
+	
 	<input type=hidden name="idCliente" value="${idCliente}" />
 	<input type=hidden name="idEstructura" value="${idEstructura}" />
 

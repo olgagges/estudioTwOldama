@@ -35,7 +35,8 @@ public class Certificado {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idEstructura", referencedColumnName = "idEstructura")
 	private Estructura estructura;
-
+	
+	
 	private String tipo;
 	private Date fechaRenovacion;
 	private Date fechaInspeccion;
@@ -47,7 +48,26 @@ public class Certificado {
 	private Date fechaITE;
 	private char eficiencia; // A o G
 	private float coste;
-
+	
+	public Certificado() {}
+	
+	public Certificado(String tipo, Date fechaRenovacion, Date fechaInspeccion, Date fechaSolicitud, Date fechaEntrega, Date fechaVisita,
+			Date fechaEmision, Date fechaEmisionEstudio, Date fechaITE, char eficiencia, float coste) {
+		super();
+		this.tipo=tipo;
+		this.fechaRenovacion=fechaRenovacion;
+		this.fechaInspeccion=fechaInspeccion;
+		this.fechaSolicitud=fechaSolicitud;
+		this.fechaEntrega=fechaEntrega;
+		this.fechaVisita=fechaVisita;
+		this.fechaEmision=fechaEmision;
+		this.fechaEmisionEstudio=fechaEmisionEstudio;
+		this.fechaITE=fechaITE;
+		this.coste=coste;
+		this.eficiencia=eficiencia;	
+	}
+	
+	
 	public long getIdCertificado() {
 		return idCertificado;
 	}
@@ -56,20 +76,20 @@ public class Certificado {
 		this.idCertificado = idCertificado;
 	}
 
-	/*public TipoCertificado getTipoCertificado() {
-		return tipoCertificado;
-	}
-
-	public void setTipoCertificado(TipoCertificado tipoCertificado) {
-		this.tipoCertificado = tipoCertificado;
-	}*/
-
 	public Arquitecto getArquitecto() {
 		return arquitecto;
 	}
 
 	public void setArquitecto(Arquitecto arquitecto) {
 		this.arquitecto = arquitecto;
+	}
+	
+	public Estructura getEstructura() {
+		return estructura;
+	}
+
+	public void setEstructura(Estructura estructura) {
+		this.estructura = estructura;
 	}
 
 	public Cliente getCliente() {
@@ -168,5 +188,13 @@ public class Certificado {
 	public void setFechaITE(Date fechaITE) {
 		this.fechaITE = fechaITE;
 	}
+	
+	/*public TipoCertificado getTipoCertificado() {
+	return tipoCertificado;
+}
+
+public void setTipoCertificado(TipoCertificado tipoCertificado) {
+	this.tipoCertificado = tipoCertificado;
+}*/
 
 }

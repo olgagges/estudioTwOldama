@@ -14,19 +14,33 @@
 <mytags:barrasuperior />
 <mytags:barralateral />
 
+
+<script language="JavaScript">
+var nombre
+function nullable()
+{
+	if($certificado.arquitecto.persona.nombre == null){
+		nombre="---" 
+	}
+	else {nombre="${certificado.arquitecto.persona.nombre}"}
+	document.write ('nombre')
+}
+</script>
+
+
 <DIV id=content>
 <br>
 
 <h3 class="r">Listado  de Certificados solicitados OLDAMA Architecture</h3><br/><br/>
 <c:choose>
 	<c:when test="${fn:length(certificados) gt 0}">
-		<table align ="center" border=1 width="60%" >
+		<table align ="center" border=1 width="90%" >
 			<tr bgcolor="grey">
 				<th align="center">Edificio</th>
 				<th>Dirección</th>
 				<th>Cliente</th>
 				<th>Tipo Cert</th>
-				<th>Solicitud</th>
+				<th>F. Solicitud</th>
 				<th>Arquitecto</th>
 				<th>F. Emisión</th>
 				<th>F. Entrega</th>
@@ -35,23 +49,23 @@
 				<th>F. Visita</th>
 				<th>F. ITE</th>
 				<th>Eficiencia</th>
-				<th>Coste</th>
+				<th>Coste(EU)</th>
 			</tr>
 			<c:forEach var="certificado" items="${certificados}">
 				
 				<tr>
-					<td align="center"><c:out value="${certificado.idEstructura}"/></td>
-					<td align="center"><c:out value="${certificado.idestructura}"/></td>
-					<td align="center"><c:out value="${certificado.idCliente}"/></td>
+					<td align="center"><c:out value="${certificado.estructura.ref}"/></td>
+					<td align="center"><c:out value="${certificado.estructura.direccion}"/></td>
+					<td align="center"><c:out value="${certificado.cliente.persona.nombre}"/></td>
 					<td align="center"><c:out value="${certificado.tipo}"/></td>
-					<td align="center"><c:out value="${certificado.fechaSolucitud}"/></td>
-					<td align="center"><c:out value="${certificado.idArquitecto}"/></td>
-					<td align="center"><c:out value="${certificado.fechaEmision}"/></td>
-					<td align="center"><c:out value="${certificado.fechaEntrega}"/></td>
-					<td align="center"><c:out value="${certificado.fechaInspeccion}"/></td>
-					<td align="center"><c:out value="${certificado.fechaRenovacion}"/></td>
-					<td align="center"><c:out value="${certificado.fechaVisita}"/></td>
-					<td align="center"><c:out value="${certificado.fechaITE}"/></td>
+					<td align="center"><c:out value="${certificado.fechaSolicitud}"/></td>
+					<td align="center"><c:out value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}"/></td>
+					<td align="center"><c:out value="${certificado.fechaEmision  eq null ? '---': certificado.fechaEmision}"/></td>
+					<td align="center"><c:out value="${certificado.fechaEntrega  eq null ? '---': certificado.fechaEntrega}"/></td>
+					<td align="center"><c:out value="${certificado.fechaInspeccion  eq null ? '---': certificado.fechaInspeccion}"/></td>
+					<td align="center"><c:out value="${certificado.fechaRenovacion  eq null ? '---': certificado.fechaRenovacion}"/></td>
+					<td align="center"><c:out value="${certificado.fechaVisita  eq null ? '---': certificado.fechaVisita}"/></td>
+					<td align="center"><c:out value="${certificado.fechaITE  eq null ? '---': certificado.fechaITE}"/></td>
 					<td align="center"><c:out value="${certificado.eficiencia}"/></td>
 					<td align="center"><c:out value="${certificado.coste}"/></td>
 					<td align="center"><A href="editCertificado.htm?id=${certificado.idCertificado}">Editar</A></td>

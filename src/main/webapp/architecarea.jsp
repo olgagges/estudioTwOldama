@@ -28,11 +28,11 @@ function registrarProyecto() {
 <DIV id=content>
 <br>
 
-<h1 class=r>Bienvenid@ al √Årea de Arquitectos de OLDAMA Architecture</h1>
+<h1 class=r>Bienvenid@ al ¡rea de Arquitectos de OLDAMA Architecture</h1>
 
 <br>
 
-<h2 class=r>Por favor, selecione la acci√≥n que desea realizar</h2>
+<h2 class=r>Por favor, selecione la acciÛn que desea realizar</h2>
 
 
    <h3 style = "text-indent: 100px">Arquitecto registrado</h3>
