@@ -20,5 +20,6 @@
    <SPAN class="barrasuperiorlink">
     <A href="contacto.jsp">Contacto</A>
    </SPAN>&nbsp;
+    <A target=new href="${pageContext.request.contextPath}/docs/manualOldama.pdf"><img alt="Manual de usuario" src="${pageContext.request.contextPath}/Images/libro.png" heigth="48" width="43" border=0 /></A>
    
 </DIV>
