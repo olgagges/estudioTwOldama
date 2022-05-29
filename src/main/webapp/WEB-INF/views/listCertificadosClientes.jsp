@@ -18,7 +18,7 @@
 <DIV id=content>
 <br>
 
-<h3 class="r">Listado  de Certificados <c:out value="${opt  eq 'C' ? ' para Renovar':' Inspeccion Tecnica'}"/></h3><br/><br/>
+<h3 class="r">Listado  de Certificados <c:out value="${opt  eq 'C' ? ' para Renovar':' Inspeccion Tecnica'}"/> llamar a los clientes</h3><br/><br/>
 <c:choose>
 	<c:when test="${fn:length(certificados) gt 0}">
 		<table align ="center" border=1 width="90%" >
