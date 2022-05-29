@@ -42,7 +42,7 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 	}
 	
 	public List<Certificado> listarInspeccionTecnica() {
-		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where fechainspeccion>=current_date").list();
+		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where fechaemision>=current_date").list();
 		return certificados;
 	}
 	

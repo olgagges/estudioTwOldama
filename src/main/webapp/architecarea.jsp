@@ -42,16 +42,17 @@ function listarProyecto() {
 <h2 class=r>Por favor, selecione la acción que desea realizar</h2>
 
 
-   <h3 style = "text-indent: 100px">Arquitecto registrado</h3>
-       	<label for="cliente">Seleccionar arquitecto:</label> 
-       		<select id="idCliente">
-				<option value="">Seleccione arquitecto</option>
-				<c:forEach items="${architects}" var="lista">
+   <h3 style = "text-indent: 100px">Seleccione perfil</h3>
+   <ul style = "text-indent: 120px">
+       	<label for="arquitecto">Seleccionar arquitecto</label> 
+       		<select id="idArquitecto">
+				<option value="">Seleccione Arquitecto</option>
+				<c:forEach items="${arquitectos}" var="lista">
 					<option value="${lista.getIdArquitecto()}">${lista.getPersona().getNombre()}
 					</option>
 				</c:forEach>
 			</select>
-
+	</ul>
 <br>
  
       <h3 class=r; style = "text-indent: 100px">Proyectos</h3>

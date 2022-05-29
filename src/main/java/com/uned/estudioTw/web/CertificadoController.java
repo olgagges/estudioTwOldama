@@ -67,13 +67,9 @@ public class CertificadoController {
 			return mav;
 		}
 		Certificado certificadoDAO = new Certificado(certificado.getTipo(),
-				Utils.convetirFecha(certificado.getFechaRenovacion()),
-				Utils.convetirFecha(certificado.getFechaInspeccion()),
 				Utils.convetirFecha(certificado.getFechaSolicitud()),
 				Utils.convetirFecha(certificado.getFechaEntrega()), Utils.convetirFecha(certificado.getFechaVisita()),
-				Utils.convetirFecha(certificado.getFechaEmision()),
-				Utils.convetirFecha(certificado.getFechaEmisionEstudio()),
-				Utils.convetirFecha(certificado.getFechaITE()), certificado.getEficiencia(), certificado.getCoste());
+				Utils.convetirFecha(certificado.getFechaEmision()), certificado.getEficiencia(), certificado.getCoste());
 
 		if (certificado.getIdCliente() != null) {
 			certificadoDAO.setCliente(certificadoService.obtenerCliente(Long.parseLong(certificado.getIdCliente())));
@@ -126,24 +122,63 @@ public class CertificadoController {
 	@RequestMapping(value = "/editCertificado.htm")
 	public ModelAndView editCertificado(@RequestParam("id") long idCertificado) {
 		List<Arquitecto> arquitectos = arquitectoService.listarTodos();
+		
 		Certificado certificado = certificadoService.obtener(idCertificado);
+		Estructura estructura = certificado.getEstructura();
+		Cliente cliente = certificado.getCliente();
+		
+		CertificadoDTO certificadoDTO = new CertificadoDTO();
+		
+		certificadoDTO.setIdCertificado(certificado.getIdCertificado());
+		
+		certificadoDTO.setTipo(certificado.getTipo());
+		certificadoDTO.setCoste(certificado.getCoste());
+		certificadoDTO.setEficiencia(certificado.getEficiencia());
+		certificadoDTO.setFechaSolicitud(Utils.convertirFechaVista(certificado.getFechaSolicitud()));
+		
+		if (certificadoDTO.getFechaEntrega() != null) {
+			certificadoDTO
+					.setFechaEntrega(Utils.convertirFechaVista(certificado.getFechaEntrega()));
+		}
+		
+		if (certificadoDTO.getFechaVisita() != null) {
+			certificadoDTO
+					.setFechaVisita(Utils.convertirFechaVista(certificado.getFechaVisita()));
+		}
+		
+		if (certificadoDTO.getFechaEmision() != null) {
+			certificadoDTO
+					.setFechaEmision(Utils.convertirFechaVista(certificado.getFechaEmision()));
+		}
+		
+		if (certificadoDTO.getIdArquitecto() != null) {
+			certificadoDTO
+					.setIdArquitecto(String.valueOf(certificado.getArquitecto().getIdArquitecto()));
+		}
+		if (certificadoDTO.getIdEstructura() != null) {
+			certificadoDTO
+					.setIdEstructura(String.valueOf(certificado.getEstructura().getIdEstructura()));
+		}
+		if (certificadoDTO.getIdCliente() != null) {
+			certificadoDTO
+					.setIdCliente(String.valueOf(certificado.getCliente().getIdCliente()));
+		}
+		
+		
 		ModelAndView mav = new ModelAndView("editCertificado");
-		mav.addObject("idCertificado", idCertificado);
-		mav.addObject("certificado", certificado);
+		mav.addObject("certificado", certificadoDTO);
 		mav.addObject("arquitectos", arquitectos);
+		mav.addObject("cliente", cliente);
+		mav.addObject("estructura", estructura);
 		return mav;
 	}
 
 	@RequestMapping(value = "/editCertificado.htm", method = RequestMethod.POST)
 	public ModelAndView editCertificado(CertificadoDTO certificado, Errors errors) {
 		Certificado certificadoDAO = new Certificado(certificado.getTipo(),
-				Utils.convetirFecha(certificado.getFechaRenovacion()),
-				Utils.convetirFecha(certificado.getFechaInspeccion()),
 				Utils.convetirFecha(certificado.getFechaSolicitud()),
 				Utils.convetirFecha(certificado.getFechaEntrega()), Utils.convetirFecha(certificado.getFechaVisita()),
-				Utils.convetirFecha(certificado.getFechaEmision()),
-				Utils.convetirFecha(certificado.getFechaEmisionEstudio()),
-				Utils.convetirFecha(certificado.getFechaITE()), certificado.getEficiencia(), certificado.getCoste());
+				Utils.convetirFecha(certificado.getFechaEmision()), certificado.getEficiencia(), certificado.getCoste());
 
 		if (certificado.getIdCliente() != null) {
 			certificadoDAO.setCliente(certificadoService.obtenerCliente(Long.parseLong(certificado.getIdCliente())));
@@ -156,10 +191,13 @@ public class CertificadoController {
 			certificadoDAO
 					.setEstructura(certificadoService.obtenerEstructura(Long.parseLong(certificado.getIdEstructura())));
 		}
-		if (certificado.getIdCertificado() != null) {
-			certificadoDAO.setIdCertificado(Long.parseLong(certificado.getIdCertificado()));
-		}
+		
+			certificadoDAO.setIdCertificado(certificado.getIdCertificado());
+			
+		
+	
 		certificadoService.editar(certificadoDAO);
+		
 		return new ModelAndView("redirect:/personaeditada.htm");
 	}
 

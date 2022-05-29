@@ -4,19 +4,16 @@ import java.util.Date;
 
 public class CertificadoDTO {
 
-	private String idCertificado;
+	private long idCertificado;
 	private String idCliente;
 	private String idArquitecto;
 	private String idEstructura;
 	private String tipo;
-	private String fechaRenovacion;
-	private String fechaInspeccion;
 	private String fechaSolicitud;
 	private String fechaEntrega;
 	private String fechaVisita;
 	private String fechaEmision;
-	private String fechaEmisionEstudio;
-	private String fechaITE;
+
 	private char eficiencia; // A o G
 	private float coste;
 	
@@ -39,12 +36,7 @@ public class CertificadoDTO {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getFechaRenovacion() {
-		return fechaRenovacion;
-	}
-	public void setFechaRenovacion(String fechaRenovacion) {
-		this.fechaRenovacion = fechaRenovacion;
-	}
+	
 	public String getFechaEntrega() {
 		return fechaEntrega;
 	}
@@ -63,30 +55,15 @@ public class CertificadoDTO {
 	public void setFechaSolicitud(String fechaSolicitud) {
 		this.fechaSolicitud = fechaSolicitud;
 	}
-	public String getFechaInspeccion() {
-		return fechaInspeccion;
-	}
-	public void setFechaInspeccion(String fechaInspeccion) {
-		this.fechaInspeccion = fechaInspeccion;
-	}
+	
+	
 	public String getFechaEmision() {
 		return fechaEmision;
 	}
 	public void setFechaEmision(String fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
-	public String getFechaEmisionEstudio() {
-		return fechaEmisionEstudio;
-	}
-	public void setFechaEmisionEstudio(String fechaEmisionEstudio) {
-		this.fechaEmisionEstudio = fechaEmisionEstudio;
-	}
-	public String getFechaITE() {
-		return fechaITE;
-	}
-	public void setFechaITE(String fechaITE) {
-		this.fechaITE = fechaITE;
-	}
+	
 	public char getEficiencia() {
 		return eficiencia;
 	}
@@ -105,10 +82,10 @@ public class CertificadoDTO {
 	public void setIdEstructura(String idEstructura) {
 		this.idEstructura = idEstructura;
 	}
-	public String getIdCertificado() {
+	public long getIdCertificado() {
 		return idCertificado;
 	}
-	public void setIdCertificado(String idCertificado) {
+	public void setIdCertificado(long idCertificado) {
 		this.idCertificado = idCertificado;
 	}
 	

@@ -53,8 +53,7 @@ public class CertificadoServiceImpl implements CertificadoService {
 	}
 
 	public Certificado obtener(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return certificadoDAO.obtener(id);
 	}
 
 	public Cliente obtenerCliente(long idCliente) {

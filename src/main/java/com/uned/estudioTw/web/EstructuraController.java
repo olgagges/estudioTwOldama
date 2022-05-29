@@ -12,8 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.uned.estudioTw.model.Estructura;
+import com.uned.estudioTw.model.EstructuraDTO;
 import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.EstructuraService;
+
+import utils.Utils;
+
+import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Persona;
 import com.uned.estudioTw.service.ClienteService;
@@ -33,13 +38,17 @@ public class EstructuraController {
 	}
 
 	@RequestMapping(value = "/addEstructura.htm", method = RequestMethod.POST)
-	public ModelAndView addEstructura(Estructura estructura, Errors errors) {
+	public ModelAndView addEstructura(EstructuraDTO estructura, Errors errors) {
 		if (errors.hasErrors()) {
 			ModelAndView mav = new ModelAndView("addEstructura");
 			mav.addObject("errors", errors);
 			return mav;
 		}
-		estructuraService.crear(estructura);
+		Estructura estructuraDAO = new Estructura(estructura.getRef(), estructura.getTipo(),
+				estructura.getDireccion(), Utils.convetirFecha(estructura.getFechaConstruccion()));
+		
+		
+		estructuraService.crear(estructuraDAO);
 		return new ModelAndView("redirect:/sendForm.htm");
 	}
 

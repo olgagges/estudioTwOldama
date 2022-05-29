@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Estructura {
+public class EstructuraDTO {
 	@Id
 	@GeneratedValue
 	private long idEstructura;
@@ -22,17 +22,7 @@ public class Estructura {
 	private String ref;
 	private String direccion;
 	private String tipo;
-	private Date fechaConstruccion;
-	
-	public Estructura() {}
-	
-	public Estructura(String ref,  String tipo, String direccion, Date fechaConstruccion) {
-		super();
-		this.tipo=tipo;
-		this.ref=ref;
-		this.direccion=direccion;
-		this.fechaConstruccion = fechaConstruccion;	
-	}
+	private String fechaConstruccion;
 
 	public long getIdEstructura() {
 		return idEstructura;
@@ -74,11 +64,11 @@ public class Estructura {
 		this.tipo = tipo;
 	}
 
-	public Date getFechaConstruccion() {
+	public String getFechaConstruccion() {
 		return fechaConstruccion;
 	}
 
-	public void setFechaConstruccion(Date fechaConstruccion) {
+	public void setFechaConstruccion(String fechaConstruccion) {
 		this.fechaConstruccion = fechaConstruccion;
 	}
 

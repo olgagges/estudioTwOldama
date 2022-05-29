@@ -32,50 +32,42 @@
 	</tr>
 	<tr>
 		<td align="center"><c:out value="${certificado.tipo}"/></td>
-		<td align="center"><c:out value="${certificado.estructura.ref}"/></td>
-		<td align="center"><c:out value="${certificado.estructura.direccion}"/></td>
-		<td align="center"><c:out value="${certificado.cliente.persona.nombre}"/></td>
+		<td align="center"><c:out value="${estructura.ref}"/></td>
+		<td align="center"><c:out value="${estructura.direccion}"/></td>
+		<td align="center"><c:out value="${cliente.persona.nombre}"/></td>
 		<td align="center"><c:out value="${certificado.fechaSolicitud}"/></td>
 	</tr>
 </table><br/><br/>
 
-<form:form method="POST" action="editCertificado.htm" modelAttribute="certificado">
-	<table align ="center">
-		<tr>
-			<td><form:hidden path="idEstructura" /></td>
-			<td><form:hidden path="idCliente" /></td>
-			<td><form:hidden path="tipo" /></td>
-			<td><form:hidden path="fechaSolicitud" /></td>
-		</tr>
-		<label for="idArquitecto">Arquitecto</label> 
+<form class=r method="post" action="editCertificado.htm">
+			
+			<input type=hidden name="idEstructura" value="${idEstructura}" />
+			<input type=hidden name="idCliente" value="${idCliente}" /> 
+			<input type=hidden name="idCertificado" value="${idCertificado}" />
+			<input type=hidden name="fechaSolicitud" value="${fechaSolicitud}" />
+			
+
+			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
-				<option value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}">Arquitecto</option>
-				<c:forEach items="${arquitectos}" var="listaArquitectos">
-					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
+				<option value=0>${arquitecto  eq null ? 'Seleccione Arquitecto': certificado.arquitecto.persona.nombre}</option>
+				<c:forEach items="${arquitectos}" var="arquitectos">
+					<option value="${arquitectos.getIdArquitecto()}">${arquitectos.getPersona().getNombre()}
 					</option>
 				</c:forEach>
-			</select>
-		<tr>
-			<td>Nombre :</td>
-			<td><form:input path="persona.nombre"  /></td>
-		</tr>
-		<tr>
-			<td>Dni :</td>
-			<td><form:input path="persona.dni" /></td>
-		</tr>
-		<tr>
-			<td>Email :</td>
-			<td><form:input path="persona.email" /></td>
-		</tr>
-		<tr></tr>
-<tr></tr>
-<tr></tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" value="Confirmar" /></td>
-		</tr>
-	</table>
-</form:form>
+			</select> <br/><br/>
+			<label for="fechaVisita">Fecha de Visita</label>
+			<input type="text" name="fechaVisita" value="${certificado.fechaVisita  eq null ? 'dd/mm/aaaa': certificado.fechaVisita}"/><br/><br/>
+			<label for="fechaVisita">Fecha de Emisión</label>
+			<input type="text" name="fechaEmision" value="${certificado.fechaEmision  eq null ? 'dd/mm/aaaa': certificado.fechaEmision}"/><br/><br/>
+			<label for="fechaVisita">Fecha de Entrega</label>
+			<input type="text" name="fechaEntrega" value="${certificado.fechaEntrega  eq null ? 'dd/mm/aaaa': certificado.fechaEntrega}"/><br/><br/>
+			<label for="eficiencia">Categoría Eficiencia </label>
+			<input type="text" name="eficiencia" value="${certificado.eficiencia  eq null ? 'X': certificado.eficiencia}" /><br/><br/>
+			<label for="coste">Coste (EU)</label>
+			<input type="text" name="coste" value="${certificado.coste  eq 0 ? '0': certificado.coste}" />
+			 <br /> <br /> <input type="submit" /><input
+				type="reset" />
+		</form>
 </DIV>
 <mytags:piedepagina />
 </body>

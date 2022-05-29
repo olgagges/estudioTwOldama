@@ -38,31 +38,26 @@ public class Certificado {
 	
 	
 	private String tipo;
-	private Date fechaRenovacion;
-	private Date fechaInspeccion;
+
 	private Date fechaSolicitud;
 	private Date fechaEntrega;
 	private Date fechaVisita;
 	private Date fechaEmision;
-	private Date fechaEmisionEstudio;
-	private Date fechaITE;
+
+
 	private char eficiencia; // A o G
 	private float coste;
 	
 	public Certificado() {}
 	
-	public Certificado(String tipo, Date fechaRenovacion, Date fechaInspeccion, Date fechaSolicitud, Date fechaEntrega, Date fechaVisita,
-			Date fechaEmision, Date fechaEmisionEstudio, Date fechaITE, char eficiencia, float coste) {
+	public Certificado(String tipo,  Date fechaSolicitud, Date fechaEntrega, Date fechaVisita,
+			Date fechaEmision, char eficiencia, float coste) {
 		super();
 		this.tipo=tipo;
-		this.fechaRenovacion=fechaRenovacion;
-		this.fechaInspeccion=fechaInspeccion;
 		this.fechaSolicitud=fechaSolicitud;
 		this.fechaEntrega=fechaEntrega;
 		this.fechaVisita=fechaVisita;
 		this.fechaEmision=fechaEmision;
-		this.fechaEmisionEstudio=fechaEmisionEstudio;
-		this.fechaITE=fechaITE;
 		this.coste=coste;
 		this.eficiencia=eficiencia;	
 	}
@@ -100,21 +95,6 @@ public class Certificado {
 		this.cliente = cliente;
 	}
 
-	public Date getFechaRenovacion() {
-		return fechaRenovacion;
-	}
-
-	public void setFechaRenovavion(Date fechaRenovacion) {
-		this.fechaRenovacion = fechaRenovacion;
-	}
-
-	public Date getFechaInspeccion() {
-		return fechaInspeccion;
-	}
-
-	public void setFechaInspeccion(Date fechaInspeccion) {
-		this.fechaInspeccion = fechaInspeccion;
-	}
 
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;
@@ -148,15 +128,6 @@ public class Certificado {
 		this.fechaEmision = fechaEmision;
 	}
 
-	public Date getFechaEmisionEstudio() {
-		return fechaEmisionEstudio;
-	}
-
-	public void setFechaEmisionEstudio(Date fechaEmisionEstudio) {
-		this.fechaEmisionEstudio = fechaEmisionEstudio;
-	}
-
-
 	public char getEficiencia() {
 		return eficiencia;
 	}
@@ -181,13 +152,7 @@ public class Certificado {
 		this.tipo = tipo;
 	}
 
-	public Date getFechaITE() {
-		return fechaITE;
-	}
 
-	public void setFechaITE(Date fechaITE) {
-		this.fechaITE = fechaITE;
-	}
 	
 	/*public TipoCertificado getTipoCertificado() {
 	return tipoCertificado;

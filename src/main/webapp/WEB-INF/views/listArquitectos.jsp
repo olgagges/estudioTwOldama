@@ -17,18 +17,21 @@
 
 <h3 class="r">Listado completo de Arquitectos OLDAMA Architecture</h3><br/><br/>
 <c:choose>
-	<c:when test="${fn:length(arquitects) gt 0}">
+	<c:when test="${fn:length(arquitectos) gt 0}">
 		<table align ="center" border=1 width="50%" >
 			<tr bgcolor="grey">
 				<th>Nombre</th>
 				<th>Email</th>
 				<th>DNI</th>
+				<th colspan="2">Acciones</th>
 			</tr>
-			<c:forEach var="arquitect" items="${arquitects}">
+			<c:forEach var="arquitecto" items="${arquitectos}">
 				<tr>
-					<td align="center"><c:out value="${arquitect.persona.nombre}"/></td>
-					<td align="center">${arquitect.persona.email}</td>
-					<td align="center">${arquitect.persona.dni}</td>
+					<td align="center"><c:out value="${arquitecto.persona.nombre}"/></td>
+					<td align="center">${arquitecto.persona.email}</td>
+					<td align="center">${arquitecto.persona.dni}</td>
+					<td align="center"><A href="editArquitecto.htm?id=${arquitecto.idArquitecto}">Editar</A></td>
+					<td align="center"><A href="delArquitecto.htm?id=${arquitecto.idArquitecto}">Borrar</A></td>
 				</tr>
 			</c:forEach>
 		</table>

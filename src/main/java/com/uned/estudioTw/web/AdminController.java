@@ -31,7 +31,7 @@ public class AdminController {
 		Admin admin = new Admin();
 		admin.setPersona(persona);
 		adminService.crear(admin);
-		return new ModelAndView("redirect:/listAdmins.htm");
+		return new ModelAndView("redirect:/personadd.htm");
 	}
 
 	@RequestMapping(value = "/addAdmin.htm")

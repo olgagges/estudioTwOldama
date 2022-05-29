@@ -43,6 +43,8 @@
 <label for="ref">Referencia catastral</label>
 	<input type="text" name="ref" />
 <br/><br/>
+<label for="fechaConstruccion">Fecha Construcción</label>
+	<input type="text" name="fechaConstruccion" value="dd/mm/aaaa" /><br/><br/>
 
 <input type="submit" /><input type="reset" /></form>
 

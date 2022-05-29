@@ -33,21 +33,22 @@ public class ArquitectoController {
 		return new ModelAndView("redirect:/personadd.htm");
 	}
 	
-	
-	@RequestMapping(value = "/architecarea.htm")
-	public ModelAndView Architecarea(Persona persona, Errors errors) {
-		List<Arquitecto> arquitecto = arquitectoService.listarTodos();
-
-		ModelAndView mav = new ModelAndView("architecarea");
-		mav.addObject("architects", arquitecto);
-		return mav;
-	}
-	
-
 	@RequestMapping(value = "/addArquitecto.htm")
 	public String addArquitecto() {
 		return "addArquitecto";
 	}
+	
+	@RequestMapping(value = "/architecarea.htm")
+	public ModelAndView ArchitecArea(Persona persona, Errors errors) {
+		List<Arquitecto> arquitectos = arquitectoService.listarTodos();
+
+		ModelAndView mav = new ModelAndView("architecarea");
+		mav.addObject("arquitectos", arquitectos);
+		return mav;
+	}
+	
+
+	
 	
 	@RequestMapping(value = "/editArquitecto.htm")
 	public ModelAndView editArquitecto(@RequestParam("id") long idArquitecto) {
@@ -70,7 +71,7 @@ public class ArquitectoController {
 		List<Arquitecto> arquitectos = arquitectoService.listarTodos();
 
 		ModelAndView mav = new ModelAndView("listArquitectos");
-		mav.addObject("architects", arquitectos);
+		mav.addObject("arquitectos", arquitectos);
 		return mav;
 	}
 	

@@ -55,14 +55,15 @@ $( document ).ready(function() {
 	
 	<input type=hidden name="idCliente" value="${idCliente}" />
 	<input type=hidden name="idEstructura" value="${idEstructura}" />
+	<input type=hidden name="eficiencia" value="X" />
+	<input type=hidden name="coste" value="0" />
 
 	
 	<label for="fechaSolicitud">Fecha de Solicitud</label>
 	<input name="fechaSolicitud" type="text" value="dd/mm/aaaa"
        min="2018-01-01" max="2030-12-31"><br/><br/>
        
-	<input name = "eficiencia" type="hidden" value="X" />
-	<input name = "coste" type="hidden" value="0" />
+
 	
 	
 	<label for="tipo">Tipo de certificado:</label>
