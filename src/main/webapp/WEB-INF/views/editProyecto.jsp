@@ -22,60 +22,78 @@
 <h3 class=r>Edición de proyectos</h3><br/>
 <h3 class=r>Modifique los campos deseados y pulse Confirmar</h3><br/>
 
-<table align ="center" border=1 width="60%" >
-	<tr bgcolor="grey">
-		<th align="center">Tipo de Certificado</th>
-		<th>Edificio</th>
-		<th>Dirección</th>
-		<th>Cliente</th>
-		<th>Fecha Solicitud</th>
-	</tr>
-	<tr>
-		<td align="center"><c:out value="${certificado.tipo}"/></td>
-		<td align="center"><c:out value="${certificado.estructura.ref}"/></td>
-		<td align="center"><c:out value="${certificado.estructura.direccion}"/></td>
-		<td align="center"><c:out value="${certificado.cliente.persona.nombre}"/></td>
-		<td align="center"><c:out value="${certificado.fechaSolicitud}"/></td>
-	</tr>
-</table><br/><br/>
 
-<form:form method="POST" action="editCertificado.htm" modelAttribute="certificado">
-	<table align ="center">
-		<tr>
-			<td><form:hidden path="idEstructura" /></td>
-			<td><form:hidden path="idCliente" /></td>
-			<td><form:hidden path="tipo" /></td>
-			<td><form:hidden path="fechaSolicitud" /></td>
-		</tr>
-		<label for="idArquitecto">Arquitecto</label> 
+		<form class=r method="post" action="addProyecto.htm">
+			<input type=hidden value="${idCliente}" /> 
+
+			<input type=hidden name="idCliente" value="${idCliente}" /> 
+
+			<label for="idTipoProyecto">Tipo
+				de proyecto</label> 
+			<select id="idTipoProyecto" name="idTipoProyecto">
+				<option value=0>Seleccione Tipo</option>
+				<c:forEach items="${tiposProyecto}" var="lista">
+					<option value="${lista.getIdTipoProyecto()}">${lista.getRef()}
+					</option>
+				</c:forEach>
+			</select> </br><br/>
+			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
-				<option value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}">Arquitecto</option>
+				<option value=0>Seleccione Arquitecto</option>
 				<c:forEach items="${arquitectos}" var="listaArquitectos">
 					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
 					</option>
 				</c:forEach>
-			</select>
-		<tr>
-			<td>Nombre :</td>
-			<td><form:input path="persona.nombre"  /></td>
-		</tr>
-		<tr>
-			<td>Dni :</td>
-			<td><form:input path="persona.dni" /></td>
-		</tr>
-		<tr>
-			<td>Email :</td>
-			<td><form:input path="persona.email" /></td>
-		</tr>
-		<tr></tr>
-<tr></tr>
-<tr></tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" value="Confirmar" /></td>
-		</tr>
-	</table>
-</form:form>
+			</select> </br><br/>
+			<label for="ref">Descripcion:</label>
+			<input type="text" name="ref" /><br/><br/>
+			<label for="ref">Fecha Inicio:</label>
+			<input type="text" name="fechaInicio" value="01/01/2022"/><br/><br/>
+			<label for="ref">Fecha Solicitud:</label>
+			<input type="text" name="fechaSolicitud" value="01/01/2022"/><br/><br/>
+			<label for="ref">Fecha Entrega:</label>
+			<input type="text" name="fechaEntrega" value="01/01/2022"/><br/><br/>
+			<label for="ref">Fecha Fin:</label>
+			<input type="text" name="fechaFin" value="01/01/2022"/><br/><br/>
+
+
+			<label for="ref">Duración obra:</label>
+			<input type="text" name="duracionObra" value="0"/><br/><br/>
+			
+			<label for="ref">PresupuestoTotal:</label>
+			<input type="text" name="presupuestoTotal" value="0"/><br/><br/>
+			
+			<label for="ref">Duracion presupuesto:</label>
+			<input type="text" name="duracionPresupuesto" value="0"/><br/><br/>
+			
+			<label for="ref">Dirección:</label>
+			<input type="text" name="direccion" /><br/><br/>
+			
+			<label for="ref">Superficie terreno:</label>
+			<input type="text" name="superficieterreno" value="0"/><br/><br/>
+			
+			<label for="ref">Superficie edificio:</label>
+			<input type="text" name="superficieedificio" value="0"/><br/><br/>
+			
+			<label for="ref">Superficie reforma:</label>
+			<input type="text" name="superficieReforma" value="0"/><br/><br/>
+			
+			<label for="ref">Plantas:</label>
+			<input type="text" name="plantas" value="0"/><br/><br/>
+			
+			<label for="ref">Habitaciones:</label>
+			<input type="text" name="habitaciones" value="0"/><br/><br/>
+			
+			<label for="ref">Banyos:</label>
+			<input type="text" name="banyos" value="0"/><br/><br/>
+			
+			<label for="ref">Finalidad Obra:</label>
+			<input type="text" name="finalidadObra" /><br/><br/>
+			
+			<input type="hidden" name="coste" value="0" />
+			 <br /> <br /> <input type="submit" /><input
+				type="reset" />
+		</form>
 </DIV>
 <mytags:piedepagina />
 </body>

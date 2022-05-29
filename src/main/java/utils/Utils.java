@@ -20,4 +20,13 @@ public class Utils {
 		formato.applyPattern("yyyy/MM/dd");
 		return nuevaFecha;
 	}
+
+	public static String convertirFechaVista(Date fecha) {
+		if (fecha == null) {
+			return null;
+		}
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		return formato.format(fecha);
+
+	}
 }

@@ -1,7 +1,7 @@
 package com.uned.estudioTw.model;
 
 public class ProyectoDTO {
-
+	private long idProyecto;
 	private String idTipoProyecto;
 	private String idCliente;
 	private String idArquitecto;
@@ -185,6 +185,14 @@ public class ProyectoDTO {
 
 	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
+	}
+
+	public long getIdProyecto() {
+		return idProyecto;
+	}
+
+	public void setIdProyecto(long idProyecto) {
+		this.idProyecto = idProyecto;
 	}
 
 }

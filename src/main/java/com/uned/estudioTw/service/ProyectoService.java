@@ -17,6 +17,8 @@ public interface ProyectoService {
 
 	List<Estructura> obtenerEstructuras();
 
+	public Proyecto obtener(long id);
+
 	Cliente obtenerCliente(long idCliente);
 
 	Arquitecto obtenerArquitecto(long idArquitecto);
