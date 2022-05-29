@@ -23,5 +23,9 @@ public interface CertificadoService {
 	public Estructura obtenerEstructura(long idEstructura);
 
 	public Arquitecto obtenerArquitecto(long idArquitecto);
+	
+	List<Certificado> listarCertificadosRenovacion();
+
+	List<Certificado> listarInspeccionTecnica();
 }
 

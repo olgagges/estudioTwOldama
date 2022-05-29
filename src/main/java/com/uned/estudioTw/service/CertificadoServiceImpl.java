@@ -32,11 +32,11 @@ public class CertificadoServiceImpl implements CertificadoService {
 	public void crear(Certificado certificado) {
 		certificadoDAO.crear(certificado);
 	}
-	
+
 	public List<TipoCertificado> obtenerTiposCertificado() {
 		return tipoCertificadoDAO.listarTodos();
 	}
-	
+
 	public List<Certificado> listarTodos() {
 		List<Certificado> certificados = certificadoDAO.listarTodos();
 		return certificados;
@@ -44,29 +44,39 @@ public class CertificadoServiceImpl implements CertificadoService {
 
 	public void borrar(Certificado certificado) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void editar(Certificado certificado) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Certificado obtener(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public Cliente obtenerCliente(long idCliente) {
 		return clienteDAO.obtener(idCliente);
 	}
-	
+
 	public Estructura obtenerEstructura(long idEstructura) {
 		return estructuraDAO.obtener(idEstructura);
 	}
 
 	public Arquitecto obtenerArquitecto(long idArquitecto) {
 		return arquitectoDAO.obtener(idArquitecto);
+	}
+
+	public List<Certificado> listarCertificadosRenovacion() {
+		List<Certificado> certificados = certificadoDAO.listarTodosRenovacion();
+		return certificados;
+	}
+
+	public List<Certificado> listarInspeccionTecnica() {
+		List<Certificado> certificados = certificadoDAO.listarInspeccionTecnica();
+		return certificados;
 	}
 
 }

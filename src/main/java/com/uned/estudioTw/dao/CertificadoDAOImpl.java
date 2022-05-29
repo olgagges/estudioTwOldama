@@ -35,6 +35,16 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 				.createQuery("from Certificado where idCertificado = :tid").setParameter("tid", id).list().get(0);
 		return certificado;
 	}
+
+	public List<Certificado> listarTodosRenovacion() {
+		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado").list();
+		return certificados;
+	}
+	
+	public List<Certificado> listarInspeccionTecnica() {
+		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado").list();
+		return certificados;
+	}
 	
 	
 }
