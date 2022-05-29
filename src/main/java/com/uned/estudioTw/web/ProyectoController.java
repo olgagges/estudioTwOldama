@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uned.estudioTw.model.Arquitecto;
+import com.uned.estudioTw.model.Certificado;
+import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
 import com.uned.estudioTw.model.ProyectoDTO;
@@ -67,5 +69,13 @@ public class ProyectoController {
 		proyectoService.crear(proyectoDAO);
 		return new ModelAndView("redirect:/clientsArea.htm");
 	}
+	
+	@RequestMapping(value = "/listProyectos.htm")
+	public ModelAndView allProyectos(@RequestParam("idCliente") String idCliente) {
+		List<Proyecto> proyectos = proyectoService.listarTodos();
 
+		ModelAndView mav = new ModelAndView("listProyectos");
+		mav.addObject("proyectos", proyectos);
+		return mav;
+	}
 }

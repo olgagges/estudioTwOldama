@@ -5,7 +5,7 @@
 
 <head>
 <mytags:style />
-<title>√Årea Clientes OLDAMA</title>
+<title>AÅrea Clientes OLDAMA</title>
 </head>
 
 <body>
@@ -21,6 +21,13 @@ function registrarProyecto() {
 		document.getElementById('idArquitecto').focus;
 	}
 	else document.location.href="addProyecto.htm?id=" + document.getElementById('idArquitecto').value;
+}
+function listarProyecto() {
+	if (document.getElementById('idArquitecto').value=='') {
+		alert('Debe seleccionar el arquitecto');
+		document.getElementById('idArquitecto').focus;
+	}
+	else document.location.href="listProyectos.htm?idArquitecto=" + document.getElementById('idArquitecto').value;
 }
 </script>
 
@@ -49,9 +56,8 @@ function registrarProyecto() {
  
       <h3 class=r; style = "text-indent: 100px">Proyectos</h3>
         <ul style = "text-indent: 120px">
-          <li><A href="twitter.htm">Listado Proyectos</A></li>
+          <li><A href="#" onClick="listarProyecto()">Listado Proyectos</A></li>
           <li><A href="#" onClick="registrarProyecto()">Registrar Proyectos</A></li>
-          <li><A href="tuenti.htm">Introducir Costes</A></li>
         </ul>
         
         <br>

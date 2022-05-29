@@ -5,7 +5,7 @@
 
 <head>
 <mytags:style />
-<title>Área Clientes OLDAMA</title>
+<title>&Aacute;rea Clientes OLDAMA</title>
 </head>
 
 <body>
@@ -20,6 +20,20 @@ function solicitarProyecto() {
 		document.getElementById('idCliente').focus;
 	}
 	else document.location.href="addProyecto.htm?id=" + document.getElementById('idCliente').value;
+}
+function verProyectos() {
+	if (document.getElementById('idCliente').value=='') {
+		alert('Debe seleccionar el cliente');
+		document.getElementById('idCliente').focus;
+	}
+	else document.location.href="listProyectos.htm?idCliente=" + document.getElementById('idCliente').value;
+}
+function verCertificados() {
+	if (document.getElementById('idCliente').value=='') {
+		alert('Debe seleccionar el cliente');
+		document.getElementById('idCliente').focus;
+	}
+	else document.location.href="listCertificados.htm?idCliente=" + document.getElementById('idCliente').value;
 }
 </script>
 
@@ -69,11 +83,12 @@ function solicitarCertificado() {
         <ul style = "text-indent: 120px">
           <li><A href="#" onClick="solicitarCertificado()">Solicitar un certificado</A></li>
         </ul>
-        <ul style = "text-indent: 120px">
-          <li><a href="http://www.twitter.com/" target="_blank">Descargar documentos de sus proyectos</a></li>
+         <ul style = "text-indent: 120px">
+          <li><A href="#" onClick="verProyectos()">Ver proyectos solicitados</A></li>
         </ul>
-      
-
+        <ul style = "text-indent: 120px">
+          <li><A href="#" onClick="verCertificados()">Ver certificados solicitados</A></li>
+        </ul>
 
 </DIV>
 

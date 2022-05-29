@@ -22,4 +22,6 @@ public interface ProyectoService {
 	Arquitecto obtenerArquitecto(long idArquitecto);
 
 	TipoProyecto obtenerTipoProyecto(long parseLong);
+
+	List<Proyecto> listarTodos();
 }

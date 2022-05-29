@@ -35,4 +35,14 @@ public class ProyectoDAOImpl implements ProyectoDAO {
 				.createQuery("from Proyecto where idProyecto = :tid").setParameter("tid", id).list().get(0);
 		return proyecto;
 	}
+
+	public List<Proyecto> listarTodosArquitecto(Long id) {
+		List<Proyecto> proyectos = sessionFactory.getCurrentSession().createQuery("from Proyecto where idArquitecto = :tid").setParameter("tid", id).list();
+		return proyectos;
+	}
+
+	public List<Proyecto> listarTodosCliente(Long id) {
+		List<Proyecto> proyectos = sessionFactory.getCurrentSession().createQuery("from Proyecto where idCliente = :tid").setParameter("tid", id).list();
+		return proyectos;
+	}
 }

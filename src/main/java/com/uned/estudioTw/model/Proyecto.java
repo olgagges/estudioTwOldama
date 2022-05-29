@@ -30,6 +30,9 @@ public class Proyecto {
 	private Arquitecto arquitecto;
 
 
+	public Proyecto() {
+	}
+
 	public Proyecto(String ref, Date fechaInicio,
 			Date fechaSolicitud, Date fechaEntrega, Date fechaFin, long duracionObra, float presupuestoTotal,
 			long duracionPresupuesto, String direccion, long superficeTerreno, long superficeEdificio,

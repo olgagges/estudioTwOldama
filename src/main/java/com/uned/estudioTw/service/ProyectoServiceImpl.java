@@ -11,6 +11,7 @@ import com.uned.estudioTw.dao.EstructuraDAOImpl;
 import com.uned.estudioTw.dao.ProyectoDAOImpl;
 import com.uned.estudioTw.dao.TipoProyectoDAOImpl;
 import com.uned.estudioTw.model.Arquitecto;
+import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
@@ -56,5 +57,18 @@ public class ProyectoServiceImpl implements ProyectoService {
 	public TipoProyecto obtenerTipoProyecto(long idTipoProyecto) {
 		return tipoProyectoDAO.obtener(idTipoProyecto);
 	}
-
+	
+	public List<Proyecto> listarTodos() {
+		List<Proyecto> proyectos = proyectoDAO.listarTodos();
+		return proyectos;
+	}
+	
+	public List<Proyecto> listarTodosPorCliente(long idCliente) {
+		List<Proyecto> proyectos = proyectoDAO.listarTodosCliente(idCliente);
+		return proyectos;
+	}
+	public List<Proyecto> listarTodosPorArquitecto(long idArquitecto) {
+		List<Proyecto> proyectos = proyectoDAO.listarTodosArquitecto(idArquitecto);
+		return proyectos;
+	}
 }
