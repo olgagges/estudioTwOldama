@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Certificado {
@@ -45,13 +44,13 @@ public class Certificado {
 	private Date fechaEmision;
 
 
-	private char eficiencia; // A o G
+	private String eficiencia; // A o G
 	private float coste;
 	
 	public Certificado() {}
 	
 	public Certificado(String tipo,  Date fechaSolicitud, Date fechaEntrega, Date fechaVisita,
-			Date fechaEmision, char eficiencia, float coste) {
+			Date fechaEmision, String eficiencia, float coste) {
 		super();
 		this.tipo=tipo;
 		this.fechaSolicitud=fechaSolicitud;
@@ -61,8 +60,7 @@ public class Certificado {
 		this.coste=coste;
 		this.eficiencia=eficiencia;	
 	}
-	
-	
+
 	public long getIdCertificado() {
 		return idCertificado;
 	}
@@ -78,14 +76,6 @@ public class Certificado {
 	public void setArquitecto(Arquitecto arquitecto) {
 		this.arquitecto = arquitecto;
 	}
-	
-	public Estructura getEstructura() {
-		return estructura;
-	}
-
-	public void setEstructura(Estructura estructura) {
-		this.estructura = estructura;
-	}
 
 	public Cliente getCliente() {
 		return cliente;
@@ -95,6 +85,21 @@ public class Certificado {
 		this.cliente = cliente;
 	}
 
+	public Estructura getEstructura() {
+		return estructura;
+	}
+
+	public void setEstructura(Estructura estructura) {
+		this.estructura = estructura;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;
@@ -128,11 +133,12 @@ public class Certificado {
 		this.fechaEmision = fechaEmision;
 	}
 
-	public char getEficiencia() {
+
+	public String getEficiencia() {
 		return eficiencia;
 	}
 
-	public void setEficiencia(char eficiencia) {
+	public void setEficiencia(String eficiencia) {
 		this.eficiencia = eficiencia;
 	}
 
@@ -143,16 +149,8 @@ public class Certificado {
 	public void setCoste(float coste) {
 		this.coste = coste;
 	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-
+	
+	
 	
 	/*public TipoCertificado getTipoCertificado() {
 	return tipoCertificado;

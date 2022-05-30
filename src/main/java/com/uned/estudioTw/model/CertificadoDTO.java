@@ -14,7 +14,7 @@ public class CertificadoDTO {
 	private String fechaVisita;
 	private String fechaEmision;
 
-	private char eficiencia; // A o G
+	private String eficiencia; // A o G
 	private float coste;
 	
 	
@@ -64,10 +64,10 @@ public class CertificadoDTO {
 		this.fechaEmision = fechaEmision;
 	}
 	
-	public char getEficiencia() {
+	public String getEficiencia() {
 		return eficiencia;
 	}
-	public void setEficiencia(char eficiencia) {
+	public void setEficiencia(String eficiencia) {
 		this.eficiencia = eficiencia;
 	}
 	public float getCoste() {

@@ -39,7 +39,7 @@
 	</tr>
 </table><br/><br/>
 
-<form class=r method="post" action="editCertificado.htm">
+<form class=r method="post" action="editCertificado.htm" >
 
 			<input type=hidden name="tipo" value="${tipo}" />
 			<input type=hidden name="idEstructura" value="${estructura.idEstructura}" />

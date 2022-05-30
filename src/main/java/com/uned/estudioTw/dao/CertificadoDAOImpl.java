@@ -21,9 +21,9 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 		sessionFactory.getCurrentSession().delete(certificado);
 	}
 
-		public void editar(Certificado certificado) {
-			sessionFactory.getCurrentSession().update(certificado);
-		}
+	public void editar(Certificado certificado) {
+		sessionFactory.getCurrentSession().update(certificado);
+	}
 
 	public List<Certificado> listarTodos() {
 		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado").list();
@@ -37,19 +37,21 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 	}
 
 	public List<Certificado> listarTodosRenovacion() {
-		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where year(fechaemision)+15<= year(current_date)").list();
+		List<Certificado> certificados = sessionFactory.getCurrentSession()
+				.createQuery("FROM Certificado where year(fechaemision)+15<= year(current_date)").list();
 		return certificados;
 	}
-	
+
 	public List<Certificado> listarInspeccionTecnica() {
-		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where fechaemision>=current_date").list();
+		List<Certificado> certificados = sessionFactory.getCurrentSession()
+				.createQuery("FROM Certificado where fechaemision>=current_date").list();
 		return certificados;
 	}
 
 	public List<Certificado> listarCertificadosPorTipo(String tipo) {
-		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where tipo = :tid").setParameter("tid", tipo).list();
+		List<Certificado> certificados = sessionFactory.getCurrentSession()
+				.createQuery("FROM Certificado where tipo = :tid").setParameter("tid", tipo).list();
 		return certificados;
 	}
-	
-	
+
 }
