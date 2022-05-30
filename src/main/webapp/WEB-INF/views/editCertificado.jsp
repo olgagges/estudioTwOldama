@@ -40,11 +40,12 @@
 </table><br/><br/>
 
 <form class=r method="post" action="editCertificado.htm">
-			
-			<input type=hidden name="idEstructura" value="${idEstructura}" />
-			<input type=hidden name="idCliente" value="${idCliente}" /> 
+
+			<input type=hidden name="tipo" value="${tipo}" />
+			<input type=hidden name="idEstructura" value="${estructura.idEstructura}" />
+			<input type=hidden name="idCliente" value="${cliente.idCliente}" /> 
 			<input type=hidden name="idCertificado" value="${idCertificado}" />
-			<input type=hidden name="fechaSolicitud" value="${fechaSolicitud}" />
+			<input type=hidden name="fechaSolicitud" value="${certificado.fechaSolicitud}" />
 			
 
 			<label for="arquitecto">Arquitecto</label> 

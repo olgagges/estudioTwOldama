@@ -21,9 +21,9 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 		sessionFactory.getCurrentSession().delete(certificado);
 	}
 
-	public void editar(Certificado certificado) {
-		sessionFactory.getCurrentSession().update(certificado);
-	}
+		public void editar(Certificado certificado) {
+			sessionFactory.getCurrentSession().update(certificado);
+		}
 
 	public List<Certificado> listarTodos() {
 		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado").list();
