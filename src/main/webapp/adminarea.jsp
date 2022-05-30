@@ -14,7 +14,7 @@
 <DIV id=content>
 <br>
 
-<h1 class=r>Bienvenid@ al Área de Administrador de OLDAMA Architecture</h1>
+<h1 class=r>Bienvenid@ al &Aacute;rea de Administrador de OLDAMA Architecture</h1>
 
 <br>
 

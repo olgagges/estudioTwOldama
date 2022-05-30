@@ -35,7 +35,7 @@ function listarProyecto() {
 <DIV id=content>
 <br>
 
-<h1 class=r>Bienvenid@ al Área de Arquitectos de OLDAMA Architecture</h1>
+<h1 class=r>Bienvenid@ al &Aacute;rea de Arquitectos de OLDAMA Architecture</h1>
 
 <br>
 
