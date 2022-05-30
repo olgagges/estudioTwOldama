@@ -171,11 +171,11 @@ public class CertificadoController {
 			certificadoDTO
 					.setIdArquitecto(String.valueOf(certificado.getArquitecto().getIdArquitecto()));
 		}
-		if (certificadoDTO.getIdEstructura() != null) {
+		if (certificadoDTO.getIdEstructura() == null) {
 			certificadoDTO
 					.setIdEstructura(String.valueOf(certificado.getEstructura().getIdEstructura()));
 		}
-		if (certificadoDTO.getIdCliente() != null) {
+		if (certificadoDTO.getIdCliente() == null) {
 			certificadoDTO
 					.setIdCliente(String.valueOf(certificado.getCliente().getIdCliente()));
 		}
