@@ -32,8 +32,8 @@
 					<td align="center"><c:out value="${admin.persona.nombre}"/></td>
 					<td align="center"><c:out value="${admin.persona.email}"/></td>
 					<td align="center"><c:out value="${admin.persona.dni}"/></td>
-					<td align="center"><A href="editAdmin.htm?id=${admin.persona.idPersona}">Editar</A></td>
-					<td align="center"><A href="delAdmin.htm?id=${admin.persona.idPersona}">Borrar</A></td>
+					<td align="center"><A href="editAdmin.htm?id=${admin.idAdmin}">Editar</A></td>
+					<td align="center"><A href="delAdmin.htm?id=${admin.idAdmin}">Borrar</A></td>
 				</tr>
 			</c:forEach>
 		</table>

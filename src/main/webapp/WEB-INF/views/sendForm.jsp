@@ -16,7 +16,7 @@
 <br>
 <h3 class=r>El formulario ha sido enviado con éxito</h3><br/>
 <h3 class=r>Los datos ya están en nuestro sistema</h3><br/>
-<h3 class=r>Si es un nuevo cliente, en breve su cuenta será validada por el Administrador</h3><br/>
+
 <h3 class=r>Muchas gracias por confiar en OLDAMA Architecture</h3><br/>
 
 

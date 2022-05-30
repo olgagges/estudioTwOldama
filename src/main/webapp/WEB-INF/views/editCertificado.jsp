@@ -47,8 +47,8 @@
 			<input type=hidden name="fechaSolicitud" value="${fechaSolicitud}" />
 			
 
-			<label for="idArquitecto">Arquitecto</label> 
-			<select id="idArquitecto"  name="idArquitecto">
+			<label for="arquitecto">Arquitecto</label> 
+			<select id="arquitecto"  name="idArquitecto">
 				<option value=0>${arquitecto  eq null ? 'Seleccione Arquitecto': certificado.arquitecto.persona.nombre}</option>
 				<c:forEach items="${arquitectos}" var="arquitectos">
 					<option value="${arquitectos.getIdArquitecto()}">${arquitectos.getPersona().getNombre()}

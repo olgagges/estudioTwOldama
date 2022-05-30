@@ -25,11 +25,11 @@ public class Admin {
 		this.persona = persona;
 	}
 
-	public long getIdAmin() {
+	public long getIdAdmin() {
 		return idAdmin;
 	}
 
-	public void setIdAmin(long idAdmin) {
+	public void setIdAdmin(long idAdmin) {
 		this.idAdmin = idAdmin;
 	}
 

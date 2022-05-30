@@ -90,10 +90,26 @@ public class CertificadoController {
 
 	@RequestMapping(value = "/listCertificados.htm")
 	public ModelAndView allCertificados(@RequestParam("tipo") String tipoCertificado) {
+		
+		
 		List<Cliente> clientes = clienteService.listarTodos();
 		List<Arquitecto> arquitectos = arquitectoService.listarTodos();
 		List<Estructura> estructuras = estructuraService.listarTodos();
-		List<Certificado> certificados = certificadoService.listarTodos();
+		List<Certificado> certificados = null;
+		if (tipoCertificado.equals("HABITABILIDAD")) {
+			certificados = certificadoService.listarCertificadosPorTipo("HABITABILIDAD");
+		}
+		else if (tipoCertificado.equals("ITE")) {
+			certificados = certificadoService.listarCertificadosPorTipo("ITE");
+		}
+		else if (tipoCertificado.equals("EFICIENCIAENERGETICA")) {
+			certificados = certificadoService.listarCertificadosPorTipo("EFICIENCIAENERGETICA");
+		}
+		else if (tipoCertificado.equals("INFORMESPERICIALES")) {
+			certificados = certificadoService.listarCertificadosPorTipo("INFORMESPERICIALES");
+		}
+		else certificados = certificadoService.listarTodos();
+		
 
 		ModelAndView mav = new ModelAndView("listCertificados");
 		mav.addObject("tipo", tipoCertificado);

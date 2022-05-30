@@ -27,5 +27,7 @@ public interface CertificadoService {
 	List<Certificado> listarCertificadosRenovacion();
 
 	List<Certificado> listarInspeccionTecnica();
+
+	public List<Certificado> listarCertificadosPorTipo(String tipo);
 }
 

@@ -45,6 +45,11 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where fechaemision>=current_date").list();
 		return certificados;
 	}
+
+	public List<Certificado> listarCertificadosPorTipo(String tipo) {
+		List<Certificado> certificados = sessionFactory.getCurrentSession().createQuery("FROM Certificado where tipo = :tid").setParameter("tid", tipo).list();
+		return certificados;
+	}
 	
 	
 }

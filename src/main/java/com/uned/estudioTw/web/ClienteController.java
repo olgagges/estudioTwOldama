@@ -95,7 +95,7 @@ public class ClienteController {
 	
 	@RequestMapping(value = "/personadd.htm")
 	public String personadd() {
-		return "personaadd";
+		return "personadd";
 	}
 
 }

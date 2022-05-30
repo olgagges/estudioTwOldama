@@ -45,7 +45,7 @@ function listarProyecto() {
    <h3 style = "text-indent: 100px">Seleccione perfil</h3>
    <ul style = "text-indent: 120px">
        	<label for="arquitecto">Seleccionar arquitecto</label> 
-       		<select id="idArquitecto">
+       		<select id="arquitecto">
 				<option value="">Seleccione Arquitecto</option>
 				<c:forEach items="${arquitectos}" var="lista">
 					<option value="${lista.getIdArquitecto()}">${lista.getPersona().getNombre()}
@@ -69,6 +69,7 @@ function listarProyecto() {
           <li><a href="listCertificados.htm?tipo=ITE">Certificados de Inspección Técnica</a></li>
           <li><a href="listCertificados.htm?tipo=EFICIENCIAENERGETICA">Certificados de Eficiencia Energética</a></li>
           <li><a href="listCertificados.htm?tipo=INFORMESPERICIALES">Informes Periciales</a></li>
+           <li><a href="listCertificados.htm?tipo=todos">Listar Todos</a></li>
 
         </ul>
       </li>

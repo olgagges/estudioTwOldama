@@ -14,6 +14,13 @@
 <mytags:barrasuperior />
 <mytags:barralateral />
 
+<script type="text/javascript">
+Function cortarFecha(fecha){
+	var fechacortada;
+	fechacortada = fecha.substring(0,9);
+	return fechacortada;
+}
+</script>
 
 
 <DIV id=content>
@@ -45,7 +52,7 @@
 					<td align="center"><c:out value="${certificado.estructura.direccion}"/></td>
 					<td align="center"><c:out value="${certificado.cliente.persona.nombre}"/></td>
 					<td align="center"><c:out value="${certificado.tipo}"/></td>
-					<td align="center"><c:out value="${certificado.fechaSolicitud}" /></td>
+					<td align="center"><c:out value= "${certificado.fechaSolicitud}" /></td>
 					<td align="center"><c:out value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}"/></td>
 					<td align="center"><c:out value="${certificado.fechaVisita  eq null ? '---': certificado.fechaVisita}"/></td>
 					<td align="center"><c:out value="${certificado.fechaEmision  eq null ? '---': certificado.fechaEmision}"/></td>

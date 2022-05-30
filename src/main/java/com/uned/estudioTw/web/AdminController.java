@@ -43,7 +43,7 @@ public class AdminController {
 	public ModelAndView editAdmin(@RequestParam("id") long idAdmin) {
 		Admin admin = adminService.obtener(idAdmin);
 		ModelAndView mav = new ModelAndView("editAdmin");
-		mav.addObject("admins", admin);
+		mav.addObject("admin", admin);
 		return mav;
 	}
 

@@ -48,8 +48,7 @@ public class CertificadoServiceImpl implements CertificadoService {
 	}
 
 	public void editar(Certificado certificado) {
-		// TODO Auto-generated method stub
-
+		certificadoDAO.editar(certificado);
 	}
 
 	public Certificado obtener(long id) {
@@ -75,6 +74,11 @@ public class CertificadoServiceImpl implements CertificadoService {
 
 	public List<Certificado> listarInspeccionTecnica() {
 		List<Certificado> certificados = certificadoDAO.listarInspeccionTecnica();
+		return certificados;
+	}
+
+	public List<Certificado> listarCertificadosPorTipo(String tipo) {
+		List<Certificado> certificados = certificadoDAO.listarCertificadosPorTipo(tipo);
 		return certificados;
 	}
 
