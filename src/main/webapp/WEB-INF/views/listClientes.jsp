@@ -23,15 +23,17 @@
 		<table align ="center" border=1 width="60%" >
 			<tr bgcolor="grey">
 				<th align="center">Nombre</th>
-				<th>Email</th>
 				<th>DNI</th>
+				<th>TELEFONO</th>
+				<th>EMAIL</th>
 				<th colspan="2">Acciones</th>
 			</tr>
 			<c:forEach var="client" items="${clients}">
 				<tr>
 					<td align="center"><c:out value="${client.persona.nombre}"/></td>
-					<td align="center"><c:out value="${client.persona.email}"/></td>
 					<td align="center"><c:out value="${client.persona.dni}"/></td>
+					<td align="center"><c:out value="${client.persona.telefono}"/></td>
+					<td align="center"><c:out value="${client.persona.email}"/></td>
 					<td align="center"><A href="editCliente.htm?id=${client.idCliente}">Editar</A></td>
 					<td align="center"><A href="delCliente.htm?id=${client.idCliente}">Borrar</A></td>
 				</tr>

@@ -33,7 +33,7 @@ function verCertificados() {
 		alert('Debe seleccionar el cliente');
 		document.getElementById('idCliente').focus;
 	}
-	else document.location.href="listCertificados.htm?idCliente=" + document.getElementById('idCliente').value;
+	else document.location.href="listCertificadosPedidos.htm?id=" + document.getElementById('idCliente').value;
 }
 </script>
 

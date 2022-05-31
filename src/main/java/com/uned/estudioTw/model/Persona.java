@@ -13,6 +13,7 @@ public class Persona {
 	private String nombre;
 	private String email;
 	private String dni;
+	private String telefono;
 
 	public long getIdPersona() {
 		return idPersona;
@@ -44,6 +45,14 @@ public class Persona {
 
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 }

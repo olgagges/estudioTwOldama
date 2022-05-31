@@ -21,15 +21,18 @@
 		<table align ="center" border=1 width="50%" >
 			<tr bgcolor="grey">
 				<th>Nombre</th>
-				<th>Email</th>
 				<th>DNI</th>
+				<th>Teléfono</th>
+				<th>Email</th>
 				<th colspan="2">Acciones</th>
 			</tr>
 			<c:forEach var="arquitecto" items="${arquitectos}">
 				<tr>
 					<td align="center"><c:out value="${arquitecto.persona.nombre}"/></td>
-					<td align="center">${arquitecto.persona.email}</td>
 					<td align="center">${arquitecto.persona.dni}</td>
+					<td align="center">${arquitecto.persona.telefono}</td>
+					<td align="center">${arquitecto.persona.email}</td>
+					
 					<td align="center"><A href="editArquitecto.htm?id=${arquitecto.idArquitecto}">Editar</A></td>
 					<td align="center"><A href="delArquitecto.htm?id=${arquitecto.idArquitecto}">Borrar</A></td>
 				</tr>

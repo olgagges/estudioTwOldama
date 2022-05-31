@@ -9,7 +9,6 @@ import com.uned.estudioTw.dao.ArquitectoDAOImpl;
 import com.uned.estudioTw.dao.CertificadoDAOImpl;
 import com.uned.estudioTw.dao.ClienteDAOImpl;
 import com.uned.estudioTw.dao.EstructuraDAOImpl;
-import com.uned.estudioTw.dao.TipoCertificadoDAOImpl;
 import com.uned.estudioTw.model.Arquitecto;
 import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
@@ -20,8 +19,7 @@ import com.uned.estudioTw.model.TipoCertificado;
 public class CertificadoServiceImpl implements CertificadoService {
 	@Autowired
 	CertificadoDAOImpl certificadoDAO;
-	@Autowired
-	TipoCertificadoDAOImpl tipoCertificadoDAO;
+
 	@Autowired
 	ClienteDAOImpl clienteDAO;
 	@Autowired
@@ -33,9 +31,6 @@ public class CertificadoServiceImpl implements CertificadoService {
 		certificadoDAO.crear(certificado);
 	}
 
-	public List<TipoCertificado> obtenerTiposCertificado() {
-		return tipoCertificadoDAO.listarTodos();
-	}
 
 	public List<Certificado> listarTodos() {
 		List<Certificado> certificados = certificadoDAO.listarTodos();
@@ -82,4 +77,9 @@ public class CertificadoServiceImpl implements CertificadoService {
 		return certificados;
 	}
 
+
+	public List<Certificado> listarPedidos(long id) {
+		List<Certificado> certificados = certificadoDAO.listarPedidos(id);
+		return certificados;
+	}
 }

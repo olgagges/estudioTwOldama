@@ -96,6 +96,7 @@ public class CertificadoController {
 		List<Arquitecto> arquitectos = arquitectoService.listarTodos();
 		List<Estructura> estructuras = estructuraService.listarTodos();
 		List<Certificado> certificados = null;
+		
 		if (tipoCertificado.equals("HABITABILIDAD")) {
 			certificados = certificadoService.listarCertificadosPorTipo("HABITABILIDAD");
 		}
@@ -134,6 +135,17 @@ public class CertificadoController {
 		mav.addObject("certificados", certificados);
 		return mav;
 	}
+	
+	@RequestMapping(value = "/listCertificadosPedidos.htm")
+	public ModelAndView certificadosPedidoss(@RequestParam("id") long idCliente) {
+		List<Certificado> certificados = null;
+		Cliente cliente = clienteService.obtener(idCliente);
+		certificados = certificadoService.listarPedidos(idCliente);
+		ModelAndView mav = new ModelAndView("listCertificadosPedidos");
+		mav.addObject("certificados", certificados);
+		mav.addObject("cliente", cliente);
+		return mav;
+	}
 
 	@RequestMapping(value = "/editCertificado.htm")
 	public ModelAndView editCertificado(@RequestParam("id") long idCertificado) {
@@ -152,17 +164,17 @@ public class CertificadoController {
 		certificadoDTO.setEficiencia(certificado.getEficiencia());
 		certificadoDTO.setFechaSolicitud(Utils.convertirFechaVista(certificado.getFechaSolicitud()));
 		
-		if (certificadoDTO.getFechaEntrega() != null) {
+		if (certificado.getFechaEntrega() != null) {
 			certificadoDTO
 					.setFechaEntrega(Utils.convertirFechaVista(certificado.getFechaEntrega()));
 		}
 		
-		if (certificadoDTO.getFechaVisita() != null) {
+		if (certificado.getFechaVisita() != null) {
 			certificadoDTO
 					.setFechaVisita(Utils.convertirFechaVista(certificado.getFechaVisita()));
 		}
 		
-		if (certificadoDTO.getFechaEmision() != null) {
+		if (certificado.getFechaEmision() != null) {
 			certificadoDTO
 					.setFechaEmision(Utils.convertirFechaVista(certificado.getFechaEmision()));
 		}
@@ -180,7 +192,6 @@ public class CertificadoController {
 					.setIdCliente(String.valueOf(certificado.getCliente().getIdCliente()));
 		}
 		
-		
 		ModelAndView mav = new ModelAndView("editCertificado");
 		mav.addObject("certificado", certificadoDTO);
 		mav.addObject("arquitectos", arquitectos);
@@ -193,9 +204,36 @@ public class CertificadoController {
 	public ModelAndView editCertificado(CertificadoDTO certificado, Errors errors) {
 		Certificado certificadoDAO = new Certificado(certificado.getTipo(),
 				Utils.convetirFecha(certificado.getFechaSolicitud()),
-				Utils.convetirFecha(certificado.getFechaEntrega()), Utils.convetirFecha(certificado.getFechaVisita()),
-				Utils.convetirFecha(certificado.getFechaEmision()), certificado.getEficiencia(), certificado.getCoste());
+				 certificado.getEficiencia(), certificado.getCoste());
 
+		if (certificado.getFechaEntrega().equals("dd/mm/aaaa")) {
+			certificadoDAO
+					.setFechaEntrega(null);
+		}
+		else {
+			certificadoDAO
+			.setFechaEntrega(Utils.convetirFecha(certificado.getFechaEntrega()));
+		}
+		
+		if (certificado.getFechaVisita().equals("dd/mm/aaaa")) {
+			certificadoDAO
+					.setFechaVisita(null);
+		}
+		else {
+			certificadoDAO
+			.setFechaVisita(Utils.convetirFecha(certificado.getFechaVisita()));
+		}
+		
+		if (certificado.getFechaEmision().equals("dd/mm/aaaa")) {
+			certificadoDAO
+					.setFechaEmision(null);
+		}
+		else {
+			certificadoDAO
+			.setFechaEmision(Utils.convetirFecha(certificado.getFechaEmision()));
+		}
+		
+		
 		if (certificado.getIdCliente() != null) {
 			certificadoDAO.setCliente(certificadoService.obtenerCliente(Long.parseLong(certificado.getIdCliente())));
 		}

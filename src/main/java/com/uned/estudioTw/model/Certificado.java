@@ -49,9 +49,17 @@ public class Certificado {
 	
 	public Certificado() {}
 	
+	public Certificado(String tipo,  Date fechaSolicitud, 
+			String eficiencia, float coste) {
+		this.tipo=tipo;
+		this.fechaSolicitud=fechaSolicitud;
+		this.coste=coste;
+		this.eficiencia=eficiencia;	
+		}
+	
 	public Certificado(String tipo,  Date fechaSolicitud, Date fechaEntrega, Date fechaVisita,
 			Date fechaEmision, String eficiencia, float coste) {
-		super();
+	
 		this.tipo=tipo;
 		this.fechaSolicitud=fechaSolicitud;
 		this.fechaEntrega=fechaEntrega;

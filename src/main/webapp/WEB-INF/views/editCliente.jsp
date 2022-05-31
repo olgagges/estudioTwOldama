@@ -37,6 +37,10 @@
 			<td><form:input path="persona.dni" /></td>
 		</tr>
 		<tr>
+			<td>Teléfono :</td>
+			<td><form:input path="persona.telefono" /></td>
+		</tr>
+		<tr>
 			<td>Email :</td>
 			<td><form:input path="persona.email" /></td>
 		</tr>

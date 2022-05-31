@@ -58,7 +58,6 @@ function listarProyecto() {
       <h3 class=r; style = "text-indent: 100px">Proyectos</h3>
         <ul style = "text-indent: 120px">
           <li><A href="#" onClick="listarProyecto()">Listado Proyectos</A></li>
-          <li><A href="#" onClick="registrarProyecto()">Registrar Proyectos</A></li>
         </ul>
         
         <br>

@@ -31,6 +31,8 @@
 	<input type="text" name="nombre" /><br/><br/>
 <label for="dni">DNI:</label>
 	<input type="text" name="dni" /><br/><br/>
+	<label for="telefono">Teléfono</label>
+	<input type="text" name="Telefono" /><br/><br/>
 <label for="email">Email:</label>
 	<input type="text" name="email" />
 <br/><br/>

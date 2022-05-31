@@ -23,15 +23,17 @@
 		<table align ="center" border=1 width="60%" >
 			<tr bgcolor="grey">
 				<th align="center">Nombre</th>
-				<th>Email</th>
 				<th>DNI</th>
+				<th>Teléfono</th>
+				<th>Email</th>
 				<th colspan="2">Acciones</th>
 			</tr>
 			<c:forEach var="admin" items="${admins}">
 				<tr>
 					<td align="center"><c:out value="${admin.persona.nombre}"/></td>
-					<td align="center"><c:out value="${admin.persona.email}"/></td>
 					<td align="center"><c:out value="${admin.persona.dni}"/></td>
+					<td align="center"><c:out value="${admin.persona.telefono}"/></td>
+					<td align="center"><c:out value="${admin.persona.email}"/></td>
 					<td align="center"><A href="editAdmin.htm?id=${admin.idAdmin}">Editar</A></td>
 					<td align="center"><A href="delAdmin.htm?id=${admin.idAdmin}">Borrar</A></td>
 				</tr>

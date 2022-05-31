@@ -25,6 +25,7 @@
 				<th align="center">Proyecto</th>
 				<th>Referencia</th>
 				<th>Fecha Inicio</th>
+				<th>Acciones</th>
 				<th>&nbsp;</th>
 			</tr>
 			<c:forEach var="proyecto" items="${proyectos}">

@@ -29,5 +29,7 @@ public interface CertificadoService {
 	List<Certificado> listarInspeccionTecnica();
 
 	public List<Certificado> listarCertificadosPorTipo(String tipo);
+
+	public List<Certificado> listarPedidos(long id);
 }
 

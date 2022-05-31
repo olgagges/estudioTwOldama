@@ -40,8 +40,8 @@
 </table><br/><br/>
 
 <form class=r method="post" action="editCertificado.htm" >
-
-			<input type=hidden name="tipo" value="${tipo}" />
+			<input type=hidden name="idCertificado" value="${certificado.idCertificado}" />
+			<input type=hidden name="tipo" value="${certificado.tipo}" />
 			<input type=hidden name="idEstructura" value="${estructura.idEstructura}" />
 			<input type=hidden name="idCliente" value="${cliente.idCliente}" /> 
 			<input type=hidden name="idCertificado" value="${idCertificado}" />
@@ -62,7 +62,7 @@
 			<input type="text" name="fechaEmision" value="${certificado.fechaEmision  eq null ? 'dd/mm/aaaa': certificado.fechaEmision}"/><br/><br/>
 			<label for="fechaVisita">Fecha de Entrega</label>
 			<input type="text" name="fechaEntrega" value="${certificado.fechaEntrega  eq null ? 'dd/mm/aaaa': certificado.fechaEntrega}"/><br/><br/>
-			<label for="eficiencia">Categoría Eficiencia </label>
+			<label for="eficiencia">Categoría Eficiencia (A-G) </label>
 			<input type="text" name="eficiencia" value="${certificado.eficiencia  eq null ? 'X': certificado.eficiencia}" /><br/><br/>
 			<label for="coste">Coste (EU)</label>
 			<input type="text" name="coste" value="${certificado.coste  eq 0 ? '0': certificado.coste}" />
