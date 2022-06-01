@@ -27,13 +27,13 @@ public class ProyectoController {
 
 	@RequestMapping(value = "/addProyecto.htm")
 	public ModelAndView addClientProject(@RequestParam("id") long idCliente) {
-		List<TipoProyecto> tiposProyecto = proyectoService.obtenerTiposProyecto();
+		//List<TipoProyecto> tiposProyecto = proyectoService.obtenerTiposProyecto();
 		List<Arquitecto> arquitectos = proyectoService.obtenerArquitectos();
 		List<Estructura> estructuras = null;
 		// proyectoService.obtenerEstructuras();
 		ModelAndView mav = new ModelAndView("addProyecto");
 		mav.addObject("idCliente", idCliente);
-		mav.addObject("tiposProyecto", tiposProyecto);
+		//mav.addObject("tiposProyecto", tiposProyecto);
 		mav.addObject("arquitectos", arquitectos);
 		mav.addObject("estructuras", estructuras);
 		return mav;
@@ -43,7 +43,8 @@ public class ProyectoController {
 	public ModelAndView editProyecto(@RequestParam("id") long idProyecto) {
 		Proyecto proyecto = proyectoService.obtener(idProyecto);
 		ProyectoDTO proyectoDTO = new ProyectoDTO();
-
+		
+		proyectoDTO.setTipo(proyecto.getTipo());
 		proyectoDTO.setBanyos(proyecto.getBanyos());
 		proyectoDTO.setCoste(proyecto.getCoste());
 		proyectoDTO.setDireccion(proyecto.getDireccion());
@@ -68,9 +69,9 @@ public class ProyectoController {
 		if (proyecto.getCliente()!=null) {
 			proyectoDTO.setIdCliente(String.valueOf(proyecto.getCliente().getIdCliente()));
 		}
-		if (proyecto.getTipoProyecto()!=null) {
+		/*if (proyecto.getTipoProyecto()!=null) {
 			proyectoDTO.setIdTipoProyecto(String.valueOf(proyecto.getTipoProyecto().getIdTipoProyecto()));
-		}
+		}*/
 
 		ModelAndView mav = new ModelAndView("editProyecto");
 		mav.addObject("proyecto", proyectoDTO);
@@ -80,7 +81,7 @@ public class ProyectoController {
 
 	@RequestMapping(value = "/editProyecto.htm", method = RequestMethod.POST)
 	public ModelAndView editProyecto(ProyectoDTO proyecto, Errors errors) {
-		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), Utils.convetirFecha(proyecto.getFechaInicio()),
+		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), proyecto.getTipo(), Utils.convetirFecha(proyecto.getFechaInicio()),
 				Utils.convetirFecha(proyecto.getFechaSolicitud()), Utils.convetirFecha(proyecto.getFechaEntrega()),
 				Utils.convetirFecha(proyecto.getFechaFin()), proyecto.getDuracionObra(), proyecto.getPresupuestoTotal(),
 				proyecto.getDuracionPresupuesto(), proyecto.getDireccion(), proyecto.getSuperficeTerreno(),
@@ -93,10 +94,10 @@ public class ProyectoController {
 		if (proyecto.getIdArquitecto() != null) {
 			proyectoDAO.setArquitecto(proyectoService.obtenerArquitecto(Long.parseLong(proyecto.getIdArquitecto())));
 		}
-		if (proyecto.getIdTipoProyecto() != null) {
+		/*if (proyecto.getIdTipoProyecto() != null) {
 			proyectoDAO
 					.setTipoProyecto(proyectoService.obtenerTipoProyecto(Long.parseLong(proyecto.getIdTipoProyecto())));
-		}
+		}*/
 		proyectoService.crear(proyectoDAO);
 		return new ModelAndView("redirect:/clientsArea.htm");
 	}
@@ -109,7 +110,7 @@ public class ProyectoController {
 			return mav;
 		}
 
-		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), Utils.convetirFecha(proyecto.getFechaInicio()),
+		Proyecto proyectoDAO = new Proyecto(proyecto.getRef(), proyecto.getTipo(), Utils.convetirFecha(proyecto.getFechaInicio()),
 				Utils.convetirFecha(proyecto.getFechaSolicitud()), Utils.convetirFecha(proyecto.getFechaEntrega()),
 				Utils.convetirFecha(proyecto.getFechaFin()), proyecto.getDuracionObra(), proyecto.getPresupuestoTotal(),
 				proyecto.getDuracionPresupuesto(), proyecto.getDireccion(), proyecto.getSuperficeTerreno(),
@@ -122,16 +123,16 @@ public class ProyectoController {
 		if (proyecto.getIdArquitecto() != null) {
 			proyectoDAO.setArquitecto(proyectoService.obtenerArquitecto(Long.parseLong(proyecto.getIdArquitecto())));
 		}
-		if (proyecto.getIdTipoProyecto() != null) {
+		/*if (proyecto.getIdTipoProyecto() != null) {
 			proyectoDAO
 					.setTipoProyecto(proyectoService.obtenerTipoProyecto(Long.parseLong(proyecto.getIdTipoProyecto())));
-		}
+		}*/
 		proyectoService.crear(proyectoDAO);
 		return new ModelAndView("redirect:/clientsArea.htm");
 	}
 
 	@RequestMapping(value = "/listProyectos.htm")
-	public ModelAndView allProyectos(@RequestParam("idCliente") String idCliente) {
+	public ModelAndView allProyectos(){//@RequestParam("idCliente") String idCliente) {
 		List<Proyecto> proyectos = proyectoService.listarTodos();
 
 		ModelAndView mav = new ModelAndView("listProyectos");

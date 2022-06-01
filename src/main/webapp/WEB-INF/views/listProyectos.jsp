@@ -24,15 +24,18 @@
 			<tr bgcolor="grey">
 				<th align="center">Proyecto</th>
 				<th>Referencia</th>
+				<th>Tipo</th>
 				<th>Fecha Inicio</th>
 				<th>Acciones</th>
-				<th>&nbsp;</th>
+				
 			</tr>
 			<c:forEach var="proyecto" items="${proyectos}">
 				
 				<tr>
 					<td align="center"><c:out value="${proyecto.idProyecto}"/></td>
+					
 					<td align="center"><c:out value="${proyecto.ref}"/></td>
+					<td align="center"><c:out value="${proyecto.tipo}"/></td>
 					<td align="center"><c:out value="${proyecto.fechaInicio}"/></td>
 					<td align="center"><A href="editProyecto.htm?id=${proyecto.idProyecto}">Editar</A></td>
 				</tr>

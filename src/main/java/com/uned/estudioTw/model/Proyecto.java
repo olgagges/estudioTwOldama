@@ -17,9 +17,9 @@ public class Proyecto {
 	@GeneratedValue
 	private long idProyecto;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	/*@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idTipoProyecto", referencedColumnName = "idTipoProyecto")
-	private TipoProyecto tipoProyecto;
+	private TipoProyecto tipoProyecto;*/
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idCliente", referencedColumnName = "idCliente")
@@ -33,12 +33,13 @@ public class Proyecto {
 	public Proyecto() {
 	}
 
-	public Proyecto(String ref, Date fechaInicio,
+	public Proyecto(String ref, String tipo, Date fechaInicio,
 			Date fechaSolicitud, Date fechaEntrega, Date fechaFin, long duracionObra, float presupuestoTotal,
 			long duracionPresupuesto, String direccion, long superficeTerreno, long superficeEdificio,
 			long superficeReforma, long plantas, long habitaciones, long banyos, float coste, String finalidadObra) {
 		super();
 		this.ref = ref;
+		this.setTipo(tipo);
 		this.fechaInicio = fechaInicio;
 		this.fechaSolicitud = fechaSolicitud;
 		this.fechaEntrega = fechaEntrega;
@@ -74,6 +75,7 @@ public class Proyecto {
 	}
 
 	private String ref;
+	private String tipo;
 	private Date fechaInicio;
 	private Date fechaSolicitud;
 	private Date fechaEntrega;
@@ -102,13 +104,13 @@ public class Proyecto {
 		this.idProyecto = idProyecto;
 	}
 
-	public TipoProyecto getTipoProyecto() {
+	/*public TipoProyecto getTipoProyecto() {
 		return tipoProyecto;
 	}
 
 	public void setTipoProyecto(TipoProyecto tipoProyecto) {
 		this.tipoProyecto = tipoProyecto;
-	}
+	}*/
 
 	public String getRef() {
 		return ref;
@@ -245,6 +247,14 @@ public class Proyecto {
 
 	public void setFinalidadObra(String finalidadObra) {
 		this.finalidadObra = finalidadObra;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }

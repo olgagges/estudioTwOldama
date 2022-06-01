@@ -27,7 +27,7 @@ function listarProyecto() {
 		alert('Debe seleccionar el arquitecto');
 		document.getElementById('idArquitecto').focus;
 	}
-	else document.location.href="listProyectos.htm?idArquitecto=" + document.getElementById('idArquitecto').value;
+	else document.location.href="listProyectos.htm"; //?idArquitecto=" + document.getElementById('idArquitecto').value;
 }
 </script>
 
@@ -57,7 +57,8 @@ function listarProyecto() {
  
       <h3 class=r; style = "text-indent: 100px">Proyectos</h3>
         <ul style = "text-indent: 120px">
-          <li><A href="#" onClick="listarProyecto()">Listado Proyectos</A></li>
+          <li><A href="listProyectos.htm">Listado Proyectos</A></li>
+          <!--<li><A href="#" onClick="listarProyecto()">Listado Proyectos</A></li>-->
         </ul>
         
         <br>

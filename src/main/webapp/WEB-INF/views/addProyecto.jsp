@@ -33,15 +33,18 @@
 
 			<input type=hidden name="idCliente" value="${idCliente}" /> 
 
-			<label for="idTipoProyecto">Tipo
-				de proyecto</label> 
-			<select id="idTipoProyecto" name="idTipoProyecto">
-				<option value=0>Seleccione Tipo</option>
-				<c:forEach items="${tiposProyecto}" var="lista">
-					<option value="${lista.getIdTipoProyecto()}">${lista.getRef()}
-					</option>
-				</c:forEach>
-			</select> </br><br/>
+			<label for="tipo">Tipo de proyecto:</label>
+		<select name="tipo">
+
+		<option value=0>Seleccione Tipo</option>
+		<option value="RESIDENCIAL">RESIDENCIAL</option>
+
+		<option value="NORESIDENCIAL">NO RESIDENCIAL</option>
+		
+		<option value="REHABILITACION">REHABILITACIÓN</option>
+
+		</select><br/><br/>
+		
 			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
 				<option value=0>Seleccione Arquitecto</option>

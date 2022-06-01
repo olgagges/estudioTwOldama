@@ -2,12 +2,12 @@ package com.uned.estudioTw.model;
 
 public class ProyectoDTO {
 	private long idProyecto;
-	private String idTipoProyecto;
+	//private String idTipoProyecto;
 	private String idCliente;
 	private String idArquitecto;
 
 	private String ref;
-
+	private String tipo;
 	private String fechaInicio;
 	private String fechaSolicitud;
 	private String fechaEntrega;
@@ -27,13 +27,13 @@ public class ProyectoDTO {
 	private float coste;
 	private String finalidadObra;
 
-	public String getIdTipoProyecto() {
+	/*public String getIdTipoProyecto() {
 		return idTipoProyecto;
 	}
 
 	public void setIdTipoProyecto(String idTipoProyecto) {
 		this.idTipoProyecto = idTipoProyecto;
-	}
+	}*/
 
 	public String getIdCliente() {
 		return idCliente;
@@ -193,6 +193,14 @@ public class ProyectoDTO {
 
 	public void setIdProyecto(long idProyecto) {
 		this.idProyecto = idProyecto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
