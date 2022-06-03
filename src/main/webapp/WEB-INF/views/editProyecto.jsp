@@ -20,22 +20,38 @@
 <DIV id=content>
 <br>
 <h3 class=r>Edición de proyectos</h3><br/>
-<h3 class=r>Modifique los campos deseados y pulse Confirmar</h3><br/>
+<h3 class=r>Modifique los campos deseados y pulse Confirmar</h3>
+
+<table align ="center" border=1 width="60%" >
+	<tr bgcolor="grey">
+		<th align="center">Nº Proyecto</th>
+		<th>Tipo Proyecto</th>
+		<th>Cliente</th>
+		<th>Descripción</th>
+		<th>Dirección</th>
+		<th>Fecha Solicitud</th>
+	</tr>
+	<tr>
+		<td align="center"><c:out value="${proyecto.idProyecto}"/></td>
+		<td align="center"><c:out value="${proyecto.tipo}"/></td>
+		<td align="center"><c:out value="${cliente.persona.nombre}"/></td>
+		<td align="center"><c:out value="${proyecto.ref}"/></td>
+		<td align="center"><c:out value="${proyecto.direccion}"/></td>
+		<td align="center"><c:out value="${proyecto.fechaSolicitud}"/></td>
+	</tr>
+</table>
 
 
-		<form class=r method="post" action="addProyecto.htm">
-			<input type=hidden value="${idCliente}" /> 
+		<form class=r method="post" action="addProyecto.htm"> 
 
-			<input type=hidden name="idCliente" value="${idCliente}" /> 
+			<input type=hidden name="idProyecto" value="${proyecto.idProyecto}" /> 
+			<input type=hidden name="tipo" value="${proyecto.tipo}" />
+			<input type=hidden name="idCliente" value="${cliente.idCliente}" />
+			<input type=hidden name="ref" value="${proyecto.ref}" />
+			<input type=hidden name="direccion" value="${proyecto.direccion}" />
+			<input type=hidden name="fechaSolicitud" value="${proyecto.fechaSolicitud}" />
 
-			<label for="idTipoProyecto">Tipo
-				de proyecto</label> 
-			<select id="idTipoProyecto" name="idTipoProyecto">
-				<option value=0>Seleccione Tipo</option>
-				<c:forEach items="${tiposProyecto}" var="lista">
-					<option value="${lista.getIdTipoProyecto()}">${lista.getRef()}
-					</option>
-				</c:forEach>
+			
 			</select> </br><br/>
 			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
@@ -44,54 +60,59 @@
 					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
 					</option>
 				</c:forEach>
-			</select> </br><br/>
-			<label for="ref">Descripcion:</label>
-			<input type="text" name="ref" /><br/><br/>
-			<label for="ref">Fecha Inicio:</label>
-			<input type="text" name="fechaInicio" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Solicitud:</label>
-			<input type="text" name="fechaSolicitud" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Entrega:</label>
-			<input type="text" name="fechaEntrega" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Fin:</label>
-			<input type="text" name="fechaFin" value="01/01/2022"/><br/><br/>
-
-
-			<label for="ref">Duración obra:</label>
-			<input type="text" name="duracionObra" value="0"/><br/><br/>
+			</select> </br><br/><br/>
 			
-			<label for="ref">PresupuestoTotal:</label>
-			<input type="text" name="presupuestoTotal" value="0"/><br/><br/>
+		
+		
+		
+			<label for="fechaInicio">Fecha Inicio:</label>
+			<input type="text" name="fechaInicio" value="${proyecto.fechaInicio  eq null ? 'dd/mm/aaaa': proyecto.fechaInicio}"/>&nbsp;&nbsp;&nbsp;
+			<label for="fechaFin">Fecha Fin:</label>
+			<input type="text" name="fechaFin" value="${proyecto.fechaFin  eq null ? 'dd/mm/aaaa': proyecto.fechaFin}"/><br/><br/>
+		
+			<label for="fechaEntrega">Fecha Entrega:</label>
+			<input type="text" name="fechaEntrega" value="${proyecto.fechaEntrega  eq null ? 'dd/mm/aaaa': proyecto.fechaEntrega}"/><br/><br/>
+			<HR>
+			<br/>
+			<label for="duracionObra">Duración obra:</label>
+			<input type="text" name="duracionObra" value="${proyecto.duracionObra  eq 0 ? '0': proyecto.duracionObra}"/>&nbsp;&nbsp;&nbsp;
+			 
+			<label for="presupuestoTotal">Presupuesto total(EU):</label>
+			<input type="text" name="presupuestoTotal" value="${proyecto.presupuestoTotal  eq 0 ? '0': proyecto.presupuestoTotal}"/><br/><br/>
+	
+			<label for="duracionPresupuesto">Duracion presupuesto:</label>
+			<input type="text" name="duracionPresupuesto" value="${proyecto.duracionPresupuesto  eq 0 ? '0': proyecto.duracionPresupuesto}"/><br/><br/>
+			<HR>
+			<br/>
 			
-			<label for="ref">Duracion presupuesto:</label>
-			<input type="text" name="duracionPresupuesto" value="0"/><br/><br/>
+			<label for="superficeTerreno">Superficie terreno:</label>
+			<input type="text" name="superficeTerreno" value="${proyecto.superficeTerreno  eq 0 ? '0': proyecto.superficeTerreno}"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Dirección:</label>
-			<input type="text" name="direccion" /><br/><br/>
+			<label for="superficeEdificio">Superficie edificio:</label>
+			<input type="text" name="superficeEdificio" value="${proyecto.superficeEdificio  eq 0 ? '0': proyecto.superficeEdificio}"/><br/><br/>
 			
-			<label for="ref">Superficie terreno:</label>
-			<input type="text" name="superficieterreno" value="0"/><br/><br/>
+			<label for="superficeReforma">Superficie reforma:</label>
+			<input type="text" name="superficeReforma" value="${proyecto.superficeReforma  eq 0 ? '0': proyecto.superficeReforma}"/><br/><br/>
+			<HR>
+			<br/>
 			
-			<label for="ref">Superficie edificio:</label>
-			<input type="text" name="superficieedificio" value="0"/><br/><br/>
+			<label for="plantas">Plantas:</label>
+			<input type="text" name="plantas" value="${proyecto.plantas  eq 0 ? '0': proyecto.plantas}"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Superficie reforma:</label>
-			<input type="text" name="superficieReforma" value="0"/><br/><br/>
+			<label for="habitaciones">Habitaciones:</label>
+			<input type="text" name="habitaciones" value="${proyecto.habitaciones  eq 0 ? '0': proyecto.habitaciones}"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Plantas:</label>
-			<input type="text" name="plantas" value="0"/><br/><br/>
+			<label for="banyos">Baños:</label>
+			<input type="text" name="banyos" value="${proyecto.banyos  eq 0 ? '0': proyecto.banyos}"/><br/><br/>
+			<HR>
+			<br/>
 			
-			<label for="ref">Habitaciones:</label>
-			<input type="text" name="habitaciones" value="0"/><br/><br/>
+			<label for="finalidadObra">Finalidad Obra:</label>
+			<input type="text" name="finalidadObra" value="${proyecto.finalidadObra  eq null ? '': proyecto.finalidadObra}" /><br/><br/>
 			
-			<label for="ref">Banyos:</label>
-			<input type="text" name="banyos" value="0"/><br/><br/>
-			
-			<label for="ref">Finalidad Obra:</label>
-			<input type="text" name="finalidadObra" /><br/><br/>
-			
-			<input type="hidden" name="coste" value="0" />
-			 <br /> <br /> <input type="submit" /><input
+			<label for="coste">Coste Total(EU):</label>
+			<input type="text" name="coste" value="${proyecto.coste  eq 0 ? '0': proyecto.coste}"/><br/><br/>
+			 <br /> <br /> <input type="submit" value="Modificar" /><input
 				type="reset" />
 		</form>
 </DIV>

@@ -30,16 +30,58 @@ public class Proyecto {
 	private Arquitecto arquitecto;
 
 
-	public Proyecto() {
+	private String ref;
+	private String tipo;
+	private Date fechaInicio;
+	private Date fechaSolicitud;
+	private Date fechaEntrega;
+	private Date fechaFin;
+
+	private long duracionObra;
+	private float presupuestoTotal;
+	private long duracionPresupuesto;
+	
+	private String direccion;
+	private long superficeTerreno;
+	private long superficeEdificio;
+	private long superficeReforma;
+	private long plantas;
+	private long habitaciones;
+	private long banyos;
+	private float coste;
+	private String finalidadObra;
+
+	public Proyecto() {super();
 	}
 
+	public Proyecto(String ref, String tipo, Date fechaSolicitud,  long duracionObra, float presupuestoTotal,
+			long duracionPresupuesto, String direccion, long superficeTerreno, long superficeEdificio,
+			long superficeReforma, long plantas, long habitaciones, long banyos, float coste, String finalidadObra) {
+		super();
+		this.ref = ref;
+		this.tipo=tipo;
+		this.fechaSolicitud = fechaSolicitud;
+		this.duracionObra = duracionObra;
+		this.presupuestoTotal = presupuestoTotal;
+		this.duracionPresupuesto = duracionPresupuesto;
+		this.direccion = direccion;
+		this.superficeTerreno = superficeTerreno;
+		this.superficeEdificio = superficeEdificio;
+		this.superficeReforma = superficeReforma;
+		this.plantas = plantas;
+		this.habitaciones = habitaciones;
+		this.banyos = banyos;
+		this.coste = coste;
+		this.finalidadObra = finalidadObra;
+	}
+	
 	public Proyecto(String ref, String tipo, Date fechaInicio,
 			Date fechaSolicitud, Date fechaEntrega, Date fechaFin, long duracionObra, float presupuestoTotal,
 			long duracionPresupuesto, String direccion, long superficeTerreno, long superficeEdificio,
 			long superficeReforma, long plantas, long habitaciones, long banyos, float coste, String finalidadObra) {
 		super();
 		this.ref = ref;
-		this.setTipo(tipo);
+		this.tipo=tipo;
 		this.fechaInicio = fechaInicio;
 		this.fechaSolicitud = fechaSolicitud;
 		this.fechaEntrega = fechaEntrega;
@@ -74,26 +116,6 @@ public class Proyecto {
 		this.arquitecto = arquitecto;
 	}
 
-	private String ref;
-	private String tipo;
-	private Date fechaInicio;
-	private Date fechaSolicitud;
-	private Date fechaEntrega;
-	private Date fechaFin;
-
-	private long duracionObra;
-	private float presupuestoTotal;
-	private long duracionPresupuesto;
-	
-	private String direccion;
-	private long superficeTerreno;
-	private long superficeEdificio;
-	private long superficeReforma;
-	private long plantas;
-	private long habitaciones;
-	private long banyos;
-	private float coste;
-	private String finalidadObra;
 	
 
 	public long getIdProyecto() {

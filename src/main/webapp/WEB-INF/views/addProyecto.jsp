@@ -43,71 +43,45 @@
 		
 		<option value="REHABILITACION">REHABILITACIÓN</option>
 
-		</select><br/><br/>
+		</select><br/><br/><br/>
 		
-			<label for="idArquitecto">Arquitecto</label> 
-			<select id="idArquitecto"  name="idArquitecto">
-				<option value=0>Seleccione Arquitecto</option>
-				<c:forEach items="${arquitectos}" var="listaArquitectos">
-					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
-					</option>
-				</c:forEach>
-			</select> </br><br/>
-<%-- 				<label for="idEstructura">Estructura</label> 
-			<select id="idEstructura">
-				<option value=0 >Seleccione Estructura</option>
-				<c:forEach items="${estructuras}" var="listaEstructuras">
-					<option value="${listaEstructuras.getIdEstructura()}">${listaEstructuras.getRef()}
-					</option>
-				</c:forEach>
-			</select> </br><br/> --%>
-			<label for="ref">Descripcion:</label>
-			<input type="text" name="ref" /><br/><br/>
-			<label for="ref">Fecha Inicio:</label>
-			<input type="text" name="fechaInicio" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Solicitud:</label>
-			<input type="text" name="fechaSolicitud" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Entrega:</label>
-			<input type="text" name="fechaEntrega" value="01/01/2022"/><br/><br/>
-			<label for="ref">Fecha Fin:</label>
-			<input type="text" name="fechaFin" value="01/01/2022"/><br/><br/>
-
-
-			<label for="ref">Duración obra:</label>
-			<input type="text" name="duracionObra" value="0"/><br/><br/>
+			<label for="ref">Descripción:</label>
+			<input type="text" name="ref"/>&nbsp;&nbsp;&nbsp;
+			<label for="fechaSolicitud">Fecha Solicitud:</label>
+			<input type="text" name="fechaSolicitud" value="dd/mm/aaaa"/><br/><br/>
+			<label for="direccion">Dirección:</label>
+			<input type="text" name="direccion"/><br/><br/>
+		
+			<HR>
+			<br/>
 			
-			<label for="ref">PresupuestoTotal:</label>
-			<input type="text" name="presupuestoTotal" value="0"/><br/><br/>
+			<label for="superficeTerreno">Superficie terreno:</label>
+			<input type="text" name="superficeTerreno" value="0"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Duracion presupuesto:</label>
-			<input type="text" name="duracionPresupuesto" value="0"/><br/><br/>
+			<label for="superficeEdificio">Superficie edificio:</label>
+			<input type="text" name="superficeEdificio" value="0"/><br/><br/>
 			
-			<label for="ref">Dirección:</label>
-			<input type="text" name="direccion" /><br/><br/>
+			<label for="superficeReforma">Superficie reforma:</label>
+			<input type="text" name="superficeReforma" value="0"/><br/><br/>
+			<HR>
+			<br/>
 			
-			<label for="ref">Superficie terreno:</label>
-			<input type="text" name="superficieterreno" value="0"/><br/><br/>
+			<label for="plantas">Plantas:</label>
+			<input type="text" name="plantas" value="0"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Superficie edificio:</label>
-			<input type="text" name="superficieedificio" value="0"/><br/><br/>
+			<label for="habitaciones">Habitaciones:</label>
+			<input type="text" name="habitaciones" value="0"/>&nbsp;&nbsp;&nbsp;
 			
-			<label for="ref">Superficie reforma:</label>
-			<input type="text" name="superficieReforma" value="0"/><br/><br/>
-			
-			<label for="ref">Plantas:</label>
-			<input type="text" name="plantas" value="0"/><br/><br/>
-			
-			<label for="ref">Habitaciones:</label>
-			<input type="text" name="habitaciones" value="0"/><br/><br/>
-			
-			<label for="ref">Banyos:</label>
+			<label for="banyos">Baños:</label>
 			<input type="text" name="banyos" value="0"/><br/><br/>
+			<HR>
+			<br/>
 			
-			<label for="ref">Finalidad Obra:</label>
+			<label for="finalidadObra">Finalidad Obra:</label>
 			<input type="text" name="finalidadObra" /><br/><br/>
 			
 			<input type="hidden" name="coste" value="0" />
-			 <br /> <br /> <input type="submit" /><input
+			  <br /> <input type="submit" value="Solicitar"/><input
 				type="reset" />
 		</form>
 
