@@ -132,6 +132,7 @@ public class CertificadoController {
 		}
 		else certificados = certificadoService.listarTodos();
 		ModelAndView mav = new ModelAndView("listCertificadosClientes");
+		mav.addObject("opt", opt);
 		mav.addObject("certificados", certificados);
 		return mav;
 	}

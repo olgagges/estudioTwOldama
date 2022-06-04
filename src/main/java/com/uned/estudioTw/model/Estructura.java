@@ -2,22 +2,15 @@ package com.uned.estudioTw.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Estructura {
 	@Id
 	@GeneratedValue
 	private long idEstructura;
-
-	/*@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idTipoEstructura", referencedColumnName = "idTipoEstructura")
-	private TipoEstructura TipoEstructura;*/
 
 	private String ref;
 	private String direccion;

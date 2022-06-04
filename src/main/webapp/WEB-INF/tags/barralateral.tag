@@ -25,8 +25,8 @@
     <br>
     <br>
    <DIV class="sidenavigationlink"; ALIGN=center>
-   <P style= color:black>Manual de Usuario Web</P>
-    <A target=new href="${pageContext.request.contextPath}/docs/manualOldama.pdf">
+   <P style= color:black>Memoria</P>
+    <A target=new href="${pageContext.request.contextPath}/docs/memoriaOldama.pdf">
     	<img alt="Manual de usuario" src="${pageContext.request.contextPath}/Images/libro.png" height="48" width="43" border="0" />
     </A>
     </DIV>

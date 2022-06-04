@@ -38,12 +38,12 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 
 	public List<Certificado> listarTodosRenovacion() {
 		List<Certificado> certificados = sessionFactory.getCurrentSession()
-				.createQuery("FROM Certificado where year(fechaemision)+15<= year(current_date)").list();
+				.createQuery("FROM Certificado where year(fechaemision)+15<= year(current_date) and tipo='HABITABILIDAD'").list();
 		return certificados;
 	}
 
 	public List<Certificado> listarInspeccionTecnica() {
-		String sql = "FROM Certificado, Estructura E where year(E.fechaConstruccion)<=year(current_date)-45";
+		String sql = "FROM Certificado as c where year(c.estructura.fechaConstruccion)<=(year(current_date)-45) and c.tipo='ITE'";
 		List<Certificado> certificados = sessionFactory.getCurrentSession()
 				.createQuery(sql).list();
 		return certificados;
