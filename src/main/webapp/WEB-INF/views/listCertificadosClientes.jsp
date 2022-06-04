@@ -30,14 +30,13 @@
 				<th>Tipo Cert</th>
 				<th>F. Solicitud</th>
 				<th>Arquitecto</th>
+				<th>F. Visita</th>
 				<th>F. Emisión</th>
 				<th>F. Entrega</th>
-				<th>F. Inspección</th>
-				<th>F. Renovación</th>
-				<th>F. Visita</th>
-				<th>F. ITE</th>
+						
 				<th>Eficiencia</th>
 				<th>Coste(EU)</th>
+
 			</tr>
 			<c:forEach var="certificado" items="${certificados}">
 				
@@ -49,15 +48,11 @@
 					<td align="center"><c:out value="${certificado.tipo}"/></td>
 					<td align="center"><c:out value="${certificado.fechaSolicitud}"/></td>
 					<td align="center"><c:out value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}"/></td>
+					<td align="center"><c:out value="${certificado.fechaVisita  eq null ? '---': certificado.fechaVisita}"/></td>
 					<td align="center"><c:out value="${certificado.fechaEmision  eq null ? '---': certificado.fechaEmision}"/></td>
 					<td align="center"><c:out value="${certificado.fechaEntrega  eq null ? '---': certificado.fechaEntrega}"/></td>
-					<td align="center"><c:out value="${certificado.fechaInspeccion  eq null ? '---': certificado.fechaInspeccion}"/></td>
-					<td align="center"><c:out value="${certificado.fechaRenovacion  eq null ? '---': certificado.fechaRenovacion}"/></td>
-					<td align="center"><c:out value="${certificado.fechaVisita  eq null ? '---': certificado.fechaVisita}"/></td>
-					<td align="center"><c:out value="${certificado.fechaITE  eq null ? '---': certificado.fechaITE}"/></td>
-					<td align="center"><c:out value="${certificado.eficiencia}"/></td>
-					<td align="center"><c:out value="${certificado.coste}"/></td>
-					<td align="center"><A href="editCertificado.htm?id=${certificado.idCertificado}">Editar</A></td>
+					<td align="center"><c:out value="${certificado.eficiencia  eq null ? '---': certificado.eficiencia}"/></td>
+					<td align="center"><c:out value="${certificado.coste  eq 0 ? '0': certificado.coste}"/></td>
 				</tr>
 				
 			</c:forEach>
