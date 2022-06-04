@@ -50,9 +50,9 @@
 
 			<label for="arquitecto">Arquitecto</label> 
 			<select id="arquitecto"  name="idArquitecto">
-				<option value=0>${arquitecto  eq null ? 'Seleccione Arquitecto': certificado.arquitecto.persona.nombre}</option>
-				<c:forEach items="${arquitectos}" var="arquitectos">
-					<option value="${arquitectos.getIdArquitecto()}">${arquitectos.getPersona().getNombre()}
+				<c:forEach items="${arquitectos}" var="listaArquitectos">
+					<option value="${listaArquitectos.getIdArquitecto()}" ${listaArquitectos.getIdArquitecto() == proyecto.idArquitecto ? 'selected="selected"' : ''}>
+					${listaArquitectos.getPersona().getNombre()}
 					</option>
 				</c:forEach>
 			</select> <br/><br/>
