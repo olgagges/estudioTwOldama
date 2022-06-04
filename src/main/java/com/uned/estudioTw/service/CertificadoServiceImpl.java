@@ -13,7 +13,6 @@ import com.uned.estudioTw.model.Arquitecto;
 import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
-import com.uned.estudioTw.model.TipoCertificado;
 
 @Service
 public class CertificadoServiceImpl implements CertificadoService {
@@ -30,7 +29,6 @@ public class CertificadoServiceImpl implements CertificadoService {
 	public void crear(Certificado certificado) {
 		certificadoDAO.crear(certificado);
 	}
-
 
 	public List<Certificado> listarTodos() {
 		List<Certificado> certificados = certificadoDAO.listarTodos();
@@ -76,7 +74,6 @@ public class CertificadoServiceImpl implements CertificadoService {
 		List<Certificado> certificados = certificadoDAO.listarCertificadosPorTipo(tipo);
 		return certificados;
 	}
-
 
 	public List<Certificado> listarPedidos(long id) {
 		List<Certificado> certificados = certificadoDAO.listarPedidos(id);

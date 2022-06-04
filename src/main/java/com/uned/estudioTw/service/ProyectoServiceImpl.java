@@ -9,19 +9,15 @@ import com.uned.estudioTw.dao.ArquitectoDAOImpl;
 import com.uned.estudioTw.dao.ClienteDAOImpl;
 import com.uned.estudioTw.dao.EstructuraDAOImpl;
 import com.uned.estudioTw.dao.ProyectoDAOImpl;
-import com.uned.estudioTw.dao.TipoProyectoDAOImpl;
 import com.uned.estudioTw.model.Arquitecto;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
-import com.uned.estudioTw.model.TipoProyecto;
 
 @Service
 public class ProyectoServiceImpl implements ProyectoService {
 	@Autowired
 	ProyectoDAOImpl proyectoDAO;
-	@Autowired
-	TipoProyectoDAOImpl tipoProyectoDAO;
 	@Autowired
 	ArquitectoDAOImpl arquitectoDAO;
 	@Autowired
@@ -31,10 +27,6 @@ public class ProyectoServiceImpl implements ProyectoService {
 
 	public void crear(Proyecto proyecto) {
 		proyectoDAO.crear(proyecto);
-	}
-
-	public List<TipoProyecto> obtenerTiposProyecto() {
-		return tipoProyectoDAO.listarTodos();
 	}
 
 	public List<Arquitecto> obtenerArquitectos() {
@@ -51,10 +43,6 @@ public class ProyectoServiceImpl implements ProyectoService {
 
 	public Arquitecto obtenerArquitecto(long idArquitecto) {
 		return arquitectoDAO.obtener(idArquitecto);
-	}
-
-	public TipoProyecto obtenerTipoProyecto(long idTipoProyecto) {
-		return tipoProyectoDAO.obtener(idTipoProyecto);
 	}
 
 	public List<Proyecto> listarTodos() {
@@ -78,6 +66,6 @@ public class ProyectoServiceImpl implements ProyectoService {
 
 	public void editar(Proyecto proyecto) {
 		proyectoDAO.editar(proyecto);
-		
+
 	}
 }

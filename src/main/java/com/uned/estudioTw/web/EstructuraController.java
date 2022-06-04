@@ -1,7 +1,5 @@
 package com.uned.estudioTw.web;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -10,18 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.EstructuraDTO;
-import com.uned.estudioTw.model.TipoProyecto;
 import com.uned.estudioTw.service.EstructuraService;
 
 import utils.Utils;
-
-import com.uned.estudioTw.model.Certificado;
-import com.uned.estudioTw.model.Cliente;
-import com.uned.estudioTw.model.Persona;
-import com.uned.estudioTw.service.ClienteService;
 
 @Controller
 public class EstructuraController {

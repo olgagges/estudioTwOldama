@@ -15,10 +15,9 @@ import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
 import com.uned.estudioTw.model.ProyectoDTO;
-import com.uned.estudioTw.model.TipoProyecto;
-import com.uned.estudioTw.service.ProyectoService;
 import com.uned.estudioTw.service.ArquitectoService;
 import com.uned.estudioTw.service.ClienteService;
+import com.uned.estudioTw.service.ProyectoService;
 
 import utils.Utils;
 

@@ -1,7 +1,5 @@
 package com.uned.estudioTw.model;
 
-import java.util.Date;
-
 public class CertificadoDTO {
 
 	private long idCertificado;
