@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.uned.estudioTw.dao"},{"l":"com.uned.estudioTw.model"},{"l":"com.uned.estudioTw.service"},{"l":"com.uned.estudioTw.web"},{"l":"utils"}]

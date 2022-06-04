@@ -8,10 +8,7 @@
 		<mapping class="com.uned.estudioTw.model.Admin" />
 		<mapping class="com.uned.estudioTw.model.Arquitecto" />
 		<mapping class="com.uned.estudioTw.model.Proyecto" />
-		<mapping class="com.uned.estudioTw.model.TipoProyecto" />
 		<mapping class="com.uned.estudioTw.model.Certificado" />
-		<mapping class="com.uned.estudioTw.model.TipoCertificado" />
 		<mapping class="com.uned.estudioTw.model.Estructura" />
-		<mapping class="com.uned.estudioTw.model.TipoEstructura" />
 	</session-factory>
 </hibernate-configuration>

@@ -45,10 +45,7 @@
 					org.hibernate.dialect.HSQLDialect
 				</prop>
 				<prop key="hibernate.show_sql">true</prop>
-			<!--  	<prop key="hibernate.hbm2ddl.auto">create-drop</prop> 
-			 	 <prop key="hibernate.hbm2ddl.import_files">import.sql</prop>
-			 	 <prop key="hibernate.hbm2ddl.import_files_sql_extractor">org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor</prop>
-			 -->
+			 	<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
 			</props>
 		</property>
 	</bean>
