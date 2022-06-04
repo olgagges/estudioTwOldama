@@ -15,14 +15,6 @@ public class Certificado {
 	@GeneratedValue
 	private long idCertificado;
 
-	/*@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idTipoCertificado", referencedColumnName = "idTipoCertificado")
-	private TipoCertificado tipoCertificado;*/
-	
-	/*@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "nombre", referencedColumnName = "nombre")
-	private TipoCertificado tipoCertificado;*/
-
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idArquitecto", referencedColumnName = "idArquitecto")
 	private Arquitecto arquitecto;
