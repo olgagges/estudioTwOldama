@@ -43,8 +43,9 @@ public class CertificadoDAOImpl implements CertificadoDAO {
 	}
 
 	public List<Certificado> listarInspeccionTecnica() {
+		String sql = "FROM Certificado, Estructura E where year(E.fechaConstruccion)<=year(current_date)-45";
 		List<Certificado> certificados = sessionFactory.getCurrentSession()
-				.createQuery("FROM Certificado where fechaemision>=current_date").list();
+				.createQuery(sql).list();
 		return certificados;
 	}
 
