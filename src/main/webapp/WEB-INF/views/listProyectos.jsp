@@ -40,7 +40,7 @@
 					<td align="center"><c:out value="${proyecto.cliente.persona.nombre}"/></td>
 					<td align="center"><c:out value="${proyecto.tipo}"/></td>
 					<td align="center"><c:out value="${proyecto.fechaSolicitud}"/></td>
-					<td align="center"><c:out value="${certificado.arquitecto  eq null ? '---': certificado.arquitecto.persona.nombre}"/></td>
+					<td align="center"><c:out value="${proyecto.arquitecto  eq null ? '---': proyecto.arquitecto.persona.nombre}"/></td>
 					<td align="center"><A href="editProyecto.htm?id=${proyecto.idProyecto}">Editar</A></td>
 				</tr>
 				

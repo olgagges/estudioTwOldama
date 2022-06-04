@@ -161,7 +161,7 @@ public class ProyectoController {
 			proyectoDAO
 					.setTipoProyecto(proyectoService.obtenerTipoProyecto(Long.parseLong(proyecto.getIdTipoProyecto())));
 		}*/
-		proyectoService.crear(proyectoDAO);
+		proyectoService.editar(proyectoDAO);
 		return new ModelAndView("redirect:/sendForm.htm");
 	}
 

@@ -55,7 +55,7 @@
 			</select> </br><br/>
 			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
-				<option value=0>Seleccione Arquitecto</option>
+				<option value=0>${arquitecto  eq null ? 'Seleccione Arquitecto': proyecto.arquitecto.persona.nombre}</option>
 				<c:forEach items="${arquitectos}" var="listaArquitectos">
 					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
 					</option>

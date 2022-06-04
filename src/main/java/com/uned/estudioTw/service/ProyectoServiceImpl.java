@@ -75,4 +75,9 @@ public class ProyectoServiceImpl implements ProyectoService {
 	public Proyecto obtener(long id) {
 		return proyectoDAO.obtener(id);
 	}
+
+	public void editar(Proyecto proyecto) {
+		proyectoDAO.editar(proyecto);
+		
+	}
 }

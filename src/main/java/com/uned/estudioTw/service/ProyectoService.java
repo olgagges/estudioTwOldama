@@ -26,4 +26,6 @@ public interface ProyectoService {
 	TipoProyecto obtenerTipoProyecto(long parseLong);
 
 	List<Proyecto> listarTodos();
+
+	public void editar(Proyecto proyectoDAO);
 }
