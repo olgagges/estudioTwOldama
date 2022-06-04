@@ -126,13 +126,6 @@ public class Proyecto {
 		this.idProyecto = idProyecto;
 	}
 
-	/*public TipoProyecto getTipoProyecto() {
-		return tipoProyecto;
-	}
-
-	public void setTipoProyecto(TipoProyecto tipoProyecto) {
-		this.tipoProyecto = tipoProyecto;
-	}*/
 
 	public String getRef() {
 		return ref;

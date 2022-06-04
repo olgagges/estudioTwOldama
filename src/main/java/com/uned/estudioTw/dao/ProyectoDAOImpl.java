@@ -14,7 +14,7 @@ public class ProyectoDAOImpl implements ProyectoDAO {
 	private SessionFactory sessionFactory;
 
 	public void crear(Proyecto proyecto) {
-		sessionFactory.getCurrentSession().save("Cliente", proyecto);
+		sessionFactory.getCurrentSession().save("Proyecto", proyecto);
 	}
 
 	public void borrar(Proyecto proyecto) {

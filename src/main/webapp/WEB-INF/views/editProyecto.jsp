@@ -42,7 +42,7 @@
 </table>
 
 
-		<form class=r method="post" action="addProyecto.htm"> 
+		<form class=r method="post" action="editProyecto.htm"> 
 
 			<input type=hidden name="idProyecto" value="${proyecto.idProyecto}" /> 
 			<input type=hidden name="tipo" value="${proyecto.tipo}" />
@@ -55,7 +55,7 @@
 			</select> </br><br/>
 			<label for="idArquitecto">Arquitecto</label> 
 			<select id="idArquitecto"  name="idArquitecto">
-				<option value=0>${arquitecto  eq null ? 'Seleccione Arquitecto': proyecto.arquitecto.persona.nombre}</option>
+				<option value=0>${proyecto.idArquitecto  eq null ? 'Seleccione Arquitecto': proyecto2.arquitecto.persona.nombre}</option>
 				<c:forEach items="${arquitectos}" var="listaArquitectos">
 					<option value="${listaArquitectos.getIdArquitecto()}">${listaArquitectos.getPersona().getNombre()}
 					</option>

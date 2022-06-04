@@ -78,14 +78,12 @@ public class ProyectoController {
 		if (proyecto.getCliente()!=null) {
 			proyectoDTO.setIdCliente(String.valueOf(proyecto.getCliente().getIdCliente()));
 		}
-		/*if (proyecto.getTipoProyecto()!=null) {
-			proyectoDTO.setIdTipoProyecto(String.valueOf(proyecto.getTipoProyecto().getIdTipoProyecto()));
-		}*/
 
 		ModelAndView mav = new ModelAndView("editProyecto");
 		mav.addObject("proyecto", proyectoDTO);
 		mav.addObject("cliente", cliente);
 		mav.addObject("arquitectos", arquitectos);
+		mav.addObject("proyecto2", proyecto);
 		return mav;
 	}
 
@@ -132,8 +130,8 @@ public class ProyectoController {
 		
 		proyectoDAO.setIdProyecto(proyecto.getIdProyecto());
 
-		proyectoService.crear(proyectoDAO);
-		return new ModelAndView("redirect:/clientsArea.htm");
+		proyectoService.editar(proyectoDAO);
+		return new ModelAndView("redirect:/personaeditada.htm");
 	}
 
 	@RequestMapping(value = "/addProyecto.htm", method = RequestMethod.POST)
@@ -157,11 +155,8 @@ public class ProyectoController {
 		if (proyecto.getIdArquitecto() != null) {
 			proyectoDAO.setArquitecto(proyectoService.obtenerArquitecto(Long.parseLong(proyecto.getIdArquitecto())));
 		}
-		/*if (proyecto.getIdTipoProyecto() != null) {
-			proyectoDAO
-					.setTipoProyecto(proyectoService.obtenerTipoProyecto(Long.parseLong(proyecto.getIdTipoProyecto())));
-		}*/
-		proyectoService.editar(proyectoDAO);
+		
+		proyectoService.crear(proyectoDAO);
 		return new ModelAndView("redirect:/sendForm.htm");
 	}
 
