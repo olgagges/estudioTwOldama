@@ -10,6 +10,7 @@ import com.uned.estudioTw.dao.ClienteDAOImpl;
 import com.uned.estudioTw.dao.EstructuraDAOImpl;
 import com.uned.estudioTw.dao.ProyectoDAOImpl;
 import com.uned.estudioTw.model.Arquitecto;
+import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
@@ -67,5 +68,10 @@ public class ProyectoServiceImpl implements ProyectoService {
 	public void editar(Proyecto proyecto) {
 		proyectoDAO.editar(proyecto);
 
+	}
+
+	public List<Proyecto> listarPedidos(long id) {
+		List<Proyecto> proyectos = proyectoDAO.listarPedidos(id);
+		return proyectos;
 	}
 }

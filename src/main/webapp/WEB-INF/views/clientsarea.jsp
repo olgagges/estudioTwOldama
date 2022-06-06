@@ -26,7 +26,7 @@ function verProyectos() {
 		alert('Debe seleccionar el cliente');
 		document.getElementById('idCliente').focus;
 	}
-	else document.location.href="listProyectos.htm?idCliente=" + document.getElementById('idCliente').value;
+	else document.location.href="listProyectosPedidos.htm?id=" + document.getElementById('idCliente').value;
 }
 function verCertificados() {
 	if (document.getElementById('idCliente').value=='') {

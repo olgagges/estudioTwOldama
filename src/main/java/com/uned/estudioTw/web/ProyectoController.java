@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uned.estudioTw.model.Arquitecto;
+import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Cliente;
 import com.uned.estudioTw.model.Estructura;
 import com.uned.estudioTw.model.Proyecto;
@@ -168,6 +169,18 @@ public class ProyectoController {
 		mav.addObject("proyectos", proyectos);
 		mav.addObject("arquitectos", arquitectos);
 		mav.addObject("clientes", clientes);
+		return mav;
+	}
+	
+	
+	@RequestMapping(value = "/listProyectosPedidos.htm")
+	public ModelAndView certificadosPedidoss(@RequestParam("id") long idCliente) {
+		List<Proyecto> proyectos = null;
+		Cliente cliente = clienteService.obtener(idCliente);
+		proyectos = proyectoService.listarPedidos(idCliente);
+		ModelAndView mav = new ModelAndView("listProyectosPedidos");
+		mav.addObject("proyectos", proyectos);
+		mav.addObject("cliente", cliente);
 		return mav;
 	}
 }

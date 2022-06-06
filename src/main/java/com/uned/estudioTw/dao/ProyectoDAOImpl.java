@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.uned.estudioTw.model.Certificado;
 import com.uned.estudioTw.model.Proyecto;
 
 @Repository
@@ -43,6 +44,12 @@ public class ProyectoDAOImpl implements ProyectoDAO {
 
 	public List<Proyecto> listarTodosCliente(Long id) {
 		List<Proyecto> proyectos = sessionFactory.getCurrentSession().createQuery("from Proyecto where idCliente = :tid").setParameter("tid", id).list();
+		return proyectos;
+	}
+
+	public List<Proyecto> listarPedidos(long id) {
+		List<Proyecto> proyectos = sessionFactory.getCurrentSession()
+				.createQuery("FROM Proyecto where idCliente = :tid").setParameter("tid", id).list();
 		return proyectos;
 	}
 }

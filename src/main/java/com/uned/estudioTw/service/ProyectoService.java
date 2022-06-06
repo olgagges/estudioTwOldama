@@ -23,4 +23,6 @@ public interface ProyectoService {
 	List<Proyecto> listarTodos();
 
 	public void editar(Proyecto proyectoDAO);
+
+	public List<Proyecto> listarPedidos(long idCliente);
 }
